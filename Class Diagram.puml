@@ -1,0 +1,119 @@
+@startuml
+' Diagram Title
+title JibJob MVP Class Diagram
+
+' Style Improvement (Optional)
+skinparam classAttributeIconSize 0
+hide empty members
+
+' Class Definitions
+class User {
+  - userId: int {PK}
+  - email: String
+  - passwordHash: String
+  - name: String
+  - locationZip: String
+  - latitude: double {nullable}
+  - longitude: double {nullable}
+  note right on member longitude : Latitude/Longitude are\noptional for more\nprecise location later.
+  - skills: List<String>
+  - createdAt: DateTime
+  - updatedAt: DateTime
+  -- Methods --
+  + postJob(jobDetails): Job
+  + applyForJob(jobId, message): Application
+  + updateProfile(profileData): void
+  + viewApplicationsForJob(jobId): List<Application>
+  + writeReview(reviewData): Review
+}
+
+class Job {
+  - jobId: int {PK}
+  - title: String
+  - description: String
+  - locationZip: String
+  - latitude: double {nullable}
+  - longitude: double {nullable}
+  - tags: List<String>
+  note left on member tags : Crucial for content-based\nmatching with User skills.
+  - status: JobStatus
+  - proposedBudget: String {nullable}
+  - createdAt: DateTime
+  - updatedAt: DateTime
+  - postedByUserId: int {FK}
+  - assignedToUserId: int {nullable} {FK}
+  -- Methods --
+  + viewDetails(): JobData
+  + updateDetails(jobDetails): void
+  + assignUser(userId): void
+  + completeJob(): void
+  + viewApplicants(): List<User>
+}
+
+class Application {
+  - applicationId: int {PK}
+  - jobId: int {FK}
+  - applicantUserId: int {FK}
+  - status: AppStatus
+  - applicationTimestamp: DateTime
+  - message: String {nullable}
+  -- Methods --
+  + accept(): void
+  + reject(): void
+}
+
+class Review {
+  - reviewId: int {PK}
+  - jobId: int {FK}
+  - reviewerUserId: int {FK}
+  - revieweeUserId: int {FK}
+  - rating: int
+  - comment: String {nullable}
+  - reviewTimestamp: DateTime
+}
+
+' Enum Definitions
+enum JobStatus {
+  Open
+  Assigned
+  Completed
+  Cancelled
+}
+
+enum AppStatus {
+  Pending
+  Accepted
+  Rejected
+}
+
+' Relationships
+User "1" -- "0..*" Job : Posts >
+note on link: A User posts zero or more Jobs.\nA Job is posted by exactly one User.
+
+User "1" -- "0..*" Application : Submits >
+note on link: A User (Provider) submits zero or more Applications.
+
+Job "1" -- "0..*" Application : Receives <
+note on link: A Job receives zero or more Applications.
+
+Job "0..*" --> "0..1" User : Assigned To >
+note on link: A Job may be assigned to one User (Provider).\nA User can be assigned to many Jobs over time.
+
+User "1" -- "0..*" Review : Writes (Reviewer) >
+note on link: A User writes zero or more Reviews.
+
+User "1" -- "0..*" Review : Receives (Reviewee) <
+note on link: A User receives zero or more Reviews.
+
+Job "1" -- "0..*" Review : Has Context For <
+note on link: A Job provides the context for Reviews (typically 0 or 2).
+
+' Enum Usage Relationships (Dependency)
+Job ..> JobStatus : uses
+Application ..> AppStatus : uses
+
+' Floating Notes for General Comments
+note "User class represents both\nJob Seekers (posting)\nand Job Providers (applying)" as N1
+User .. N1
+
+@enduml
