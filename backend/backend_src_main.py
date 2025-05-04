@@ -20,3 +20,4 @@ async def root():
 async def create_gig(gig: Gig):
     # TODO: Implementation
     return {"message": "Gig created", "gig": gig}
+#ffffff
