@@ -17,6 +17,7 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
+.gradle/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -32,6 +33,18 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.packages
+pubspec.lock
+build/
+
+
+# Generated plugin registrations
+**/GeneratedPluginRegistrant.java
+**/GeneratedPluginRegistrant.h
+**/GeneratedPluginRegistrant.m
+
+# VS Code
+.vscode/
 
 # Symbolication related
 app.*.symbols
