@@ -126,7 +126,7 @@ String selectedCategory = '';
               ),
             ),
 
-            SizedBox(height : 60) ,
+           // SizedBox(height : 80) ,
 
             // Show Visiteur Card only if no category is selected
             if (selectedCategory.isEmpty)

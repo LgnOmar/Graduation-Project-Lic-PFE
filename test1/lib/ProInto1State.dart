@@ -59,7 +59,7 @@ class Prointo1State extends StatelessWidget {
                 height: 0.95,
               ),
             )),
-            SizedBox(height: 60),
+            //SizedBox(height: 60),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

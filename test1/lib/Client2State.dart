@@ -70,7 +70,7 @@ class Client2State extends StatelessWidget {
                 height: 0.95,
               ),
             )),
-            SizedBox(height: 90),
+            SizedBox(height: 60),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

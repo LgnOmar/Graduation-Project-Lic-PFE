@@ -53,14 +53,14 @@ class Client3State extends StatelessWidget {
               "Sélectionnez celui que vous souhaitez rencontrer",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: const Color(0xFF130160) /* Main1 */ ,
+                color: const Color(0xFF130160) /* Main1 */,
                 fontSize: 22,
                 fontFamily: 'DM Sans',
                 fontWeight: FontWeight.w300,
                 height: 0.95,
               ),
             )),
-            SizedBox(height: 80),
+            SizedBox(height: 60),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
