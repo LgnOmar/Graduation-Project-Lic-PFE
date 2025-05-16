@@ -88,6 +88,9 @@ flutter:
     - assets/points.png
     - assets/social.png
     - assets/prix.png
+    - assets/forward.png
+    - assets/backward.png
+
 
 
 
