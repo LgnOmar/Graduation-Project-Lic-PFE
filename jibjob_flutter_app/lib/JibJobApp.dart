@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'SplashScreen.dart';
-import 'Profileclient.dart' ;
-import 'JibJobAuthPage.dart' ;
-import 'Profilepro.dart' ;
-import 'listeServices.dart' ;
-import 'ProSignUpPage0.dart' ;
+import 'screens/SplashScreen.dart';
+import 'screens/Profileclient.dart' ;
+import 'screens/JibJobAuthPage.dart' ;
+import 'screens/Profilepro.dart' ;
+import 'screens/listeServices.dart' ;
+import 'screens/ProSignUpPage0.dart' ;
 
 class JibJobApp extends StatelessWidget{
   @override

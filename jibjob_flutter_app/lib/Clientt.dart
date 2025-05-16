@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'JibJobAuthPage.dart';
+import 'screens/JibJobAuthPage.dart';
 
 // ignore: must_be_immutable
 class Clientt extends StatelessWidget{
