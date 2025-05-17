@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-// Assuming Profileclient.dart and Client3State.dart are for navigation,
-// we'll address those if needed. For now, let's focus on the signup page itself.
 // import 'Profileclient.dart'; // We'll comment this out for now if not immediately used for navigation AFTER signup
-import 'Client3State.dart';   // Used by teammate's back button. Make sure it's a valid page.
+import 'Client3State.dart';
 
 class ClientSignUpPage extends StatefulWidget {
   const ClientSignUpPage({Key? key}) : super(key: key);
@@ -13,23 +11,23 @@ class ClientSignUpPage extends StatefulWidget {
 }
 
 class _ClientSignUpPageState extends State<ClientSignUpPage> {
-  // --- State Variables (Combined from both versions) ---
-  final _formKey = GlobalKey<FormState>(); // For form validation (from your version)
-  final _emailController = TextEditingController();    // (from both)
-  final _passwordController = TextEditingController(); // (from both)
-  final _fullNameController = TextEditingController(); // (from both)
-  final _phoneController = TextEditingController();    // (from teammate)
-  final _cityController = TextEditingController();     // (from teammate)
-  final _presentationController = TextEditingController(); // (from teammate)
+  // --- State Variables
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _fullNameController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _cityController = TextEditingController();
+  final _presentationController = TextEditingController();
   // We could add a controller for profile picture if we implement picking, but not for now.
-  bool _isLoading = false; // To show a loading indicator (from your version)
+  bool _isLoading = false; // To show a loading indicator
 
   // --- Supabase Client ---
   final _supabase = Supabase.instance.client; // Easy access to Supabase client (from your version)
 
-  // Teammate's dark purple color
-  final Color darkPurple = Color(0xFF130160); // Or Color(0xFF20004E) if that was the intended one
-  final Color jibJobPurple = Color(0xFF130160); // Let's stick to this name as it's clearer for project
+  //colors for the app
+  final Color darkPurple = Color(0xFF130160);
+  final Color jibJobPurple = Color(0xFF130160);
 
   // --- Dispose controllers when widget is removed ---
   @override
@@ -37,9 +35,9 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
     _emailController.dispose();
     _passwordController.dispose();
     _fullNameController.dispose();
-    _phoneController.dispose(); // (from teammate)
-    _cityController.dispose();  // (from teammate)
-    _presentationController.dispose(); // (from teammate)
+    _phoneController.dispose();
+    _cityController.dispose();
+    _presentationController.dispose();
     super.dispose();
   }
 
@@ -70,9 +68,9 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
     final email = _emailController.text.trim();
     final password = _passwordController.text.trim();
     final fullName = _fullNameController.text.trim();
-    final phoneNumber = _phoneController.text.trim(); // (from teammate)
-    final locationText = _cityController.text.trim(); // (from teammate) - Renamed for clarity with DB
-    final bio = _presentationController.text.trim();  // (from teammate) - Renamed for clarity with DB
+    final phoneNumber = _phoneController.text.trim();
+    final locationText = _cityController.text.trim();
+    final bio = _presentationController.text.trim();
 
     try {
       final AuthResponse authResponse = await _supabase.auth.signUp(
@@ -94,19 +92,11 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Sign up successful!')), // Email confirmation message removed as it's off
+            const SnackBar(content: Text('Sign up successful!')),
           );
-          // TODO: Navigate to the next appropriate page (e.g., Profileclient or a home page)
-          // Example: Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ProfileclientPage()));
           print("Sign up success! TODO: Navigate to next page.");
-          // Let's assume teammate's next page was Profileclient:
-          // You might want to pass the newly created user data or ID to Profileclient if it needs it.
-          // For now, let's keep the navigation part for you to refine.
         }
       }
-      // No 'else' here, as authResponse.user being null without an error
-      // was primarily for the email confirmation pending state.
-      // If email confirmation is OFF, auth.signUp should throw an error or return a user.
     } on AuthException catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -256,7 +246,6 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: jibJobPurple),
           onPressed: () {
-            // Ensure Client3State is a valid page to navigate to or use Navigator.pop(context)
             if (Navigator.canPop(context)) {
               Navigator.pop(context);
             } else {
@@ -293,7 +282,7 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                   // Form fields using adapted buildField method
                   buildField(
                     "Nom et Prenom*",
-                    "ex: Jean Dupont",
+                    "ex: Omar Laggoune",
                     _fullNameController,
                     validator: (value) {
                       if (value == null || value.isEmpty) return 'Veuillez entrer votre nom complet';
@@ -303,7 +292,7 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                   ),
                   buildField(
                     "Email*",
-                    "ex: jean.dupont@exemple.com",
+                    "ex: omar.laggoune@exemple.com",
                     _emailController,
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
@@ -350,8 +339,8 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                     // No validator making it optional
                   ),
                   const SizedBox(height: 24),
-                  // --- Photo de Profile (Teammate's UI, functionality TBD) ---
-                  // This needs more work (image_picker package, Supabase storage upload)
+                  // --- Photo de Profile (functionality TBD) ---
+                  // This needs more work khali 3liha pour linstant (image_picker package, Supabase storage upload)
                   // For MVP, this can be a non-functional UI element or skipped.
                   Align( // Center the "Photo de Profile" section
                     alignment: Alignment.center,
@@ -382,7 +371,7 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                       ? const Center(child: CircularProgressIndicator())
                       : ElevatedButton(
                     // onPressed: _signUp, // Call your signUp logic!
-                    onPressed: () { // Modified to use your _signUp
+                    onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _signUp();
                       }
