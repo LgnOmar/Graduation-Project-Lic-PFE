@@ -1,41 +1,241 @@
 import 'package:flutter/material.dart';
-import 'Profileclient.dart';
-import 'Client3State.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+// Assuming Profileclient.dart and Client3State.dart are for navigation,
+// we'll address those if needed. For now, let's focus on the signup page itself.
+// import 'Profileclient.dart'; // We'll comment this out for now if not immediately used for navigation AFTER signup
+import 'Client3State.dart';   // Used by teammate's back button. Make sure it's a valid page.
 
 class ClientSignUpPage extends StatefulWidget {
+  const ClientSignUpPage({Key? key}) : super(key: key);
+
   @override
-  _ClientSignUpPageState createState() => _ClientSignUpPageState();
+  State<ClientSignUpPage> createState() => _ClientSignUpPageState();
 }
 
-// ignore: unused_element
 class _ClientSignUpPageState extends State<ClientSignUpPage> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final nameController = TextEditingController();
-  final phoneController = TextEditingController();
-  final cityController = TextEditingController();
-  final presentationController = TextEditingController();
+  // --- State Variables (Combined from both versions) ---
+  final _formKey = GlobalKey<FormState>(); // For form validation (from your version)
+  final _emailController = TextEditingController();    // (from both)
+  final _passwordController = TextEditingController(); // (from both)
+  final _fullNameController = TextEditingController(); // (from both)
+  final _phoneController = TextEditingController();    // (from teammate)
+  final _cityController = TextEditingController();     // (from teammate)
+  final _presentationController = TextEditingController(); // (from teammate)
+  // We could add a controller for profile picture if we implement picking, but not for now.
+  bool _isLoading = false; // To show a loading indicator (from your version)
 
-  final Color darkPurple = Color(0xFF20004E);
+  // --- Supabase Client ---
+  final _supabase = Supabase.instance.client; // Easy access to Supabase client (from your version)
 
+  // Teammate's dark purple color
+  final Color darkPurple = Color(0xFF130160); // Or Color(0xFF20004E) if that was the intended one
+  final Color jibJobPurple = Color(0xFF130160); // Let's stick to this name as it's clearer for project
+
+  // --- Dispose controllers when widget is removed ---
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    nameController.dispose();
-    phoneController.dispose();
-    cityController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _fullNameController.dispose();
+    _phoneController.dispose(); // (from teammate)
+    _cityController.dispose();  // (from teammate)
+    _presentationController.dispose(); // (from teammate)
     super.dispose();
   }
+
+  // --- Sign Up Function
+  Future<void> _signUp() async {
+    if (!_formKey.currentState!.validate()) {
+      // Lets use TextFormField instead of buildFields
+      if (_emailController.text.trim().isEmpty || _passwordController.text.trim().isEmpty || _fullNameController.text.trim().isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Please fill in Email, Password, and Full Name.')),
+        );
+        return;
+      }
+      if (_passwordController.text.trim().length < 6) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Password must be at least 6 characters.')),
+        );
+        return;
+      }
+
+    }
+
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+    final fullName = _fullNameController.text.trim();
+    final phoneNumber = _phoneController.text.trim(); // (from teammate)
+    final locationText = _cityController.text.trim(); // (from teammate) - Renamed for clarity with DB
+    final bio = _presentationController.text.trim();  // (from teammate) - Renamed for clarity with DB
+
+    try {
+      final AuthResponse authResponse = await _supabase.auth.signUp(
+        email: email,
+        password: password,
+      );
+
+      if (authResponse.user != null) {
+        // Insert into public.users table
+        await _supabase.from('users').insert({
+          'auth_user_id': authResponse.user!.id,
+          'email': email,
+          'full_name': fullName,
+          'phone_number': phoneNumber.isNotEmpty ? phoneNumber : null, // Save if provided
+          'location_text': locationText.isNotEmpty ? locationText : null, // Save if provided
+          'bio': bio.isNotEmpty ? bio : null, // Save if provided
+          // profile_picture_url would be handled after image upload
+        });
+
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Sign up successful!')), // Email confirmation message removed as it's off
+          );
+          // TODO: Navigate to the next appropriate page (e.g., Profileclient or a home page)
+          // Example: Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ProfileclientPage()));
+          print("Sign up success! TODO: Navigate to next page.");
+          // Let's assume teammate's next page was Profileclient:
+          // You might want to pass the newly created user data or ID to Profileclient if it needs it.
+          // For now, let's keep the navigation part for you to refine.
+        }
+      }
+      // No 'else' here, as authResponse.user being null without an error
+      // was primarily for the email confirmation pending state.
+      // If email confirmation is OFF, auth.signUp should throw an error or return a user.
+    } on AuthException catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Sign up failed: ${e.message}')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('An unexpected error occurred: ${e.toString()}')),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+
+  // IMPORTANT CHANGE: Modified buildField to return TextFormField for validation.
+  Widget buildField(String label, String hint, TextEditingController controller,
+      {String? subLabel, bool isPassword = false, String? Function(String?)? validator, TextInputType? keyboardType, TextInputAction? textInputAction}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: TextStyle(fontSize: 18, color: jibJobPurple, fontWeight: FontWeight.w500)), // Added color and weight
+          if (subLabel != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 2.0, bottom: 4.0), // Added bottom padding
+              child: Text(
+                subLabel,
+                style: TextStyle(fontSize: 12, color: Colors.black54),
+              ),
+            ),
+          SizedBox(height: 6),
+          TextFormField( // CHANGED from TextField to TextFormField
+            controller: controller,
+            obscureText: isPassword,
+            decoration: InputDecoration(
+              hintText: hint,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8), // Standardized radius
+                  borderSide: BorderSide(color: Colors.grey.shade400)
+              ),
+              focusedBorder: OutlineInputBorder( // Added focused border
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: jibJobPurple, width: 2)
+              ),
+              enabledBorder: OutlineInputBorder( // Added enabled border
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey.shade400)
+              ),
+              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14), // Adjusted padding
+              fillColor: Colors.grey[100], // Lighter fill
+              filled: true,
+            ),
+            validator: validator, // Added validator
+            keyboardType: keyboardType,
+            textInputAction: textInputAction,
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Modified buildFieldLarge to use TextFormField
+  Widget buildFieldLarge(String label, String hint, TextEditingController controller,
+      {String? subLabel, String? Function(String?)? validator}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: TextStyle(fontSize: 18, color: jibJobPurple, fontWeight: FontWeight.w500)),
+          if (subLabel != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 2.0, bottom: 4.0),
+              child: Text(
+                subLabel,
+                style: TextStyle(fontSize: 12, color: Colors.black54),
+              ),
+            ),
+          SizedBox(height: 6),
+          TextFormField( // CHANGED from TextField to TextFormField
+            maxLines: 5,
+            controller: controller,
+            decoration: InputDecoration(
+              hintText: hint,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey.shade400)
+              ),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: jibJobPurple, width: 2)
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey.shade400)
+              ),
+              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              fillColor: Colors.grey[100],
+              filled: true,
+            ),
+            validator: validator, // Added validator
+            textInputAction: TextInputAction.newline, // Allow multiple lines
+          ),
+        ],
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      // For a signup page, usually there's no bottom navigation.
+      // If you want it, uncomment, but ensure navigation from it is handled.
+      /*
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: darkPurple,
+        selectedItemColor: jibJobPurple,
         unselectedItemColor: Colors.grey,
-        currentIndex: 4,
+        //currentIndex: 4, // This should be dynamic if used on multiple pages
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
@@ -44,176 +244,186 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Demandes'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Compte'),
         ],
+        onTap: (index) {
+          // TODO: Handle navigation for bottom bar
+          print("Bottom nav tapped: $index");
+        },
       ),
+      */
 
-      body: SafeArea(
-        child: SingleChildScrollView(
-          //padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start ,
-            children: [
-              // Top bar
-              Container ( color: Colors.grey[200] ,
-                  padding: EdgeInsets.symmetric(horizontal: 10 , vertical: 16 ) ,
-                  child : Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.arrow_back, color: darkPurple),
-                        iconSize: 35,
-                        onPressed: () {
-                          runApp(
-                              MaterialApp(
-                                  home : Client3State() ,
-                                  debugShowCheckedModeBanner: false
-                              )) ;
-                        },
-                      ),
-                      Text(
-                        'Creer un compte client',
-                        style: TextStyle(
-                          fontFamily: 'DM Sans' ,
-                          fontSize: 27,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF130160),
-                        ),
-                      ),
-                    ],
-                  )),
-              SizedBox(height: 24),
-
-              // Form fields
-              Container( padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                  child : Column( crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        buildField("Email", "Ex: zakarya@gmail.com", emailController),
-                        buildField("Mot de pass", "********", passwordController, isPassword: true),
-                        buildField("Nom et Prenom", "ex: Zakarya Oukil", nameController),
-                        buildField("Telephone", "ex: 06 68 71 87 84", phoneController,
-                            subLabel: "Pour recevoir les demandes des clients"),
-                        buildField("Commune", "ex: Birkhadem ou code postal", cityController,
-                            subLabel: "Il est preferable de rechercher par code postal"),
-
-                        buildFieldLarge(
-                            "Presentation", "ex: jai x annees d’experience en x. Le peux fournir le service a, service b, service c. Je suis joignable de x jour a x jour, de x heure a x heure." ,
-                            presentationController ,
-                            subLabel:'Presenter vous en queleques mots aux clients'
-                        ) ,
-
-
-                        SizedBox(height: 24),
-
-                        Container( margin: EdgeInsets.fromLTRB(20, 0, 0, 0) ,
-                            child : Column(
-                                children: [
-                                  Text('   Photo de Profile\n', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600 ,)),
-                                  GestureDetector(
-                                    onTap: () {
-
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 40,
-                                      backgroundColor: Colors.grey[300],
-                                      child: Icon(Icons.camera_alt, size: 40, color: Colors.white),
-                                    ),
-                                  )])),
-
-                        SizedBox(height: 50,) ,
-
-
-
-                        // Submit button
-                        ElevatedButton(
-                          onPressed: () {
-                            runApp(
-                                MaterialApp(
-                                  //home : Profileclient(emailController , passwordController , nameController , phoneController ,cityController ) ,
-                                    debugShowCheckedModeBanner: false
-                                )) ;
-                            // Navigator.push(context, MaterialPageRoute(builder: (_) => NextPage()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF130160),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            minimumSize: Size(double.infinity, 50),
-                          ),
-                          child: Text("Suivant" , style : TextStyle(color: Colors.white , fontSize: 25 , fontWeight: FontWeight.w400)),
-                        )])),
-            ],
+      // Using AppBar instead of custom container for consistency and standard features.
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: jibJobPurple),
+          onPressed: () {
+            // Ensure Client3State is a valid page to navigate to or use Navigator.pop(context)
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              // Fallback if there's nothing to pop, e.g. direct navigation to Client3State
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => Client3State()));
+            }
+          },
+        ),
+        title: Text(
+          'Creer un compte client',
+          style: TextStyle(
+            fontFamily: 'DM Sans', // Ensure this font is added to pubspec.yaml and assets
+            fontSize: 22, // Slightly smaller for AppBar
+            fontWeight: FontWeight.bold, // Bolder for title
+            color: jibJobPurple,
           ),
         ),
+        backgroundColor: Colors.grey[100], // Light background for AppBar
+        elevation: 1.0, // Slight shadow
+        centerTitle: false, // Align title to the start after leading icon
       ),
-    );
-  }
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding( // Added padding for the whole form content
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+            child: Form( // Wrap Column with Form
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Removed the custom top bar, using AppBar now.
+                  // SizedBox(height: 24), // Adjust spacing as AppBar is now standard
 
-  Widget buildField(String label, String hint, TextEditingController controller,
-      {String? subLabel, bool isPassword = false}) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label , style: TextStyle(fontSize: 18)),
-          if (subLabel != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 2.0),
-              child: Text(
-                subLabel,
-                style: TextStyle(fontSize: 12, color: Colors.black54),
+                  // Form fields using adapted buildField method
+                  buildField(
+                    "Nom et Prenom*",
+                    "ex: Jean Dupont",
+                    _fullNameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) return 'Veuillez entrer votre nom complet';
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                  ),
+                  buildField(
+                    "Email*",
+                    "ex: jean.dupont@exemple.com",
+                    _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) return 'Veuillez entrer votre email';
+                      if (!RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value)) return 'Veuillez entrer un email valide';
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                  ),
+                  buildField(
+                    "Mot de passe*",
+                    "Minimum 6 caractères",
+                    _passwordController,
+                    isPassword: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) return 'Veuillez entrer un mot de passe';
+                      if (value.length < 6) return 'Le mot de passe doit comporter au moins 6 caractères';
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next, // Changed to next, last field will be .done
+                  ),
+                  buildField(
+                    "Telephone", // Optional
+                    "ex: 06 12 34 56 78",
+                    _phoneController,
+                    keyboardType: TextInputType.phone,
+                    subLabel: "Pour recevoir les demandes des clients (optionnel)",
+                    textInputAction: TextInputAction.next,
+                    // No validator making it optional
+                  ),
+                  buildField(
+                    "Commune / Ville", // Optional
+                    "ex: Birkhadem ou code postal",
+                    _cityController,
+                    subLabel: "Pour les propositions de services (optionnel)",
+                    textInputAction: TextInputAction.next,
+                    // No validator making it optional
+                  ),
+                  buildFieldLarge(
+                    "Presentation", // Optional
+                    "ex: Je suis disponible pour divers petits boulots...",
+                    _presentationController,
+                    subLabel: 'Presentez vous en quelques mots (optionnel)',
+                    // No validator making it optional
+                  ),
+                  const SizedBox(height: 24),
+                  // --- Photo de Profile (Teammate's UI, functionality TBD) ---
+                  // This needs more work (image_picker package, Supabase storage upload)
+                  // For MVP, this can be a non-functional UI element or skipped.
+                  Align( // Center the "Photo de Profile" section
+                    alignment: Alignment.center,
+                    child: Column(
+                      children: [
+                        Text('Photo de Profile (Optionnel)', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: jibJobPurple)),
+                        SizedBox(height: 8),
+                        GestureDetector(
+                          onTap: () {
+                            // TODO: Implement image picking logic
+                            print("Image picker tapped - TODO");
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Fonctionnalité de photo de profil à venir!')),
+                            );
+                          },
+                          child: CircleAvatar(
+                            radius: 50, // Increased radius
+                            backgroundColor: Colors.grey[300],
+                            child: Icon(Icons.camera_alt, size: 40, color: jibJobPurple.withOpacity(0.7)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 40), // Increased spacing
+                  // --- Submit button ---
+                  _isLoading
+                      ? const Center(child: CircularProgressIndicator())
+                      : ElevatedButton(
+                    // onPressed: _signUp, // Call your signUp logic!
+                    onPressed: () { // Modified to use your _signUp
+                      if (_formKey.currentState!.validate()) {
+                        _signUp();
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: jibJobPurple, // Using defined color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        minimumSize: Size(double.infinity, 50),
+                        padding: const EdgeInsets.symmetric(vertical: 16) // Added for consistency
+                    ),
+                    child: Text(
+                        "Creer mon compte", // Changed text from "Suivant"
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500) // Adjusted style
+                    ),
+                  ),
+                  const SizedBox(height: 16.0),
+                  // --- Option to go to Login Page (From your original clean code) ---
+                  Align(
+                    alignment: Alignment.center,
+                    child: TextButton(
+                      onPressed: () {
+                        // TODO: Navigate to Login Page properly
+                        // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
+                        print("Navigate to Login Page - TODO");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Navigation vers la page de connexion à implémenter.')),
+                        );
+                      },
+                      child: Text(
+                        'Vous avez déjà un compte? Se connecter',
+                        style: TextStyle(color: jibJobPurple, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  )
+                ],
               ),
-            ),
-          SizedBox(height: 6),
-          TextField(
-            controller: controller,
-            obscureText: isPassword,
-            decoration: InputDecoration(
-              hintText: hint,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 12),
-              fillColor: Colors.grey[200] ,
-              filled: true ,
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-
-  Widget buildFieldLarge(String label, String hint, TextEditingController controller,
-      {String? subLabel, bool isPassword = false}) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label , style: TextStyle(fontSize: 18)),
-          if (subLabel != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 2.0),
-              child: Text(
-                subLabel,
-                style: TextStyle(fontSize: 12, color: Colors.black54),
-              ),
-            ),
-          SizedBox(height: 6),
-          TextField(
-            maxLines: 5,
-            controller: controller,
-            decoration: InputDecoration(
-              hintText: hint,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 12),
-              fillColor: Colors.grey[200] ,
-              filled: true ,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
