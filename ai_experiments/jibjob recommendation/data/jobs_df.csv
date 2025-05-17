@@ -1,0 +1,501 @@
+job_id,title,description_mission_anglais,categorie_mission,location
+job_0,Smartphone repair in Ghardaïa,Smartphone repair expert needed in Ghardaïa. Project involves public venue. Good communication skills and punctuality essential.,Maintenance & Repairs,Ghardaïa
+job_1,Car mechanics in Adrar,Need assistance with Car mechanics in Adrar. Ideal for part-time workers with knowledge in maintenance & repairs.,Maintenance & Repairs,Adrar
+job_2,Bicycle repair in Tlemcen,Need assistance with Bicycle repair in Tlemcen. Ideal for retirees with knowledge in maintenance & repairs.,Maintenance & Repairs,Tlemcen
+job_3,Airport pickup in Souk Ahras,Seeking skilled individual for Airport pickup services in Souk Ahras. Must have own tools and transportation. Weekday availability required.,Transportation,Souk Ahras
+job_4,Furniture transport in Mila,Seeking skilled individual for Furniture transport services in Mila. Must have own tools and transportation. Weekday availability required.,Transportation,Mila
+job_5,Manicure & pedicure in El Tarf,Need assistance with Manicure & pedicure in El Tarf. Ideal for professionals with knowledge in beauty & wellness.,Beauty & Wellness,El Tarf
+job_6,Home chef services in Annaba,Home chef services expert needed in Annaba. Project involves residential work. Good communication skills and punctuality essential.,Food & Cuisine,Annaba
+job_7,Private math tutoring in El Oued,Seeking skilled individual for Private math tutoring services in El Oued. Must have own tools and transportation. Flexible hours required.,Teaching & Education,El Oued
+job_8,Furniture transport in Aïn Témouchent,Need assistance with Furniture transport in Aïn Témouchent. Ideal for professionals with knowledge in transportation.,Transportation,Aïn Témouchent
+job_9,Traditional carpet making in M'Sila,Traditional carpet making expert needed in M'Sila. Project involves commercial space. Good communication skills and punctuality essential.,Handcrafts,M'Sila
+job_10,Massage therapy in Sidi Bel Abbès,Looking for talented beauty & wellness specialist for Massage therapy work in Sidi Bel Abbès. Project starts immediately.,Beauty & Wellness,Sidi Bel Abbès
+job_11,Graphic design in Tamanrasset,Seeking skilled individual for Graphic design services in Tamanrasset. Must have own tools and transportation. Flexible hours required.,Digital Services,Tamanrasset
+job_12,Wedding planning in In Guezzam,Seeking skilled individual for Wedding planning services in In Guezzam. Must have own tools and transportation. Weekday availability required.,Events & Celebrations,In Guezzam
+job_13,Fruit picking in Ouled Djellal,Looking for an experienced professional for Fruit picking in Ouled Djellal. The work involves ongoing support with competitive compensation.,Agriculture & Gardening,Ouled Djellal
+job_14,Graphic design in Ouled Djellal,Digital Services professional wanted for Graphic design in Ouled Djellal. Medium-term project with possibility for extension.,Digital Services,Ouled Djellal
+job_15,Electrical installations in Tipaza,Need assistance with Electrical installations in Tipaza. Ideal for retirees with knowledge in home services.,Home Services,Tipaza
+job_16,Catering services in Biskra,Looking for an experienced professional for Catering services in Biskra. The work involves regular maintenance with competitive compensation.,Events & Celebrations,Biskra
+job_17,DJ services in Biskra,Need assistance with DJ services in Biskra. Ideal for students with knowledge in events & celebrations.,Events & Celebrations,Biskra
+job_18,Private math tutoring in Sétif,Hiring for Private math tutoring in the Sétif area. Experience required. Fair payment and potential for regular work.,Teaching & Education,Sétif
+job_19,Furniture assembly in El Oued,Seeking skilled individual for Furniture assembly services in El Oued. Must have own tools and transportation. Flexible hours required.,Home Services,El Oued
+job_20,French language lessons in Chlef,Teaching & Education professional wanted for French language lessons in Chlef. Long-term project with possibility for extension.,Teaching & Education,Chlef
+job_21,Traditional carpet making in Alger,Looking for an experienced professional for Traditional carpet making in Alger. The work involves regular maintenance with competitive compensation.,Handcrafts,Alger
+job_22,Makeup services in Biskra,Hiring for Makeup services in the Biskra area. Training provided. Fair payment and potential for regular work.,Beauty & Wellness,Biskra
+job_23,Delivery services in El Oued,Hiring for Delivery services in the El Oued area. Portfolio requested. Fair payment and potential for regular work.,Transportation,El Oued
+job_24,Science tutoring in Touggourt,Need assistance with Science tutoring in Touggourt. Ideal for retirees with knowledge in teaching & education.,Teaching & Education,Touggourt
+job_25,Electrical installations in Tébessa,Hiring for Electrical installations in the Tébessa area. References needed. Fair payment and potential for regular work.,Home Services,Tébessa
+job_26,Science tutoring in Tizi Ouzou,Teaching & Education professional wanted for Science tutoring in Tizi Ouzou. Medium-term project with possibility for extension.,Teaching & Education,Tizi Ouzou
+job_27,Fruit picking in Médéa,Looking for an experienced professional for Fruit picking in Médéa. The work involves one-time service with competitive compensation.,Agriculture & Gardening,Médéa
+job_28,Arabic language teaching in Tlemcen,Teaching & Education professional wanted for Arabic language teaching in Tlemcen. Long-term project with possibility for extension.,Teaching & Education,Tlemcen
+job_29,Traditional bread baking in Timimoun,Need assistance with Traditional bread baking in Timimoun. Ideal for professionals with knowledge in food & cuisine.,Food & Cuisine,Timimoun
+job_30,Video editing in Bouira,Seeking skilled individual for Video editing services in Bouira. Must have own tools and transportation. Weekday availability required.,Digital Services,Bouira
+job_31,Wood crafting in Oran,Hiring for Wood crafting in the Oran area. Experience required. Fair payment and potential for regular work.,Handcrafts,Oran
+job_32,University exam preparation in El Bayadh,Hiring for University exam preparation in the El Bayadh area. Portfolio requested. Fair payment and potential for regular work.,Teaching & Education,El Bayadh
+job_33,Makeup services in Blida,Hiring for Makeup services in the Blida area. References needed. Fair payment and potential for regular work.,Beauty & Wellness,Blida
+job_34,Manicure & pedicure in Skikda,Looking for an experienced professional for Manicure & pedicure in Skikda. The work involves immediate assistance with competitive compensation.,Beauty & Wellness,Skikda
+job_35,Home chef services in Tindouf,Hiring for Home chef services in the Tindouf area. References needed. Fair payment and potential for regular work.,Food & Cuisine,Tindouf
+job_36,Fruit picking in Béjaïa,Agriculture & Gardening professional wanted for Fruit picking in Béjaïa. Medium-term project with possibility for extension.,Agriculture & Gardening,Béjaïa
+job_37,Home hairdressing in Mascara,Looking for an experienced professional for Home hairdressing in Mascara. The work involves one-time service with competitive compensation.,Beauty & Wellness,Mascara
+job_38,Traditional bread baking in Tiaret,Seeking skilled individual for Traditional bread baking services in Tiaret. Must have own tools and transportation. Flexible hours required.,Food & Cuisine,Tiaret
+job_39,Traditional dress sewing in Biskra,Traditional dress sewing expert needed in Biskra. Project involves commercial space. Good communication skills and punctuality essential.,Handcrafts,Biskra
+job_40,Cooking lessons in Tipaza,Need assistance with Cooking lessons in Tipaza. Ideal for part-time workers with knowledge in food & cuisine.,Food & Cuisine,Tipaza
+job_41,Intercity transport in M'Sila,Looking for an experienced professional for Intercity transport in M'Sila. The work involves one-time service with competitive compensation.,Transportation,M'Sila
+job_42,Traditional pastry making in Khenchela,Traditional pastry making expert needed in Khenchela. Project involves private property. Good communication skills and punctuality essential.,Food & Cuisine,Khenchela
+job_43,Computer skills training in Djanet,Need assistance with Computer skills training in Djanet. Ideal for professionals with knowledge in teaching & education.,Teaching & Education,Djanet
+job_44,Traditional bread baking in Tlemcen,Need assistance with Traditional bread baking in Tlemcen. Ideal for students with knowledge in food & cuisine.,Food & Cuisine,Tlemcen
+job_45,Furniture transport in Bordj Badji Mokhtar,Hiring for Furniture transport in the Bordj Badji Mokhtar area. Portfolio requested. Fair payment and potential for regular work.,Transportation,Bordj Badji Mokhtar
+job_46,Makeup services in Timimoun,Hiring for Makeup services in the Timimoun area. Portfolio requested. Fair payment and potential for regular work.,Beauty & Wellness,Timimoun
+job_47,Plumbing repairs in Médéa,Seeking skilled individual for Plumbing repairs services in Médéa. Must have own tools and transportation. Weekend work required.,Home Services,Médéa
+job_48,Henna art in Oran,Beauty & Wellness professional wanted for Henna art in Oran. Recurring project with possibility for extension.,Beauty & Wellness,Oran
+job_49,Leather crafting in Mascara,Hiring for Leather crafting in the Mascara area. Portfolio requested. Fair payment and potential for regular work.,Handcrafts,Mascara
+job_50,Intercity transport in Tipaza,Transportation professional wanted for Intercity transport in Tipaza. Medium-term project with possibility for extension.,Transportation,Tipaza
+job_51,Plumbing repairs in Naâma,Looking for talented home services specialist for Plumbing repairs work in Naâma. Project starts upon agreement.,Home Services,Naâma
+job_52,Furniture transport in Blida,Transportation professional wanted for Furniture transport in Blida. Long-term project with possibility for extension.,Transportation,Blida
+job_53,Plumbing repairs in Sidi Bel Abbès,Home Services professional wanted for Plumbing repairs in Sidi Bel Abbès. Short-term project with possibility for extension.,Home Services,Sidi Bel Abbès
+job_54,Pottery services in Souk Ahras,Hiring for Pottery services in the Souk Ahras area. Training provided. Fair payment and potential for regular work.,Handcrafts,Souk Ahras
+job_55,Henna art in Ouled Djellal,Seeking skilled individual for Henna art services in Ouled Djellal. Must have own tools and transportation. Weekend work required.,Beauty & Wellness,Ouled Djellal
+job_56,Catering services in Béni Abbès,Hiring for Catering services in the Béni Abbès area. Training provided. Fair payment and potential for regular work.,Events & Celebrations,Béni Abbès
+job_57,Delivery services in Bouira,Transportation professional wanted for Delivery services in Bouira. Long-term project with possibility for extension.,Transportation,Bouira
+job_58,Furniture transport in Mila,Hiring for Furniture transport in the Mila area. References needed. Fair payment and potential for regular work.,Transportation,Mila
+job_59,Housekeeping in Béchar,Looking for an experienced professional for Housekeeping in Béchar. The work involves one-time service with competitive compensation.,Home Services,Béchar
+job_60,Henna art in Saïda,Henna art expert needed in Saïda. Project involves public venue. Good communication skills and punctuality essential.,Beauty & Wellness,Saïda
+job_61,Cooking lessons in M'Sila,Looking for an experienced professional for Cooking lessons in M'Sila. The work involves regular maintenance with competitive compensation.,Food & Cuisine,M'Sila
+job_62,Henna art in Constantine,Need assistance with Henna art in Constantine. Ideal for part-time workers with knowledge in beauty & wellness.,Beauty & Wellness,Constantine
+job_63,Fruit picking in M'Sila,Seeking skilled individual for Fruit picking services in M'Sila. Must have own tools and transportation. Weekend work required.,Agriculture & Gardening,M'Sila
+job_64,French language lessons in Mila,French language lessons expert needed in Mila. Project involves commercial space. Good communication skills and punctuality essential.,Teaching & Education,Mila
+job_65,Science tutoring in Naâma,Teaching & Education professional wanted for Science tutoring in Naâma. Long-term project with possibility for extension.,Teaching & Education,Naâma
+job_66,Catering for special events in Adrar,Catering for special events expert needed in Adrar. Project involves commercial space. Good communication skills and punctuality essential.,Food & Cuisine,Adrar
+job_67,Plant care in El M'Ghair,Hiring for Plant care in the El M'Ghair area. Training provided. Fair payment and potential for regular work.,Agriculture & Gardening,El M'Ghair
+job_68,Traditional carpet making in Tébessa,Looking for an experienced professional for Traditional carpet making in Tébessa. The work involves regular maintenance with competitive compensation.,Handcrafts,Tébessa
+job_69,Moving assistance in Tipaza,Seeking skilled individual for Moving assistance services in Tipaza. Must have own tools and transportation. Urgent need required.,Transportation,Tipaza
+job_70,Event photography in Ouled Djellal,Need assistance with Event photography in Ouled Djellal. Ideal for students with knowledge in events & celebrations.,Events & Celebrations,Ouled Djellal
+job_71,Electrical installations in Khenchela,Home Services professional wanted for Electrical installations in Khenchela. Long-term project with possibility for extension.,Home Services,Khenchela
+job_72,Cooking lessons in Biskra,Need assistance with Cooking lessons in Biskra. Ideal for part-time workers with knowledge in food & cuisine.,Food & Cuisine,Biskra
+job_73,Fruit picking in Oum El Bouaghi,Fruit picking expert needed in Oum El Bouaghi. Project involves residential work. Good communication skills and punctuality essential.,Agriculture & Gardening,Oum El Bouaghi
+job_74,Agricultural consulting in Jijel,Agricultural consulting expert needed in Jijel. Project involves commercial space. Good communication skills and punctuality essential.,Agriculture & Gardening,Jijel
+job_75,DJ services in El Tarf,DJ services expert needed in El Tarf. Project involves private property. Good communication skills and punctuality essential.,Events & Celebrations,El Tarf
+job_76,Henna art in Aïn Defla,Need assistance with Henna art in Aïn Defla. Ideal for students with knowledge in beauty & wellness.,Beauty & Wellness,Aïn Defla
+job_77,Home chef services in Bouira,Hiring for Home chef services in the Bouira area. Experience required. Fair payment and potential for regular work.,Food & Cuisine,Bouira
+job_78,Home renovation in Tamanrasset,Hiring for Home renovation in the Tamanrasset area. Portfolio requested. Fair payment and potential for regular work.,Home Services,Tamanrasset
+job_79,Homemade couscous in Touggourt,Looking for an experienced professional for Homemade couscous in Touggourt. The work involves regular maintenance with competitive compensation.,Food & Cuisine,Touggourt
+job_80,Social media management in Tipaza,Looking for an experienced professional for Social media management in Tipaza. The work involves ongoing support with competitive compensation.,Digital Services,Tipaza
+job_81,Homemade couscous in Djanet,Looking for an experienced professional for Homemade couscous in Djanet. The work involves regular maintenance with competitive compensation.,Food & Cuisine,Djanet
+job_82,Home appliance repair in Djelfa,Home appliance repair expert needed in Djelfa. Project involves commercial space. Good communication skills and punctuality essential.,Maintenance & Repairs,Djelfa
+job_83,City tours in Ouled Djellal,Looking for an experienced professional for City tours in Ouled Djellal. The work involves ongoing support with competitive compensation.,Transportation,Ouled Djellal
+job_84,Science tutoring in Béni Abbès,Looking for an experienced professional for Science tutoring in Béni Abbès. The work involves one-time service with competitive compensation.,Teaching & Education,Béni Abbès
+job_85,Cooking lessons in Khenchela,Seeking skilled individual for Cooking lessons services in Khenchela. Must have own tools and transportation. Flexible hours required.,Food & Cuisine,Khenchela
+job_86,Massage therapy in Mostaganem,Looking for talented beauty & wellness specialist for Massage therapy work in Mostaganem. Project starts this month.,Beauty & Wellness,Mostaganem
+job_87,Science tutoring in Sétif,Need assistance with Science tutoring in Sétif. Ideal for students with knowledge in teaching & education.,Teaching & Education,Sétif
+job_88,Massage therapy in Tissemsilt,Looking for an experienced professional for Massage therapy in Tissemsilt. The work involves one-time service with competitive compensation.,Beauty & Wellness,Tissemsilt
+job_89,Homemade couscous in Sétif,Looking for an experienced professional for Homemade couscous in Sétif. The work involves one-time service with competitive compensation.,Food & Cuisine,Sétif
+job_90,Massage therapy in Biskra,Seeking skilled individual for Massage therapy services in Biskra. Must have own tools and transportation. Flexible hours required.,Beauty & Wellness,Biskra
+job_91,Wedding planning in Oran,Looking for talented events & celebrations specialist for Wedding planning work in Oran. Project starts this month.,Events & Celebrations,Oran
+job_92,Irrigation system installation in Sétif,Hiring for Irrigation system installation in the Sétif area. Training provided. Fair payment and potential for regular work.,Agriculture & Gardening,Sétif
+job_93,Traditional bread baking in Béjaïa,Hiring for Traditional bread baking in the Béjaïa area. Experience required. Fair payment and potential for regular work.,Food & Cuisine,Béjaïa
+job_94,Irrigation system installation in Ouargla,Irrigation system installation expert needed in Ouargla. Project involves commercial space. Good communication skills and punctuality essential.,Agriculture & Gardening,Ouargla
+job_95,City tours in Tissemsilt,Hiring for City tours in the Tissemsilt area. Training provided. Fair payment and potential for regular work.,Transportation,Tissemsilt
+job_96,Traditional bread baking in In Guezzam,Looking for talented food & cuisine specialist for Traditional bread baking work in In Guezzam. Project starts upon agreement.,Food & Cuisine,In Guezzam
+job_97,E-commerce setup in Mascara,E-commerce setup expert needed in Mascara. Project involves residential work. Good communication skills and punctuality essential.,Digital Services,Mascara
+job_98,Traditional dress sewing in Blida,Traditional dress sewing expert needed in Blida. Project involves residential work. Good communication skills and punctuality essential.,Handcrafts,Blida
+job_99,Traditional pastry making in Saïda,Traditional pastry making expert needed in Saïda. Project involves residential work. Good communication skills and punctuality essential.,Food & Cuisine,Saïda
+job_100,Leather crafting in Tindouf,Need assistance with Leather crafting in Tindouf. Ideal for students with knowledge in handcrafts.,Handcrafts,Tindouf
+job_101,Leather crafting in Bouira,Handcrafts professional wanted for Leather crafting in Bouira. Long-term project with possibility for extension.,Handcrafts,Bouira
+job_102,Catering services in Blida,Looking for an experienced professional for Catering services in Blida. The work involves one-time service with competitive compensation.,Events & Celebrations,Blida
+job_103,Intercity transport in Ghardaïa,Hiring for Intercity transport in the Ghardaïa area. References needed. Fair payment and potential for regular work.,Transportation,Ghardaïa
+job_104,Furniture assembly in Chlef,Looking for talented home services specialist for Furniture assembly work in Chlef. Project starts next week.,Home Services,Chlef
+job_105,Car mechanics in El Oued,Need assistance with Car mechanics in El Oued. Ideal for students with knowledge in maintenance & repairs.,Maintenance & Repairs,El Oued
+job_106,Henna art in Khenchela,Hiring for Henna art in the Khenchela area. Training provided. Fair payment and potential for regular work.,Beauty & Wellness,Khenchela
+job_107,Private math tutoring in Tissemsilt,Seeking skilled individual for Private math tutoring services in Tissemsilt. Must have own tools and transportation. Weekday availability required.,Teaching & Education,Tissemsilt
+job_108,French language lessons in Djanet,Looking for talented teaching & education specialist for French language lessons work in Djanet. Project starts next week.,Teaching & Education,Djanet
+job_109,Irrigation system installation in Tizi Ouzou,Hiring for Irrigation system installation in the Tizi Ouzou area. Experience required. Fair payment and potential for regular work.,Agriculture & Gardening,Tizi Ouzou
+job_110,E-commerce setup in Constantine,Digital Services professional wanted for E-commerce setup in Constantine. Short-term project with possibility for extension.,Digital Services,Constantine
+job_111,Graphic design in Mostaganem,Digital Services professional wanted for Graphic design in Mostaganem. Recurring project with possibility for extension.,Digital Services,Mostaganem
+job_112,Traditional dress sewing in Illizi,Seeking skilled individual for Traditional dress sewing services in Illizi. Must have own tools and transportation. Urgent need required.,Handcrafts,Illizi
+job_113,Agricultural consulting in El Bayadh,Agriculture & Gardening professional wanted for Agricultural consulting in El Bayadh. Medium-term project with possibility for extension.,Agriculture & Gardening,El Bayadh
+job_114,Jewelry making in Relizane,Looking for an experienced professional for Jewelry making in Relizane. The work involves immediate assistance with competitive compensation.,Handcrafts,Relizane
+job_115,City tours in El Tarf,Looking for an experienced professional for City tours in El Tarf. The work involves immediate assistance with competitive compensation.,Transportation,El Tarf
+job_116,French language lessons in Tipaza,Teaching & Education professional wanted for French language lessons in Tipaza. Short-term project with possibility for extension.,Teaching & Education,Tipaza
+job_117,Massage therapy in Tiaret,Hiring for Massage therapy in the Tiaret area. Training provided. Fair payment and potential for regular work.,Beauty & Wellness,Tiaret
+job_118,Irrigation system installation in Tiaret,Looking for talented agriculture & gardening specialist for Irrigation system installation work in Tiaret. Project starts immediately.,Agriculture & Gardening,Tiaret
+job_119,Airport pickup in Naâma,Need assistance with Airport pickup in Naâma. Ideal for retirees with knowledge in transportation.,Transportation,Naâma
+job_120,Home appliance repair in Tindouf,Need assistance with Home appliance repair in Tindouf. Ideal for students with knowledge in maintenance & repairs.,Maintenance & Repairs,Tindouf
+job_121,Airport pickup in Annaba,Airport pickup expert needed in Annaba. Project involves residential work. Good communication skills and punctuality essential.,Transportation,Annaba
+job_122,Traditional carpet making in Adrar,Looking for talented handcrafts specialist for Traditional carpet making work in Adrar. Project starts upon agreement.,Handcrafts,Adrar
+job_123,Intercity transport in Skikda,Transportation professional wanted for Intercity transport in Skikda. Recurring project with possibility for extension.,Transportation,Skikda
+job_124,E-commerce setup in Aïn Témouchent,Need assistance with E-commerce setup in Aïn Témouchent. Ideal for professionals with knowledge in digital services.,Digital Services,Aïn Témouchent
+job_125,Makeup services in Mostaganem,Makeup services expert needed in Mostaganem. Project involves commercial space. Good communication skills and punctuality essential.,Beauty & Wellness,Mostaganem
+job_126,Traditional pastry making in Tébessa,Hiring for Traditional pastry making in the Tébessa area. Training provided. Fair payment and potential for regular work.,Food & Cuisine,Tébessa
+job_127,Intercity transport in Adrar,Need assistance with Intercity transport in Adrar. Ideal for professionals with knowledge in transportation.,Transportation,Adrar
+job_128,Makeup services in Djelfa,Makeup services expert needed in Djelfa. Project involves public venue. Good communication skills and punctuality essential.,Beauty & Wellness,Djelfa
+job_129,Traditional music performance in Tlemcen,Seeking skilled individual for Traditional music performance services in Tlemcen. Must have own tools and transportation. Flexible hours required.,Events & Celebrations,Tlemcen
+job_130,Catering services in Tébessa,Looking for talented events & celebrations specialist for Catering services work in Tébessa. Project starts immediately.,Events & Celebrations,Tébessa
+job_131,Electrical installations in Tipaza,Electrical installations expert needed in Tipaza. Project involves private property. Good communication skills and punctuality essential.,Home Services,Tipaza
+job_132,DJ services in Djelfa,Need assistance with DJ services in Djelfa. Ideal for retirees with knowledge in events & celebrations.,Events & Celebrations,Djelfa
+job_133,French language lessons in El Oued,Need assistance with French language lessons in El Oued. Ideal for part-time workers with knowledge in teaching & education.,Teaching & Education,El Oued
+job_134,Massage therapy in Oran,Looking for an experienced professional for Massage therapy in Oran. The work involves regular maintenance with competitive compensation.,Beauty & Wellness,Oran
+job_135,Science tutoring in Oran,Science tutoring expert needed in Oran. Project involves private property. Good communication skills and punctuality essential.,Teaching & Education,Oran
+job_136,Traditional bread baking in Guelma,Food & Cuisine professional wanted for Traditional bread baking in Guelma. Long-term project with possibility for extension.,Food & Cuisine,Guelma
+job_137,Homemade couscous in Sétif,Homemade couscous expert needed in Sétif. Project involves commercial space. Good communication skills and punctuality essential.,Food & Cuisine,Sétif
+job_138,Traditional dress sewing in Illizi,Traditional dress sewing expert needed in Illizi. Project involves residential work. Good communication skills and punctuality essential.,Handcrafts,Illizi
+job_139,Electronics repair in Béni Abbès,Need assistance with Electronics repair in Béni Abbès. Ideal for part-time workers with knowledge in maintenance & repairs.,Maintenance & Repairs,Béni Abbès
+job_140,Home hairdressing in Annaba,Beauty & Wellness professional wanted for Home hairdressing in Annaba. Long-term project with possibility for extension.,Beauty & Wellness,Annaba
+job_141,Air conditioner maintenance in Djelfa,Hiring for Air conditioner maintenance in the Djelfa area. Training provided. Fair payment and potential for regular work.,Home Services,Djelfa
+job_142,Home hairdressing in Béni Abbès,Need assistance with Home hairdressing in Béni Abbès. Ideal for retirees with knowledge in beauty & wellness.,Beauty & Wellness,Béni Abbès
+job_143,Electronics repair in Ghardaïa,Looking for an experienced professional for Electronics repair in Ghardaïa. The work involves regular maintenance with competitive compensation.,Maintenance & Repairs,Ghardaïa
+job_144,Wood crafting in Constantine,Looking for talented handcrafts specialist for Wood crafting work in Constantine. Project starts next week.,Handcrafts,Constantine
+job_145,Home renovation in El Meniaa,Looking for talented home services specialist for Home renovation work in El Meniaa. Project starts upon agreement.,Home Services,El Meniaa
+job_146,Moving assistance in Béni Abbès,Hiring for Moving assistance in the Béni Abbès area. Experience required. Fair payment and potential for regular work.,Transportation,Béni Abbès
+job_147,Delivery services in Bordj Bou Arréridj,Looking for talented transportation specialist for Delivery services work in Bordj Bou Arréridj. Project starts this month.,Transportation,Bordj Bou Arréridj
+job_148,Intercity transport in Constantine,Looking for talented transportation specialist for Intercity transport work in Constantine. Project starts immediately.,Transportation,Constantine
+job_149,Computer maintenance in Tlemcen,Maintenance & Repairs professional wanted for Computer maintenance in Tlemcen. Medium-term project with possibility for extension.,Maintenance & Repairs,Tlemcen
+job_150,Social media management in Mascara,Digital Services professional wanted for Social media management in Mascara. Medium-term project with possibility for extension.,Digital Services,Mascara
+job_151,Traditional pastry making in Tindouf,Food & Cuisine professional wanted for Traditional pastry making in Tindouf. Long-term project with possibility for extension.,Food & Cuisine,Tindouf
+job_152,Smartphone repair in Saïda,Smartphone repair expert needed in Saïda. Project involves private property. Good communication skills and punctuality essential.,Maintenance & Repairs,Saïda
+job_153,Olive harvesting in Djanet,Agriculture & Gardening professional wanted for Olive harvesting in Djanet. Medium-term project with possibility for extension.,Agriculture & Gardening,Djanet
+job_154,Private math tutoring in Djelfa,Need assistance with Private math tutoring in Djelfa. Ideal for students with knowledge in teaching & education.,Teaching & Education,Djelfa
+job_155,Massage therapy in Biskra,Seeking skilled individual for Massage therapy services in Biskra. Must have own tools and transportation. Urgent need required.,Beauty & Wellness,Biskra
+job_156,Manicure & pedicure in Khenchela,Hiring for Manicure & pedicure in the Khenchela area. Training provided. Fair payment and potential for regular work.,Beauty & Wellness,Khenchela
+job_157,Traditional hamam services in In Guezzam,Hiring for Traditional hamam services in the In Guezzam area. Experience required. Fair payment and potential for regular work.,Beauty & Wellness,In Guezzam
+job_158,Air conditioner maintenance in Touggourt,Need assistance with Air conditioner maintenance in Touggourt. Ideal for students with knowledge in home services.,Home Services,Touggourt
+job_159,Leather crafting in Guelma,Looking for an experienced professional for Leather crafting in Guelma. The work involves ongoing support with competitive compensation.,Handcrafts,Guelma
+job_160,Garden maintenance in Bordj Badji Mokhtar,Hiring for Garden maintenance in the Bordj Badji Mokhtar area. References needed. Fair payment and potential for regular work.,Agriculture & Gardening,Bordj Badji Mokhtar
+job_161,Moving assistance in Touggourt,Looking for an experienced professional for Moving assistance in Touggourt. The work involves one-time service with competitive compensation.,Transportation,Touggourt
+job_162,Electrical installations in Chlef,Electrical installations expert needed in Chlef. Project involves public venue. Good communication skills and punctuality essential.,Home Services,Chlef
+job_163,City tours in Alger,Need assistance with City tours in Alger. Ideal for part-time workers with knowledge in transportation.,Transportation,Alger
+job_164,Garden maintenance in Tipaza,Need assistance with Garden maintenance in Tipaza. Ideal for part-time workers with knowledge in agriculture & gardening.,Agriculture & Gardening,Tipaza
+job_165,Event decoration in Boumerdès,Need assistance with Event decoration in Boumerdès. Ideal for part-time workers with knowledge in events & celebrations.,Events & Celebrations,Boumerdès
+job_166,Social media management in Djanet,Looking for an experienced professional for Social media management in Djanet. The work involves one-time service with competitive compensation.,Digital Services,Djanet
+job_167,Mobile app development in Tindouf,Need assistance with Mobile app development in Tindouf. Ideal for professionals with knowledge in digital services.,Digital Services,Tindouf
+job_168,Logo design in Jijel,Digital Services professional wanted for Logo design in Jijel. Medium-term project with possibility for extension.,Digital Services,Jijel
+job_169,Homemade couscous in Biskra,Hiring for Homemade couscous in the Biskra area. Training provided. Fair payment and potential for regular work.,Food & Cuisine,Biskra
+job_170,Plumbing repairs in Touggourt,Need assistance with Plumbing repairs in Touggourt. Ideal for retirees with knowledge in home services.,Home Services,Touggourt
+job_171,Event decoration in Khenchela,Need assistance with Event decoration in Khenchela. Ideal for students with knowledge in events & celebrations.,Events & Celebrations,Khenchela
+job_172,Traditional music performance in Naâma,Looking for an experienced professional for Traditional music performance in Naâma. The work involves immediate assistance with competitive compensation.,Events & Celebrations,Naâma
+job_173,Website development in Bouira,Website development expert needed in Bouira. Project involves public venue. Good communication skills and punctuality essential.,Digital Services,Bouira
+job_174,Science tutoring in El Oued,Hiring for Science tutoring in the El Oued area. References needed. Fair payment and potential for regular work.,Teaching & Education,El Oued
+job_175,Bicycle repair in Oum El Bouaghi,Hiring for Bicycle repair in the Oum El Bouaghi area. Portfolio requested. Fair payment and potential for regular work.,Maintenance & Repairs,Oum El Bouaghi
+job_176,City tours in El Oued,Hiring for City tours in the El Oued area. Training provided. Fair payment and potential for regular work.,Transportation,El Oued
+job_177,Traditional dress sewing in Sétif,Traditional dress sewing expert needed in Sétif. Project involves private property. Good communication skills and punctuality essential.,Handcrafts,Sétif
+job_178,Traditional hamam services in Guelma,Hiring for Traditional hamam services in the Guelma area. References needed. Fair payment and potential for regular work.,Beauty & Wellness,Guelma
+job_179,Irrigation system installation in Sétif,Looking for talented agriculture & gardening specialist for Irrigation system installation work in Sétif. Project starts upon agreement.,Agriculture & Gardening,Sétif
+job_180,Furniture transport in Aïn Defla,Hiring for Furniture transport in the Aïn Defla area. Experience required. Fair payment and potential for regular work.,Transportation,Aïn Defla
+job_181,Home chef services in Béjaïa,Seeking skilled individual for Home chef services services in Béjaïa. Must have own tools and transportation. Weekday availability required.,Food & Cuisine,Béjaïa
+job_182,Computer skills training in Sétif,Looking for an experienced professional for Computer skills training in Sétif. The work involves immediate assistance with competitive compensation.,Teaching & Education,Sétif
+job_183,Graphic design in El Meniaa,Looking for talented digital services specialist for Graphic design work in El Meniaa. Project starts upon agreement.,Digital Services,El Meniaa
+job_184,Bicycle repair in Ouargla,Looking for an experienced professional for Bicycle repair in Ouargla. The work involves one-time service with competitive compensation.,Maintenance & Repairs,Ouargla
+job_185,Computer maintenance in Naâma,Looking for talented maintenance & repairs specialist for Computer maintenance work in Naâma. Project starts immediately.,Maintenance & Repairs,Naâma
+job_186,Henna art in Souk Ahras,Seeking skilled individual for Henna art services in Souk Ahras. Must have own tools and transportation. Weekday availability required.,Beauty & Wellness,Souk Ahras
+job_187,Electronics repair in Sidi Bel Abbès,Need assistance with Electronics repair in Sidi Bel Abbès. Ideal for professionals with knowledge in maintenance & repairs.,Maintenance & Repairs,Sidi Bel Abbès
+job_188,Social media management in Boumerdès,Digital Services professional wanted for Social media management in Boumerdès. Long-term project with possibility for extension.,Digital Services,Boumerdès
+job_189,Wedding planning in Chlef,Looking for talented events & celebrations specialist for Wedding planning work in Chlef. Project starts this month.,Events & Celebrations,Chlef
+job_190,Traditional carpet making in In Guezzam,Need assistance with Traditional carpet making in In Guezzam. Ideal for retirees with knowledge in handcrafts.,Handcrafts,In Guezzam
+job_191,Catering for special events in In Guezzam,Catering for special events expert needed in In Guezzam. Project involves commercial space. Good communication skills and punctuality essential.,Food & Cuisine,In Guezzam
+job_192,Fruit picking in Béni Abbès,Seeking skilled individual for Fruit picking services in Béni Abbès. Must have own tools and transportation. Flexible hours required.,Agriculture & Gardening,Béni Abbès
+job_193,Smartphone repair in Touggourt,Need assistance with Smartphone repair in Touggourt. Ideal for students with knowledge in maintenance & repairs.,Maintenance & Repairs,Touggourt
+job_194,Housekeeping in El M'Ghair,Hiring for Housekeeping in the El M'Ghair area. References needed. Fair payment and potential for regular work.,Home Services,El M'Ghair
+job_195,Website development in Béjaïa,Digital Services professional wanted for Website development in Béjaïa. Recurring project with possibility for extension.,Digital Services,Béjaïa
+job_196,Traditional music performance in El M'Ghair,Seeking skilled individual for Traditional music performance services in El M'Ghair. Must have own tools and transportation. Weekday availability required.,Events & Celebrations,El M'Ghair
+job_197,Private math tutoring in Skikda,Looking for talented teaching & education specialist for Private math tutoring work in Skikda. Project starts next week.,Teaching & Education,Skikda
+job_198,Home appliance repair in Sétif,Need assistance with Home appliance repair in Sétif. Ideal for part-time workers with knowledge in maintenance & repairs.,Maintenance & Repairs,Sétif
+job_199,Manicure & pedicure in Bouira,Looking for an experienced professional for Manicure & pedicure in Bouira. The work involves one-time service with competitive compensation.,Beauty & Wellness,Bouira
+job_200,Graphic design in Aïn Témouchent,Seeking skilled individual for Graphic design services in Aïn Témouchent. Must have own tools and transportation. Weekend work required.,Digital Services,Aïn Témouchent
+job_201,Catering services in M'Sila,Looking for an experienced professional for Catering services in M'Sila. The work involves ongoing support with competitive compensation.,Events & Celebrations,M'Sila
+job_202,Traditional hamam services in Bordj Bou Arréridj,Beauty & Wellness professional wanted for Traditional hamam services in Bordj Bou Arréridj. Long-term project with possibility for extension.,Beauty & Wellness,Bordj Bou Arréridj
+job_203,Moving assistance in El Oued,Need assistance with Moving assistance in El Oued. Ideal for part-time workers with knowledge in transportation.,Transportation,El Oued
+job_204,Plant care in Sidi Bel Abbès,Need assistance with Plant care in Sidi Bel Abbès. Ideal for students with knowledge in agriculture & gardening.,Agriculture & Gardening,Sidi Bel Abbès
+job_205,Traditional carpet making in Tlemcen,Hiring for Traditional carpet making in the Tlemcen area. Training provided. Fair payment and potential for regular work.,Handcrafts,Tlemcen
+job_206,Cooking lessons in Tébessa,Hiring for Cooking lessons in the Tébessa area. Training provided. Fair payment and potential for regular work.,Food & Cuisine,Tébessa
+job_207,Traditional music performance in Skikda,Need assistance with Traditional music performance in Skikda. Ideal for part-time workers with knowledge in events & celebrations.,Events & Celebrations,Skikda
+job_208,Traditional music performance in Constantine,Traditional music performance expert needed in Constantine. Project involves residential work. Good communication skills and punctuality essential.,Events & Celebrations,Constantine
+job_209,Garden maintenance in Tiaret,Garden maintenance expert needed in Tiaret. Project involves commercial space. Good communication skills and punctuality essential.,Agriculture & Gardening,Tiaret
+job_210,Home chef services in Souk Ahras,Looking for an experienced professional for Home chef services in Souk Ahras. The work involves immediate assistance with competitive compensation.,Food & Cuisine,Souk Ahras
+job_211,Traditional bread baking in Illizi,Looking for an experienced professional for Traditional bread baking in Illizi. The work involves regular maintenance with competitive compensation.,Food & Cuisine,Illizi
+job_212,Manicure & pedicure in Sidi Bel Abbès,Hiring for Manicure & pedicure in the Sidi Bel Abbès area. Experience required. Fair payment and potential for regular work.,Beauty & Wellness,Sidi Bel Abbès
+job_213,Leather crafting in Bouira,Leather crafting expert needed in Bouira. Project involves public venue. Good communication skills and punctuality essential.,Handcrafts,Bouira
+job_214,Cooking lessons in Béchar,Looking for talented food & cuisine specialist for Cooking lessons work in Béchar. Project starts immediately.,Food & Cuisine,Béchar
+job_215,Home chef services in El M'Ghair,Looking for talented food & cuisine specialist for Home chef services work in El M'Ghair. Project starts this month.,Food & Cuisine,El M'Ghair
+job_216,Traditional carpet making in Chlef,Need assistance with Traditional carpet making in Chlef. Ideal for professionals with knowledge in handcrafts.,Handcrafts,Chlef
+job_217,Furniture transport in Bordj Bou Arréridj,Hiring for Furniture transport in the Bordj Bou Arréridj area. References needed. Fair payment and potential for regular work.,Transportation,Bordj Bou Arréridj
+job_218,Massage therapy in Laghouat,Looking for talented beauty & wellness specialist for Massage therapy work in Laghouat. Project starts next week.,Beauty & Wellness,Laghouat
+job_219,Car mechanics in El Meniaa,Seeking skilled individual for Car mechanics services in El Meniaa. Must have own tools and transportation. Weekend work required.,Maintenance & Repairs,El Meniaa
+job_220,Garden maintenance in Guelma,Need assistance with Garden maintenance in Guelma. Ideal for professionals with knowledge in agriculture & gardening.,Agriculture & Gardening,Guelma
+job_221,Moving assistance in Médéa,Hiring for Moving assistance in the Médéa area. Portfolio requested. Fair payment and potential for regular work.,Transportation,Médéa
+job_222,Home renovation in Tipaza,Home Services professional wanted for Home renovation in Tipaza. Short-term project with possibility for extension.,Home Services,Tipaza
+job_223,Social media management in Béchar,Hiring for Social media management in the Béchar area. Portfolio requested. Fair payment and potential for regular work.,Digital Services,Béchar
+job_224,Bicycle repair in Touggourt,Seeking skilled individual for Bicycle repair services in Touggourt. Must have own tools and transportation. Weekend work required.,Maintenance & Repairs,Touggourt
+job_225,Traditional carpet making in Blida,Handcrafts professional wanted for Traditional carpet making in Blida. Recurring project with possibility for extension.,Handcrafts,Blida
+job_226,Garden maintenance in Tindouf,Hiring for Garden maintenance in the Tindouf area. References needed. Fair payment and potential for regular work.,Agriculture & Gardening,Tindouf
+job_227,Electronics repair in Oum El Bouaghi,Electronics repair expert needed in Oum El Bouaghi. Project involves commercial space. Good communication skills and punctuality essential.,Maintenance & Repairs,Oum El Bouaghi
+job_228,Housekeeping in M'Sila,Looking for talented home services specialist for Housekeeping work in M'Sila. Project starts immediately.,Home Services,M'Sila
+job_229,DJ services in M'Sila,DJ services expert needed in M'Sila. Project involves private property. Good communication skills and punctuality essential.,Events & Celebrations,M'Sila
+job_230,Traditional hamam services in Souk Ahras,Traditional hamam services expert needed in Souk Ahras. Project involves commercial space. Good communication skills and punctuality essential.,Beauty & Wellness,Souk Ahras
+job_231,Smartphone repair in Bordj Bou Arréridj,Smartphone repair expert needed in Bordj Bou Arréridj. Project involves commercial space. Good communication skills and punctuality essential.,Maintenance & Repairs,Bordj Bou Arréridj
+job_232,Homemade couscous in Laghouat,Need assistance with Homemade couscous in Laghouat. Ideal for part-time workers with knowledge in food & cuisine.,Food & Cuisine,Laghouat
+job_233,Arabic language teaching in El Tarf,Hiring for Arabic language teaching in the El Tarf area. References needed. Fair payment and potential for regular work.,Teaching & Education,El Tarf
+job_234,Traditional dress sewing in Aïn Témouchent,Need assistance with Traditional dress sewing in Aïn Témouchent. Ideal for part-time workers with knowledge in handcrafts.,Handcrafts,Aïn Témouchent
+job_235,Logo design in Saïda,Need assistance with Logo design in Saïda. Ideal for students with knowledge in digital services.,Digital Services,Saïda
+job_236,Home appliance repair in Relizane,Home appliance repair expert needed in Relizane. Project involves residential work. Good communication skills and punctuality essential.,Maintenance & Repairs,Relizane
+job_237,Housekeeping in Relizane,Housekeeping expert needed in Relizane. Project involves residential work. Good communication skills and punctuality essential.,Home Services,Relizane
+job_238,Olive harvesting in Relizane,Need assistance with Olive harvesting in Relizane. Ideal for retirees with knowledge in agriculture & gardening.,Agriculture & Gardening,Relizane
+job_239,Moving assistance in El Bayadh,Need assistance with Moving assistance in El Bayadh. Ideal for retirees with knowledge in transportation.,Transportation,El Bayadh
+job_240,Traditional hamam services in Batna,Looking for an experienced professional for Traditional hamam services in Batna. The work involves ongoing support with competitive compensation.,Beauty & Wellness,Batna
+job_241,Video editing in El Tarf,Looking for an experienced professional for Video editing in El Tarf. The work involves regular maintenance with competitive compensation.,Digital Services,El Tarf
+job_242,Manicure & pedicure in Mascara,Manicure & pedicure expert needed in Mascara. Project involves public venue. Good communication skills and punctuality essential.,Beauty & Wellness,Mascara
+job_243,Cooking lessons in Tindouf,Seeking skilled individual for Cooking lessons services in Tindouf. Must have own tools and transportation. Weekend work required.,Food & Cuisine,Tindouf
+job_244,City tours in Tindouf,Transportation professional wanted for City tours in Tindouf. Short-term project with possibility for extension.,Transportation,Tindouf
+job_245,Wood crafting in Béchar,Handcrafts professional wanted for Wood crafting in Béchar. Short-term project with possibility for extension.,Handcrafts,Béchar
+job_246,Intercity transport in Oran,Need assistance with Intercity transport in Oran. Ideal for professionals with knowledge in transportation.,Transportation,Oran
+job_247,Traditional music performance in Béjaïa,Traditional music performance expert needed in Béjaïa. Project involves private property. Good communication skills and punctuality essential.,Events & Celebrations,Béjaïa
+job_248,Airport pickup in Souk Ahras,Need assistance with Airport pickup in Souk Ahras. Ideal for students with knowledge in transportation.,Transportation,Souk Ahras
+job_249,Painting services in Béni Abbès,Painting services expert needed in Béni Abbès. Project involves commercial space. Good communication skills and punctuality essential.,Home Services,Béni Abbès
+job_250,Social media management in Mila,Looking for an experienced professional for Social media management in Mila. The work involves regular maintenance with competitive compensation.,Digital Services,Mila
+job_251,Private math tutoring in Adrar,Teaching & Education professional wanted for Private math tutoring in Adrar. Long-term project with possibility for extension.,Teaching & Education,Adrar
+job_252,Airport pickup in Béni Abbès,Seeking skilled individual for Airport pickup services in Béni Abbès. Must have own tools and transportation. Urgent need required.,Transportation,Béni Abbès
+job_253,Logo design in El Meniaa,Digital Services professional wanted for Logo design in El Meniaa. Medium-term project with possibility for extension.,Digital Services,El Meniaa
+job_254,Homemade couscous in Bouira,Need assistance with Homemade couscous in Bouira. Ideal for retirees with knowledge in food & cuisine.,Food & Cuisine,Bouira
+job_255,Wedding planning in Médéa,Need assistance with Wedding planning in Médéa. Ideal for retirees with knowledge in events & celebrations.,Events & Celebrations,Médéa
+job_256,E-commerce setup in Tébessa,Hiring for E-commerce setup in the Tébessa area. Portfolio requested. Fair payment and potential for regular work.,Digital Services,Tébessa
+job_257,Event photography in Alger,Looking for an experienced professional for Event photography in Alger. The work involves immediate assistance with competitive compensation.,Events & Celebrations,Alger
+job_258,E-commerce setup in Skikda,Looking for an experienced professional for E-commerce setup in Skikda. The work involves one-time service with competitive compensation.,Digital Services,Skikda
+job_259,University exam preparation in Blida,Need assistance with University exam preparation in Blida. Ideal for students with knowledge in teaching & education.,Teaching & Education,Blida
+job_260,Furniture assembly in Oran,Hiring for Furniture assembly in the Oran area. Training provided. Fair payment and potential for regular work.,Home Services,Oran
+job_261,Moving assistance in Skikda,Need assistance with Moving assistance in Skikda. Ideal for part-time workers with knowledge in transportation.,Transportation,Skikda
+job_262,University exam preparation in In Salah,Teaching & Education professional wanted for University exam preparation in In Salah. Recurring project with possibility for extension.,Teaching & Education,In Salah
+job_263,Agricultural consulting in El Tarf,Agricultural consulting expert needed in El Tarf. Project involves private property. Good communication skills and punctuality essential.,Agriculture & Gardening,El Tarf
+job_264,Car mechanics in Tamanrasset,Need assistance with Car mechanics in Tamanrasset. Ideal for retirees with knowledge in maintenance & repairs.,Maintenance & Repairs,Tamanrasset
+job_265,Event decoration in Tizi Ouzou,Events & Celebrations professional wanted for Event decoration in Tizi Ouzou. Medium-term project with possibility for extension.,Events & Celebrations,Tizi Ouzou
+job_266,Home appliance repair in Ghardaïa,Seeking skilled individual for Home appliance repair services in Ghardaïa. Must have own tools and transportation. Flexible hours required.,Maintenance & Repairs,Ghardaïa
+job_267,French language lessons in Bordj Bou Arréridj,Looking for talented teaching & education specialist for French language lessons work in Bordj Bou Arréridj. Project starts immediately.,Teaching & Education,Bordj Bou Arréridj
+job_268,Garden maintenance in Ouled Djellal,Hiring for Garden maintenance in the Ouled Djellal area. References needed. Fair payment and potential for regular work.,Agriculture & Gardening,Ouled Djellal
+job_269,Garden maintenance in Boumerdès,Looking for talented agriculture & gardening specialist for Garden maintenance work in Boumerdès. Project starts immediately.,Agriculture & Gardening,Boumerdès
+job_270,Traditional bread baking in Blida,Looking for an experienced professional for Traditional bread baking in Blida. The work involves immediate assistance with competitive compensation.,Food & Cuisine,Blida
+job_271,Video editing in Bordj Bou Arréridj,Digital Services professional wanted for Video editing in Bordj Bou Arréridj. Recurring project with possibility for extension.,Digital Services,Bordj Bou Arréridj
+job_272,Bicycle repair in Naâma,Seeking skilled individual for Bicycle repair services in Naâma. Must have own tools and transportation. Urgent need required.,Maintenance & Repairs,Naâma
+job_273,DJ services in Tissemsilt,Looking for talented events & celebrations specialist for DJ services work in Tissemsilt. Project starts this month.,Events & Celebrations,Tissemsilt
+job_274,Delivery services in El Tarf,Transportation professional wanted for Delivery services in El Tarf. Medium-term project with possibility for extension.,Transportation,El Tarf
+job_275,Mobile app development in Laghouat,Hiring for Mobile app development in the Laghouat area. Training provided. Fair payment and potential for regular work.,Digital Services,Laghouat
+job_276,Traditional dress sewing in Aïn Defla,Need assistance with Traditional dress sewing in Aïn Defla. Ideal for part-time workers with knowledge in handcrafts.,Handcrafts,Aïn Defla
+job_277,Painting services in Djanet,Need assistance with Painting services in Djanet. Ideal for retirees with knowledge in home services.,Home Services,Djanet
+job_278,Home appliance repair in Touggourt,Looking for an experienced professional for Home appliance repair in Touggourt. The work involves ongoing support with competitive compensation.,Maintenance & Repairs,Touggourt
+job_279,Air conditioner maintenance in Bordj Badji Mokhtar,Looking for an experienced professional for Air conditioner maintenance in Bordj Badji Mokhtar. The work involves regular maintenance with competitive compensation.,Home Services,Bordj Badji Mokhtar
+job_280,Bicycle repair in Tindouf,Maintenance & Repairs professional wanted for Bicycle repair in Tindouf. Medium-term project with possibility for extension.,Maintenance & Repairs,Tindouf
+job_281,Catering services in Tipaza,Looking for talented events & celebrations specialist for Catering services work in Tipaza. Project starts this month.,Events & Celebrations,Tipaza
+job_282,Homemade couscous in Aïn Témouchent,Homemade couscous expert needed in Aïn Témouchent. Project involves residential work. Good communication skills and punctuality essential.,Food & Cuisine,Aïn Témouchent
+job_283,Home hairdressing in Biskra,Seeking skilled individual for Home hairdressing services in Biskra. Must have own tools and transportation. Urgent need required.,Beauty & Wellness,Biskra
+job_284,Mobile app development in Aïn Defla,Hiring for Mobile app development in the Aïn Defla area. References needed. Fair payment and potential for regular work.,Digital Services,Aïn Defla
+job_285,Airport pickup in Ghardaïa,Need assistance with Airport pickup in Ghardaïa. Ideal for professionals with knowledge in transportation.,Transportation,Ghardaïa
+job_286,City tours in Tissemsilt,Need assistance with City tours in Tissemsilt. Ideal for retirees with knowledge in transportation.,Transportation,Tissemsilt
+job_287,Catering for special events in Tizi Ouzou,Catering for special events expert needed in Tizi Ouzou. Project involves private property. Good communication skills and punctuality essential.,Food & Cuisine,Tizi Ouzou
+job_288,Irrigation system installation in Batna,Agriculture & Gardening professional wanted for Irrigation system installation in Batna. Short-term project with possibility for extension.,Agriculture & Gardening,Batna
+job_289,Agricultural consulting in Souk Ahras,Agriculture & Gardening professional wanted for Agricultural consulting in Souk Ahras. Recurring project with possibility for extension.,Agriculture & Gardening,Souk Ahras
+job_290,Homemade couscous in Touggourt,Hiring for Homemade couscous in the Touggourt area. Training provided. Fair payment and potential for regular work.,Food & Cuisine,Touggourt
+job_291,Furniture transport in Mostaganem,Looking for an experienced professional for Furniture transport in Mostaganem. The work involves ongoing support with competitive compensation.,Transportation,Mostaganem
+job_292,Electronics repair in Tébessa,Seeking skilled individual for Electronics repair services in Tébessa. Must have own tools and transportation. Urgent need required.,Maintenance & Repairs,Tébessa
+job_293,Traditional dress sewing in Tipaza,Looking for talented handcrafts specialist for Traditional dress sewing work in Tipaza. Project starts this month.,Handcrafts,Tipaza
+job_294,Traditional bread baking in Khenchela,Looking for an experienced professional for Traditional bread baking in Khenchela. The work involves one-time service with competitive compensation.,Food & Cuisine,Khenchela
+job_295,Agricultural consulting in Annaba,Seeking skilled individual for Agricultural consulting services in Annaba. Must have own tools and transportation. Weekend work required.,Agriculture & Gardening,Annaba
+job_296,Olive harvesting in Alger,Looking for an experienced professional for Olive harvesting in Alger. The work involves one-time service with competitive compensation.,Agriculture & Gardening,Alger
+job_297,City tours in Médéa,Hiring for City tours in the Médéa area. Training provided. Fair payment and potential for regular work.,Transportation,Médéa
+job_298,City tours in In Guezzam,Looking for an experienced professional for City tours in In Guezzam. The work involves ongoing support with competitive compensation.,Transportation,In Guezzam
+job_299,Private math tutoring in Ouled Djellal,Hiring for Private math tutoring in the Ouled Djellal area. Training provided. Fair payment and potential for regular work.,Teaching & Education,Ouled Djellal
+job_300,Painting services in In Salah,Home Services professional wanted for Painting services in In Salah. Recurring project with possibility for extension.,Home Services,In Salah
+job_301,Website development in Oran,Seeking skilled individual for Website development services in Oran. Must have own tools and transportation. Urgent need required.,Digital Services,Oran
+job_302,Henna art in Aïn Defla,Need assistance with Henna art in Aïn Defla. Ideal for retirees with knowledge in beauty & wellness.,Beauty & Wellness,Aïn Defla
+job_303,Home chef services in Tissemsilt,Hiring for Home chef services in the Tissemsilt area. Experience required. Fair payment and potential for regular work.,Food & Cuisine,Tissemsilt
+job_304,Airport pickup in Tiaret,Need assistance with Airport pickup in Tiaret. Ideal for students with knowledge in transportation.,Transportation,Tiaret
+job_305,Furniture assembly in Tamanrasset,Looking for an experienced professional for Furniture assembly in Tamanrasset. The work involves regular maintenance with competitive compensation.,Home Services,Tamanrasset
+job_306,Private math tutoring in Tébessa,Private math tutoring expert needed in Tébessa. Project involves residential work. Good communication skills and punctuality essential.,Teaching & Education,Tébessa
+job_307,Catering for special events in Tizi Ouzou,Seeking skilled individual for Catering for special events services in Tizi Ouzou. Must have own tools and transportation. Weekend work required.,Food & Cuisine,Tizi Ouzou
+job_308,Traditional pastry making in Batna,Traditional pastry making expert needed in Batna. Project involves private property. Good communication skills and punctuality essential.,Food & Cuisine,Batna
+job_309,Event photography in Tissemsilt,Looking for talented events & celebrations specialist for Event photography work in Tissemsilt. Project starts next week.,Events & Celebrations,Tissemsilt
+job_310,Home hairdressing in Aïn Témouchent,Hiring for Home hairdressing in the Aïn Témouchent area. Experience required. Fair payment and potential for regular work.,Beauty & Wellness,Aïn Témouchent
+job_311,Wedding planning in Naâma,Need assistance with Wedding planning in Naâma. Ideal for part-time workers with knowledge in events & celebrations.,Events & Celebrations,Naâma
+job_312,Smartphone repair in Sidi Bel Abbès,Seeking skilled individual for Smartphone repair services in Sidi Bel Abbès. Must have own tools and transportation. Weekend work required.,Maintenance & Repairs,Sidi Bel Abbès
+job_313,Traditional music performance in Oum El Bouaghi,Need assistance with Traditional music performance in Oum El Bouaghi. Ideal for retirees with knowledge in events & celebrations.,Events & Celebrations,Oum El Bouaghi
+job_314,Massage therapy in Ouargla,Need assistance with Massage therapy in Ouargla. Ideal for part-time workers with knowledge in beauty & wellness.,Beauty & Wellness,Ouargla
+job_315,Traditional dress sewing in El Oued,Looking for an experienced professional for Traditional dress sewing in El Oued. The work involves ongoing support with competitive compensation.,Handcrafts,El Oued
+job_316,E-commerce setup in Annaba,Digital Services professional wanted for E-commerce setup in Annaba. Long-term project with possibility for extension.,Digital Services,Annaba
+job_317,Computer maintenance in Bordj Bou Arréridj,Need assistance with Computer maintenance in Bordj Bou Arréridj. Ideal for students with knowledge in maintenance & repairs.,Maintenance & Repairs,Bordj Bou Arréridj
+job_318,Smartphone repair in El Oued,Maintenance & Repairs professional wanted for Smartphone repair in El Oued. Long-term project with possibility for extension.,Maintenance & Repairs,El Oued
+job_319,University exam preparation in Tébessa,Need assistance with University exam preparation in Tébessa. Ideal for professionals with knowledge in teaching & education.,Teaching & Education,Tébessa
+job_320,Electronics repair in Ghardaïa,Maintenance & Repairs professional wanted for Electronics repair in Ghardaïa. Medium-term project with possibility for extension.,Maintenance & Repairs,Ghardaïa
+job_321,Cooking lessons in Aïn Témouchent,Food & Cuisine professional wanted for Cooking lessons in Aïn Témouchent. Long-term project with possibility for extension.,Food & Cuisine,Aïn Témouchent
+job_322,Smartphone repair in M'Sila,Maintenance & Repairs professional wanted for Smartphone repair in M'Sila. Medium-term project with possibility for extension.,Maintenance & Repairs,M'Sila
+job_323,Electrical installations in Timimoun,Electrical installations expert needed in Timimoun. Project involves residential work. Good communication skills and punctuality essential.,Home Services,Timimoun
+job_324,Car mechanics in Tizi Ouzou,Seeking skilled individual for Car mechanics services in Tizi Ouzou. Must have own tools and transportation. Urgent need required.,Maintenance & Repairs,Tizi Ouzou
+job_325,Science tutoring in Skikda,Seeking skilled individual for Science tutoring services in Skikda. Must have own tools and transportation. Flexible hours required.,Teaching & Education,Skikda
+job_326,Science tutoring in Béni Abbès,Science tutoring expert needed in Béni Abbès. Project involves private property. Good communication skills and punctuality essential.,Teaching & Education,Béni Abbès
+job_327,Traditional music performance in Naâma,Traditional music performance expert needed in Naâma. Project involves residential work. Good communication skills and punctuality essential.,Events & Celebrations,Naâma
+job_328,Plumbing repairs in Ouargla,Hiring for Plumbing repairs in the Ouargla area. Experience required. Fair payment and potential for regular work.,Home Services,Ouargla
+job_329,Plant care in Sétif,Need assistance with Plant care in Sétif. Ideal for retirees with knowledge in agriculture & gardening.,Agriculture & Gardening,Sétif
+job_330,Olive harvesting in Illizi,Need assistance with Olive harvesting in Illizi. Ideal for students with knowledge in agriculture & gardening.,Agriculture & Gardening,Illizi
+job_331,Traditional hamam services in Ouled Djellal,Hiring for Traditional hamam services in the Ouled Djellal area. Portfolio requested. Fair payment and potential for regular work.,Beauty & Wellness,Ouled Djellal
+job_332,University exam preparation in Relizane,Looking for talented teaching & education specialist for University exam preparation work in Relizane. Project starts this month.,Teaching & Education,Relizane
+job_333,Plant care in Djelfa,Seeking skilled individual for Plant care services in Djelfa. Must have own tools and transportation. Weekday availability required.,Agriculture & Gardening,Djelfa
+job_334,Smartphone repair in In Guezzam,Maintenance & Repairs professional wanted for Smartphone repair in In Guezzam. Medium-term project with possibility for extension.,Maintenance & Repairs,In Guezzam
+job_335,Video editing in Bordj Bou Arréridj,Looking for talented digital services specialist for Video editing work in Bordj Bou Arréridj. Project starts upon agreement.,Digital Services,Bordj Bou Arréridj
+job_336,Bicycle repair in Tébessa,Bicycle repair expert needed in Tébessa. Project involves residential work. Good communication skills and punctuality essential.,Maintenance & Repairs,Tébessa
+job_337,Massage therapy in Tébessa,Hiring for Massage therapy in the Tébessa area. Training provided. Fair payment and potential for regular work.,Beauty & Wellness,Tébessa
+job_338,Intercity transport in Sidi Bel Abbès,Seeking skilled individual for Intercity transport services in Sidi Bel Abbès. Must have own tools and transportation. Weekend work required.,Transportation,Sidi Bel Abbès
+job_339,Pottery services in Tipaza,Looking for talented handcrafts specialist for Pottery services work in Tipaza. Project starts upon agreement.,Handcrafts,Tipaza
+job_340,Makeup services in Alger,Makeup services expert needed in Alger. Project involves private property. Good communication skills and punctuality essential.,Beauty & Wellness,Alger
+job_341,Massage therapy in Relizane,Beauty & Wellness professional wanted for Massage therapy in Relizane. Long-term project with possibility for extension.,Beauty & Wellness,Relizane
+job_342,Olive harvesting in Bordj Badji Mokhtar,Need assistance with Olive harvesting in Bordj Badji Mokhtar. Ideal for professionals with knowledge in agriculture & gardening.,Agriculture & Gardening,Bordj Badji Mokhtar
+job_343,Mobile app development in Souk Ahras,Looking for an experienced professional for Mobile app development in Souk Ahras. The work involves one-time service with competitive compensation.,Digital Services,Souk Ahras
+job_344,Traditional carpet making in Béjaïa,Looking for an experienced professional for Traditional carpet making in Béjaïa. The work involves one-time service with competitive compensation.,Handcrafts,Béjaïa
+job_345,Private math tutoring in Constantine,Need assistance with Private math tutoring in Constantine. Ideal for students with knowledge in teaching & education.,Teaching & Education,Constantine
+job_346,Science tutoring in Laghouat,Looking for talented teaching & education specialist for Science tutoring work in Laghouat. Project starts immediately.,Teaching & Education,Laghouat
+job_347,Massage therapy in Tindouf,Seeking skilled individual for Massage therapy services in Tindouf. Must have own tools and transportation. Weekday availability required.,Beauty & Wellness,Tindouf
+job_348,Leather crafting in Tamanrasset,Hiring for Leather crafting in the Tamanrasset area. Experience required. Fair payment and potential for regular work.,Handcrafts,Tamanrasset
+job_349,Traditional music performance in El Meniaa,Looking for an experienced professional for Traditional music performance in El Meniaa. The work involves ongoing support with competitive compensation.,Events & Celebrations,El Meniaa
+job_350,Logo design in Saïda,Logo design expert needed in Saïda. Project involves commercial space. Good communication skills and punctuality essential.,Digital Services,Saïda
+job_351,Massage therapy in Skikda,Need assistance with Massage therapy in Skikda. Ideal for retirees with knowledge in beauty & wellness.,Beauty & Wellness,Skikda
+job_352,Agricultural consulting in Mila,Need assistance with Agricultural consulting in Mila. Ideal for retirees with knowledge in agriculture & gardening.,Agriculture & Gardening,Mila
+job_353,Home chef services in Béni Abbès,Hiring for Home chef services in the Béni Abbès area. Training provided. Fair payment and potential for regular work.,Food & Cuisine,Béni Abbès
+job_354,Traditional carpet making in Mascara,Seeking skilled individual for Traditional carpet making services in Mascara. Must have own tools and transportation. Flexible hours required.,Handcrafts,Mascara
+job_355,Wedding planning in Boumerdès,Hiring for Wedding planning in the Boumerdès area. Experience required. Fair payment and potential for regular work.,Events & Celebrations,Boumerdès
+job_356,Homemade couscous in Alger,Hiring for Homemade couscous in the Alger area. Portfolio requested. Fair payment and potential for regular work.,Food & Cuisine,Alger
+job_357,Garden maintenance in Djelfa,Seeking skilled individual for Garden maintenance services in Djelfa. Must have own tools and transportation. Weekday availability required.,Agriculture & Gardening,Djelfa
+job_358,Car mechanics in Annaba,Car mechanics expert needed in Annaba. Project involves public venue. Good communication skills and punctuality essential.,Maintenance & Repairs,Annaba
+job_359,Home renovation in Blida,Hiring for Home renovation in the Blida area. Experience required. Fair payment and potential for regular work.,Home Services,Blida
+job_360,Leather crafting in Ghardaïa,Need assistance with Leather crafting in Ghardaïa. Ideal for students with knowledge in handcrafts.,Handcrafts,Ghardaïa
+job_361,Event photography in Mascara,Events & Celebrations professional wanted for Event photography in Mascara. Medium-term project with possibility for extension.,Events & Celebrations,Mascara
+job_362,Painting services in M'Sila,Looking for an experienced professional for Painting services in M'Sila. The work involves regular maintenance with competitive compensation.,Home Services,M'Sila
+job_363,Home renovation in Tissemsilt,Seeking skilled individual for Home renovation services in Tissemsilt. Must have own tools and transportation. Weekend work required.,Home Services,Tissemsilt
+job_364,Graphic design in Guelma,Need assistance with Graphic design in Guelma. Ideal for students with knowledge in digital services.,Digital Services,Guelma
+job_365,French language lessons in Aïn Defla,Looking for talented teaching & education specialist for French language lessons work in Aïn Defla. Project starts this month.,Teaching & Education,Aïn Defla
+job_366,Science tutoring in Tébessa,Teaching & Education professional wanted for Science tutoring in Tébessa. Short-term project with possibility for extension.,Teaching & Education,Tébessa
+job_367,Pottery services in Mascara,Handcrafts professional wanted for Pottery services in Mascara. Recurring project with possibility for extension.,Handcrafts,Mascara
+job_368,Catering for special events in El Tarf,Looking for an experienced professional for Catering for special events in El Tarf. The work involves immediate assistance with competitive compensation.,Food & Cuisine,El Tarf
+job_369,Mobile app development in Aïn Defla,Digital Services professional wanted for Mobile app development in Aïn Defla. Recurring project with possibility for extension.,Digital Services,Aïn Defla
+job_370,Private math tutoring in Béjaïa,Hiring for Private math tutoring in the Béjaïa area. Experience required. Fair payment and potential for regular work.,Teaching & Education,Béjaïa
+job_371,University exam preparation in Batna,Looking for an experienced professional for University exam preparation in Batna. The work involves one-time service with competitive compensation.,Teaching & Education,Batna
+job_372,Wood crafting in Tiaret,Seeking skilled individual for Wood crafting services in Tiaret. Must have own tools and transportation. Weekend work required.,Handcrafts,Tiaret
+job_373,Traditional bread baking in El Oued,Hiring for Traditional bread baking in the El Oued area. Experience required. Fair payment and potential for regular work.,Food & Cuisine,El Oued
+job_374,Catering for special events in Oum El Bouaghi,Catering for special events expert needed in Oum El Bouaghi. Project involves private property. Good communication skills and punctuality essential.,Food & Cuisine,Oum El Bouaghi
+job_375,Mobile app development in Blida,Mobile app development expert needed in Blida. Project involves commercial space. Good communication skills and punctuality essential.,Digital Services,Blida
+job_376,Computer maintenance in Aïn Témouchent,Seeking skilled individual for Computer maintenance services in Aïn Témouchent. Must have own tools and transportation. Flexible hours required.,Maintenance & Repairs,Aïn Témouchent
+job_377,Science tutoring in Djanet,Looking for an experienced professional for Science tutoring in Djanet. The work involves ongoing support with competitive compensation.,Teaching & Education,Djanet
+job_378,Air conditioner maintenance in Béchar,Need assistance with Air conditioner maintenance in Béchar. Ideal for students with knowledge in home services.,Home Services,Béchar
+job_379,Car mechanics in Tindouf,Hiring for Car mechanics in the Tindouf area. Experience required. Fair payment and potential for regular work.,Maintenance & Repairs,Tindouf
+job_380,Traditional dress sewing in Batna,Handcrafts professional wanted for Traditional dress sewing in Batna. Recurring project with possibility for extension.,Handcrafts,Batna
+job_381,Leather crafting in Naâma,Need assistance with Leather crafting in Naâma. Ideal for students with knowledge in handcrafts.,Handcrafts,Naâma
+job_382,Event decoration in El Bayadh,Need assistance with Event decoration in El Bayadh. Ideal for professionals with knowledge in events & celebrations.,Events & Celebrations,El Bayadh
+job_383,Intercity transport in Skikda,Intercity transport expert needed in Skikda. Project involves residential work. Good communication skills and punctuality essential.,Transportation,Skikda
+job_384,Science tutoring in M'Sila,Science tutoring expert needed in M'Sila. Project involves public venue. Good communication skills and punctuality essential.,Teaching & Education,M'Sila
+job_385,Traditional dress sewing in Batna,Handcrafts professional wanted for Traditional dress sewing in Batna. Long-term project with possibility for extension.,Handcrafts,Batna
+job_386,Olive harvesting in El Meniaa,Looking for an experienced professional for Olive harvesting in El Meniaa. The work involves one-time service with competitive compensation.,Agriculture & Gardening,El Meniaa
+job_387,Irrigation system installation in Mostaganem,Need assistance with Irrigation system installation in Mostaganem. Ideal for retirees with knowledge in agriculture & gardening.,Agriculture & Gardening,Mostaganem
+job_388,Irrigation system installation in Médéa,Seeking skilled individual for Irrigation system installation services in Médéa. Must have own tools and transportation. Weekend work required.,Agriculture & Gardening,Médéa
+job_389,Traditional dress sewing in Illizi,Traditional dress sewing expert needed in Illizi. Project involves residential work. Good communication skills and punctuality essential.,Handcrafts,Illizi
+job_390,Wedding planning in Chlef,Events & Celebrations professional wanted for Wedding planning in Chlef. Long-term project with possibility for extension.,Events & Celebrations,Chlef
+job_391,Electrical installations in Laghouat,Looking for an experienced professional for Electrical installations in Laghouat. The work involves ongoing support with competitive compensation.,Home Services,Laghouat
+job_392,Smartphone repair in Djelfa,Looking for an experienced professional for Smartphone repair in Djelfa. The work involves one-time service with competitive compensation.,Maintenance & Repairs,Djelfa
+job_393,Airport pickup in Djanet,Transportation professional wanted for Airport pickup in Djanet. Medium-term project with possibility for extension.,Transportation,Djanet
+job_394,Garden maintenance in Bordj Badji Mokhtar,Garden maintenance expert needed in Bordj Badji Mokhtar. Project involves residential work. Good communication skills and punctuality essential.,Agriculture & Gardening,Bordj Badji Mokhtar
+job_395,University exam preparation in Timimoun,Need assistance with University exam preparation in Timimoun. Ideal for students with knowledge in teaching & education.,Teaching & Education,Timimoun
+job_396,Plant care in Mostaganem,Need assistance with Plant care in Mostaganem. Ideal for professionals with knowledge in agriculture & gardening.,Agriculture & Gardening,Mostaganem
+job_397,Agricultural consulting in Djanet,Agricultural consulting expert needed in Djanet. Project involves public venue. Good communication skills and punctuality essential.,Agriculture & Gardening,Djanet
+job_398,Traditional dress sewing in Oran,Traditional dress sewing expert needed in Oran. Project involves residential work. Good communication skills and punctuality essential.,Handcrafts,Oran
+job_399,Irrigation system installation in Mila,Looking for talented agriculture & gardening specialist for Irrigation system installation work in Mila. Project starts upon agreement.,Agriculture & Gardening,Mila
+job_400,Arabic language teaching in El M'Ghair,Teaching & Education professional wanted for Arabic language teaching in El M'Ghair. Recurring project with possibility for extension.,Teaching & Education,El M'Ghair
+job_401,Plant care in Oran,Agriculture & Gardening professional wanted for Plant care in Oran. Medium-term project with possibility for extension.,Agriculture & Gardening,Oran
+job_402,Car mechanics in Djanet,Seeking skilled individual for Car mechanics services in Djanet. Must have own tools and transportation. Urgent need required.,Maintenance & Repairs,Djanet
+job_403,Computer skills training in Tizi Ouzou,Computer skills training expert needed in Tizi Ouzou. Project involves public venue. Good communication skills and punctuality essential.,Teaching & Education,Tizi Ouzou
+job_404,Computer skills training in Mascara,Looking for an experienced professional for Computer skills training in Mascara. The work involves immediate assistance with competitive compensation.,Teaching & Education,Mascara
+job_405,Car mechanics in Sétif,Looking for talented maintenance & repairs specialist for Car mechanics work in Sétif. Project starts upon agreement.,Maintenance & Repairs,Sétif
+job_406,Traditional carpet making in In Guezzam,Handcrafts professional wanted for Traditional carpet making in In Guezzam. Long-term project with possibility for extension.,Handcrafts,In Guezzam
+job_407,Traditional carpet making in Béni Abbès,Traditional carpet making expert needed in Béni Abbès. Project involves private property. Good communication skills and punctuality essential.,Handcrafts,Béni Abbès
+job_408,Makeup services in Batna,Need assistance with Makeup services in Batna. Ideal for retirees with knowledge in beauty & wellness.,Beauty & Wellness,Batna
+job_409,Traditional carpet making in Touggourt,Handcrafts professional wanted for Traditional carpet making in Touggourt. Long-term project with possibility for extension.,Handcrafts,Touggourt
+job_410,Plumbing repairs in El Meniaa,Home Services professional wanted for Plumbing repairs in El Meniaa. Long-term project with possibility for extension.,Home Services,El Meniaa
+job_411,Catering services in Médéa,Catering services expert needed in Médéa. Project involves commercial space. Good communication skills and punctuality essential.,Events & Celebrations,Médéa
+job_412,City tours in M'Sila,Transportation professional wanted for City tours in M'Sila. Medium-term project with possibility for extension.,Transportation,M'Sila
+job_413,Agricultural consulting in Tindouf,Need assistance with Agricultural consulting in Tindouf. Ideal for retirees with knowledge in agriculture & gardening.,Agriculture & Gardening,Tindouf
+job_414,Arabic language teaching in In Salah,Teaching & Education professional wanted for Arabic language teaching in In Salah. Short-term project with possibility for extension.,Teaching & Education,In Salah
+job_415,Manicure & pedicure in Sidi Bel Abbès,Manicure & pedicure expert needed in Sidi Bel Abbès. Project involves residential work. Good communication skills and punctuality essential.,Beauty & Wellness,Sidi Bel Abbès
+job_416,E-commerce setup in Illizi,Hiring for E-commerce setup in the Illizi area. Training provided. Fair payment and potential for regular work.,Digital Services,Illizi
+job_417,Catering for special events in Touggourt,Looking for talented food & cuisine specialist for Catering for special events work in Touggourt. Project starts this month.,Food & Cuisine,Touggourt
+job_418,Manicure & pedicure in Constantine,Looking for an experienced professional for Manicure & pedicure in Constantine. The work involves one-time service with competitive compensation.,Beauty & Wellness,Constantine
+job_419,Science tutoring in Khenchela,Hiring for Science tutoring in the Khenchela area. References needed. Fair payment and potential for regular work.,Teaching & Education,Khenchela
+job_420,Wood crafting in In Salah,Need assistance with Wood crafting in In Salah. Ideal for students with knowledge in handcrafts.,Handcrafts,In Salah
+job_421,Irrigation system installation in Tissemsilt,Seeking skilled individual for Irrigation system installation services in Tissemsilt. Must have own tools and transportation. Urgent need required.,Agriculture & Gardening,Tissemsilt
+job_422,Air conditioner maintenance in Biskra,Air conditioner maintenance expert needed in Biskra. Project involves commercial space. Good communication skills and punctuality essential.,Home Services,Biskra
+job_423,Wood crafting in Tissemsilt,Need assistance with Wood crafting in Tissemsilt. Ideal for retirees with knowledge in handcrafts.,Handcrafts,Tissemsilt
+job_424,Traditional bread baking in Bordj Bou Arréridj,Need assistance with Traditional bread baking in Bordj Bou Arréridj. Ideal for students with knowledge in food & cuisine.,Food & Cuisine,Bordj Bou Arréridj
+job_425,Traditional dress sewing in Batna,Need assistance with Traditional dress sewing in Batna. Ideal for professionals with knowledge in handcrafts.,Handcrafts,Batna
+job_426,Traditional music performance in El Bayadh,Seeking skilled individual for Traditional music performance services in El Bayadh. Must have own tools and transportation. Weekday availability required.,Events & Celebrations,El Bayadh
+job_427,Leather crafting in Laghouat,Need assistance with Leather crafting in Laghouat. Ideal for part-time workers with knowledge in handcrafts.,Handcrafts,Laghouat
+job_428,Home hairdressing in Tlemcen,Beauty & Wellness professional wanted for Home hairdressing in Tlemcen. Long-term project with possibility for extension.,Beauty & Wellness,Tlemcen
+job_429,Traditional music performance in Ouled Djellal,Looking for talented events & celebrations specialist for Traditional music performance work in Ouled Djellal. Project starts immediately.,Events & Celebrations,Ouled Djellal
+job_430,Traditional bread baking in Biskra,Food & Cuisine professional wanted for Traditional bread baking in Biskra. Short-term project with possibility for extension.,Food & Cuisine,Biskra
+job_431,Electronics repair in Naâma,Looking for talented maintenance & repairs specialist for Electronics repair work in Naâma. Project starts upon agreement.,Maintenance & Repairs,Naâma
+job_432,Car mechanics in Boumerdès,Looking for talented maintenance & repairs specialist for Car mechanics work in Boumerdès. Project starts immediately.,Maintenance & Repairs,Boumerdès
+job_433,Car mechanics in In Salah,Need assistance with Car mechanics in In Salah. Ideal for retirees with knowledge in maintenance & repairs.,Maintenance & Repairs,In Salah
+job_434,Pottery services in Boumerdès,Hiring for Pottery services in the Boumerdès area. Experience required. Fair payment and potential for regular work.,Handcrafts,Boumerdès
+job_435,Air conditioner maintenance in Alger,Hiring for Air conditioner maintenance in the Alger area. Training provided. Fair payment and potential for regular work.,Home Services,Alger
+job_436,Catering services in Oum El Bouaghi,Looking for talented events & celebrations specialist for Catering services work in Oum El Bouaghi. Project starts next week.,Events & Celebrations,Oum El Bouaghi
+job_437,Painting services in Sétif,Looking for an experienced professional for Painting services in Sétif. The work involves one-time service with competitive compensation.,Home Services,Sétif
+job_438,Furniture assembly in Sétif,Hiring for Furniture assembly in the Sétif area. Training provided. Fair payment and potential for regular work.,Home Services,Sétif
+job_439,Plumbing repairs in Jijel,Plumbing repairs expert needed in Jijel. Project involves residential work. Good communication skills and punctuality essential.,Home Services,Jijel
+job_440,Wood crafting in Biskra,Handcrafts professional wanted for Wood crafting in Biskra. Recurring project with possibility for extension.,Handcrafts,Biskra
+job_441,Website development in Ghardaïa,Website development expert needed in Ghardaïa. Project involves residential work. Good communication skills and punctuality essential.,Digital Services,Ghardaïa
+job_442,Fruit picking in Bordj Badji Mokhtar,Looking for an experienced professional for Fruit picking in Bordj Badji Mokhtar. The work involves one-time service with competitive compensation.,Agriculture & Gardening,Bordj Badji Mokhtar
+job_443,Airport pickup in Jijel,Seeking skilled individual for Airport pickup services in Jijel. Must have own tools and transportation. Flexible hours required.,Transportation,Jijel
+job_444,Manicure & pedicure in Sétif,Manicure & pedicure expert needed in Sétif. Project involves commercial space. Good communication skills and punctuality essential.,Beauty & Wellness,Sétif
+job_445,Event decoration in Béchar,Looking for an experienced professional for Event decoration in Béchar. The work involves regular maintenance with competitive compensation.,Events & Celebrations,Béchar
+job_446,Home appliance repair in Naâma,Home appliance repair expert needed in Naâma. Project involves residential work. Good communication skills and punctuality essential.,Maintenance & Repairs,Naâma
+job_447,Cooking lessons in Tiaret,Seeking skilled individual for Cooking lessons services in Tiaret. Must have own tools and transportation. Urgent need required.,Food & Cuisine,Tiaret
+job_448,Moving assistance in Tindouf,Need assistance with Moving assistance in Tindouf. Ideal for professionals with knowledge in transportation.,Transportation,Tindouf
+job_449,Traditional pastry making in Béchar,Food & Cuisine professional wanted for Traditional pastry making in Béchar. Medium-term project with possibility for extension.,Food & Cuisine,Béchar
+job_450,French language lessons in Djelfa,Teaching & Education professional wanted for French language lessons in Djelfa. Long-term project with possibility for extension.,Teaching & Education,Djelfa
+job_451,Wood crafting in Constantine,Hiring for Wood crafting in the Constantine area. References needed. Fair payment and potential for regular work.,Handcrafts,Constantine
+job_452,Massage therapy in Boumerdès,Need assistance with Massage therapy in Boumerdès. Ideal for retirees with knowledge in beauty & wellness.,Beauty & Wellness,Boumerdès
+job_453,Plant care in Ouled Djellal,Agriculture & Gardening professional wanted for Plant care in Ouled Djellal. Short-term project with possibility for extension.,Agriculture & Gardening,Ouled Djellal
+job_454,Traditional music performance in El Tarf,Hiring for Traditional music performance in the El Tarf area. Experience required. Fair payment and potential for regular work.,Events & Celebrations,El Tarf
+job_455,Garden maintenance in El Tarf,Looking for an experienced professional for Garden maintenance in El Tarf. The work involves one-time service with competitive compensation.,Agriculture & Gardening,El Tarf
+job_456,Wood crafting in In Guezzam,Seeking skilled individual for Wood crafting services in In Guezzam. Must have own tools and transportation. Urgent need required.,Handcrafts,In Guezzam
+job_457,Traditional hamam services in Aïn Defla,Looking for talented beauty & wellness specialist for Traditional hamam services work in Aïn Defla. Project starts immediately.,Beauty & Wellness,Aïn Defla
+job_458,Home appliance repair in Biskra,Need assistance with Home appliance repair in Biskra. Ideal for part-time workers with knowledge in maintenance & repairs.,Maintenance & Repairs,Biskra
+job_459,Delivery services in Tindouf,Looking for talented transportation specialist for Delivery services work in Tindouf. Project starts upon agreement.,Transportation,Tindouf
+job_460,Makeup services in Mostaganem,Makeup services expert needed in Mostaganem. Project involves public venue. Good communication skills and punctuality essential.,Beauty & Wellness,Mostaganem
+job_461,Massage therapy in Oran,Massage therapy expert needed in Oran. Project involves residential work. Good communication skills and punctuality essential.,Beauty & Wellness,Oran
+job_462,Agricultural consulting in Khenchela,Agricultural consulting expert needed in Khenchela. Project involves private property. Good communication skills and punctuality essential.,Agriculture & Gardening,Khenchela
+job_463,Cooking lessons in Bordj Badji Mokhtar,Need assistance with Cooking lessons in Bordj Badji Mokhtar. Ideal for part-time workers with knowledge in food & cuisine.,Food & Cuisine,Bordj Badji Mokhtar
+job_464,University exam preparation in Saïda,Seeking skilled individual for University exam preparation services in Saïda. Must have own tools and transportation. Urgent need required.,Teaching & Education,Saïda
+job_465,Catering services in Béchar,Need assistance with Catering services in Béchar. Ideal for students with knowledge in events & celebrations.,Events & Celebrations,Béchar
+job_466,Wood crafting in Ouargla,Looking for an experienced professional for Wood crafting in Ouargla. The work involves regular maintenance with competitive compensation.,Handcrafts,Ouargla
+job_467,Manicure & pedicure in Tindouf,Seeking skilled individual for Manicure & pedicure services in Tindouf. Must have own tools and transportation. Urgent need required.,Beauty & Wellness,Tindouf
+job_468,Social media management in Naâma,Looking for talented digital services specialist for Social media management work in Naâma. Project starts upon agreement.,Digital Services,Naâma
+job_469,Traditional bread baking in Mascara,Seeking skilled individual for Traditional bread baking services in Mascara. Must have own tools and transportation. Weekday availability required.,Food & Cuisine,Mascara
+job_470,Housekeeping in Djanet,Need assistance with Housekeeping in Djanet. Ideal for retirees with knowledge in home services.,Home Services,Djanet
+job_471,Home chef services in Médéa,Home chef services expert needed in Médéa. Project involves private property. Good communication skills and punctuality essential.,Food & Cuisine,Médéa
+job_472,Electronics repair in El Tarf,Looking for talented maintenance & repairs specialist for Electronics repair work in El Tarf. Project starts immediately.,Maintenance & Repairs,El Tarf
+job_473,Computer skills training in Tizi Ouzou,Seeking skilled individual for Computer skills training services in Tizi Ouzou. Must have own tools and transportation. Weekend work required.,Teaching & Education,Tizi Ouzou
+job_474,University exam preparation in El M'Ghair,University exam preparation expert needed in El M'Ghair. Project involves residential work. Good communication skills and punctuality essential.,Teaching & Education,El M'Ghair
+job_475,Agricultural consulting in Tébessa,Looking for talented agriculture & gardening specialist for Agricultural consulting work in Tébessa. Project starts upon agreement.,Agriculture & Gardening,Tébessa
+job_476,DJ services in Béni Abbès,Need assistance with DJ services in Béni Abbès. Ideal for retirees with knowledge in events & celebrations.,Events & Celebrations,Béni Abbès
+job_477,Social media management in Sidi Bel Abbès,Seeking skilled individual for Social media management services in Sidi Bel Abbès. Must have own tools and transportation. Urgent need required.,Digital Services,Sidi Bel Abbès
+job_478,Wood crafting in Tiaret,Handcrafts professional wanted for Wood crafting in Tiaret. Long-term project with possibility for extension.,Handcrafts,Tiaret
+job_479,Cooking lessons in Timimoun,Hiring for Cooking lessons in the Timimoun area. Experience required. Fair payment and potential for regular work.,Food & Cuisine,Timimoun
+job_480,Website development in Oran,Website development expert needed in Oran. Project involves public venue. Good communication skills and punctuality essential.,Digital Services,Oran
+job_481,Logo design in Béjaïa,Hiring for Logo design in the Béjaïa area. References needed. Fair payment and potential for regular work.,Digital Services,Béjaïa
+job_482,Homemade couscous in Relizane,Hiring for Homemade couscous in the Relizane area. References needed. Fair payment and potential for regular work.,Food & Cuisine,Relizane
+job_483,Catering for special events in M'Sila,Catering for special events expert needed in M'Sila. Project involves public venue. Good communication skills and punctuality essential.,Food & Cuisine,M'Sila
+job_484,Manicure & pedicure in Biskra,Need assistance with Manicure & pedicure in Biskra. Ideal for students with knowledge in beauty & wellness.,Beauty & Wellness,Biskra
+job_485,Makeup services in Bordj Bou Arréridj,Need assistance with Makeup services in Bordj Bou Arréridj. Ideal for part-time workers with knowledge in beauty & wellness.,Beauty & Wellness,Bordj Bou Arréridj
+job_486,Intercity transport in Batna,Looking for an experienced professional for Intercity transport in Batna. The work involves one-time service with competitive compensation.,Transportation,Batna
+job_487,Pottery services in Saïda,Looking for an experienced professional for Pottery services in Saïda. The work involves regular maintenance with competitive compensation.,Handcrafts,Saïda
+job_488,Fruit picking in Aïn Témouchent,Need assistance with Fruit picking in Aïn Témouchent. Ideal for part-time workers with knowledge in agriculture & gardening.,Agriculture & Gardening,Aïn Témouchent
+job_489,Jewelry making in Djanet,Hiring for Jewelry making in the Djanet area. Portfolio requested. Fair payment and potential for regular work.,Handcrafts,Djanet
+job_490,Graphic design in Ouled Djellal,Graphic design expert needed in Ouled Djellal. Project involves public venue. Good communication skills and punctuality essential.,Digital Services,Ouled Djellal
+job_491,Event photography in Mascara,Events & Celebrations professional wanted for Event photography in Mascara. Short-term project with possibility for extension.,Events & Celebrations,Mascara
+job_492,University exam preparation in Oran,Looking for talented teaching & education specialist for University exam preparation work in Oran. Project starts immediately.,Teaching & Education,Oran
+job_493,Moving assistance in Béjaïa,Looking for an experienced professional for Moving assistance in Béjaïa. The work involves ongoing support with competitive compensation.,Transportation,Béjaïa
+job_494,Mobile app development in Biskra,Looking for talented digital services specialist for Mobile app development work in Biskra. Project starts next week.,Digital Services,Biskra
+job_495,Home appliance repair in Bouira,Hiring for Home appliance repair in the Bouira area. References needed. Fair payment and potential for regular work.,Maintenance & Repairs,Bouira
+job_496,Computer maintenance in Ouled Djellal,Need assistance with Computer maintenance in Ouled Djellal. Ideal for students with knowledge in maintenance & repairs.,Maintenance & Repairs,Ouled Djellal
+job_497,Home appliance repair in Saïda,Home appliance repair expert needed in Saïda. Project involves commercial space. Good communication skills and punctuality essential.,Maintenance & Repairs,Saïda
+job_498,Wood crafting in Tizi Ouzou,Seeking skilled individual for Wood crafting services in Tizi Ouzou. Must have own tools and transportation. Weekend work required.,Handcrafts,Tizi Ouzou
+job_499,University exam preparation in Relizane,Need assistance with University exam preparation in Relizane. Ideal for retirees with knowledge in teaching & education.,Teaching & Education,Relizane

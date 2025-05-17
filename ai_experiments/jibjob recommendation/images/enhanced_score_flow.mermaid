@@ -1,0 +1,13 @@
+```mermaid
+flowchart TD
+    A[Commentaire de l'utilisateur] --> B[Modèle BERT]
+    B --> C{Analyse de sentiment}
+    C -->|Positif| D[Score > 0]
+    C -->|Négatif| E[Score < 0]
+    D --> F[Normalisation à [0,1]]
+    E --> F
+    G[Note explicite] --> H[Normalisation à [0,1]]
+    F --> I((Calcul du score amélioré))
+    H --> I
+    I --> J[Score final de l'interaction]
+```

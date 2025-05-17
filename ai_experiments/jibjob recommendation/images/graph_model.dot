@@ -1,0 +1,41 @@
+digraph gcn_model {
+    // Graph settings
+    rankdir=TB;
+    node [shape=circle, style=filled, fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+    
+    // Users
+    subgraph cluster_users {
+        style=filled;
+        color=lightgrey;
+        label="Utilisateurs";
+        node [fillcolor=lightpink];
+        
+        user1 [label="User 1"];
+        user2 [label="User 2"];
+        user3 [label="User 3"];
+    }
+    
+    // Jobs
+    subgraph cluster_jobs {
+        style=filled;
+        color=lightgrey;
+        label="Emplois";
+        node [fillcolor=lightgreen];
+        
+        job1 [label="Job A"];
+        job2 [label="Job B"];
+        job3 [label="Job C"];
+    }
+    
+    // Connections representing interactions
+    user1 -> job1 [label="5★", color=green, penwidth=2];
+    user1 -> job2 [label="4★", color=green, penwidth=1.5];
+    user2 -> job1 [label="3★", color=orange, penwidth=1];
+    user2 -> job3 [label="2★", color=orange, penwidth=1];
+    user3 -> job2 [label="1★", color=red, penwidth=0.5];
+    user3 -> job3 [label="?", style=dashed, label="Prédiction"];
+    
+    // Legend
+    legend [shape=box, label="Légende\n\nLignes vertes: Notes élevées\nLignes orange: Notes moyennes\nLignes rouges: Notes basses\nLignes pointillées: Prédictions", fillcolor=white];
+}

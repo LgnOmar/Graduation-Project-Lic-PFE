@@ -1,0 +1,40 @@
+```mermaid
+graph LR
+    subgraph Couche d'entrée
+        U1((Utilisateur 1))
+        U2((Utilisateur 2))
+        U3((Utilisateur 3))
+        J1((Emploi A))
+        J2((Emploi B))
+        J3((Emploi C))
+    end
+    
+    subgraph Couches cachées GCN
+        H1{Couche GCN 1}
+        H2{Couche GCN 2}
+    end
+    
+    subgraph Sortie
+        S((Prédiction de score))
+    end
+    
+    U1 --> H1
+    U2 --> H1
+    U3 --> H1
+    J1 --> H1
+    J2 --> H1
+    J3 --> H1
+    
+    H1 --> H2
+    H2 --> S
+    
+    classDef user fill:#f9d5e5,stroke:#333,stroke-width:1px;
+    classDef job fill:#d5f5e3,stroke:#333,stroke-width:1px;
+    classDef hidden fill:#d5e8f9,stroke:#333,stroke-width:1px;
+    classDef output fill:#fcf3cf,stroke:#333,stroke-width:1px;
+    
+    class U1,U2,U3 user;
+    class J1,J2,J3 job;
+    class H1,H2 hidden;
+    class S output;
+```

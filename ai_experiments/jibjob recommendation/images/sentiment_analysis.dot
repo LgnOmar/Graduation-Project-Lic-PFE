@@ -1,0 +1,26 @@
+digraph bert_sentiment {
+    rankdir=LR;
+    node [shape=box, style=filled, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+    
+    // Input text
+    review [label="\"Le travail était bien payé mais les\nhoraires étaient difficiles à gérer.\"", shape=note, fillcolor=lightyellow];
+    
+    // BERT Processing
+    bert [label="Modèle BERT", shape=box3d, fillcolor=lightblue];
+    
+    // BERT output
+    embedding [label="Embedding BERT", shape=box, fillcolor=lightgrey];
+    
+    // Sentiment Analysis
+    sentiment [label="Analyse de Sentiment", shape=diamond, fillcolor=lightpink];
+    
+    // Results
+    score [label="Score Sentiment: +0.2\n(Légèrement positif)", shape=box, fillcolor=lightgreen];
+    
+    // Flow
+    review -> bert [label="Texte d'entrée"];
+    bert -> embedding [label="Traitement contextuel"];
+    embedding -> sentiment [label="Classification"];
+    sentiment -> score [label="Résultat"];
+}

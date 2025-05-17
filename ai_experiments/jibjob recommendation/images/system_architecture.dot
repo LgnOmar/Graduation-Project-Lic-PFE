@@ -1,0 +1,58 @@
+digraph recommendation_system {
+    // Graph settings
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=8];
+    
+    // Define main stages
+    subgraph cluster_0 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled, fillcolor=white];
+        label="1. Data Simulation";
+        
+        users [label="Users Data\n(ID, Profile)"];
+        jobs [label="Jobs Data\n(ID, Description, Category)"];
+        interactions [label="Interactions Data\n(Ratings, Comments)"];
+        
+        users -> interactions;
+        jobs -> interactions;
+    }
+    
+    subgraph cluster_1 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled, fillcolor=white];
+        label="2. Feature Engineering";
+        
+        sentiment [label="Sentiment Analysis\nBERT"];
+        embeddings [label="Word Embeddings\nBERT"];
+        features [label="Enhanced Features\nRatings + Sentiment"];
+        
+        sentiment -> features;
+        embeddings -> features;
+    }
+    
+    subgraph cluster_2 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled, fillcolor=white];
+        label="3. GCN Model Training";
+        
+        graph_construction [label="Graph Construction"];
+        training [label="Model Training"];
+        evaluation [label="Model Evaluation"];
+        
+        graph_construction -> training;
+        training -> evaluation;
+    }
+    
+    // Connect the stages
+    interactions -> sentiment;
+    interactions -> embeddings;
+    features -> graph_construction;
+    evaluation -> API;
+    
+    // Final API
+    API [label="API\nRecommendation Endpoints", fillcolor=lightgreen];
+}
