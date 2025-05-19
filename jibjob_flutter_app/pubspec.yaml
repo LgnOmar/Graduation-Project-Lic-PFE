@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   supabase_flutter: ^2.0.0
+  flutter_dotenv: ^5.1.0
   flutter:
     sdk: flutter
 
@@ -53,6 +54,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - assets/.env
     - assets/logo.png
     - assets/illustration.png
     - assets/mid3.jpg
