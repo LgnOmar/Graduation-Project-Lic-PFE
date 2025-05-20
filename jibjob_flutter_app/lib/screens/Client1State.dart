@@ -1,135 +1,140 @@
 import 'package:flutter/material.dart';
 import 'JibJobHomePageFirstTime1.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'Client2State.dart' ;
 
+
 class Client1State extends StatelessWidget {
-  final Color darkPurple = Color(0xFF20004E);
+
 
   @override
   Widget build(BuildContext context) {
+
+      double screenWidth = MediaQuery.of(context).size.width;
+      double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+
+      body: Stack(
+        children: [
+         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start ,
           children: [
-            SizedBox(height: 70),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/logo.png',
-                  width: 300,
+                SizedBox(height: screenHeight* 0.08) ,
+                Container(
+                  alignment: Alignment.center ,
+                  width: screenWidth * 0.7,
+                  height: screenHeight * 0.1,
+                  child: Image.asset(
+                    "assets/logo.png",
+                    fit: BoxFit.contain,
+                  ),
                 ),
-              ],
-            ),
-            SizedBox(height: 70),
+                SizedBox(height: screenHeight* 0.02) ,
 
-            Container( alignment: Alignment.topCenter, 
-            child : Image.asset(
-              'assets/client1.png', // Replace with actual image
-              height: 250,
-              width: double.infinity,
-              fit: BoxFit.contain,
-            )) ,
-            SizedBox(height: 40),
-
-            Container(margin :EdgeInsets.fromLTRB(0, 0, 0, 0)   ,
-            child : Text(
-              "Publier votre",
-              style: TextStyle(
-                color: const Color(0xFF130160),
-                fontSize: 50,
-                fontFamily: 'DM Sans',
-                fontWeight: FontWeight.w600,
-                height: 0.95,
-              ),
-            )),
-             Container(margin :EdgeInsets.fromLTRB(0, 0, 0, 0)   ,
-            child : Text(
-              " Demande",
-              style: TextStyle(
-                color: const Color(0xFF130160),
-                fontSize: 62,
-                fontFamily: 'DM Sans',
-                fontWeight: FontWeight.w600,
-                height: 0.95,
-              ),
-            )),
-            SizedBox(height: 35),
-            Container( margin :EdgeInsets.fromLTRB(40, 0, 40, 0) , 
-            child:Text(
-              "Décrivez votre besoin en quelques clics",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: const Color(0xFF130160) /* Main1 */,
-                fontSize: 22,
-                fontFamily: 'DM Sans',
-                fontWeight: FontWeight.w300,
-                height: 0.95,
-              ),
-            )),
-            SizedBox(height: 60),
-            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                
-                Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                margin : EdgeInsets.fromLTRB(0, 0, 0, 0) ,
-                height: 70,
-                width: 70,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple,
-                  shape: BoxShape.circle,
+            Container(
+                  width: screenWidth ,
+                  height: screenHeight * 0.3,
+                  child: Image.asset(
+                    "assets/client1.png",
+                    fit: BoxFit.contain,
+                  ),
                 ),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.white),
-                  onPressed: () {
-                      runApp(
-                      MaterialApp(
-                        home : JibJobHomePageFirstTime1() ,
-                        debugShowCheckedModeBanner: false
-                      )) ;
-                  },
-                ),
-              ),
-            ),
+
+                // Text
+                Container(
+  height: screenHeight * 0.19, // Container height
+  alignment: Alignment.topCenter,
+  width: screenWidth * 0.7, // Container width
+  child: AutoSizeText(
+    'Publier votre Demande',
+    style: TextStyle(
+      fontWeight: FontWeight.w600,
+      color: Colors.indigo[900],
+      fontSize: screenHeight * 0.06 ,
+    ),
+    maxLines: 2,  // Number of lines of text
+    
+  ),
+),
 
 
+                    SizedBox(height: screenHeight* 0.03) ,
+
+                    Container(
+                        height : screenHeight * 0.09 ,
+                        width: screenWidth * 0.7,
+                        child : AutoSizeText(
+                            "Décrivez votre besoin en quelques clics" ,
+                             style: TextStyle(
+                              fontSize: screenHeight * 0.022, 
+                              fontWeight: FontWeight.w400 , 
+                              color: Colors.indigo[900]
+                        ) ,
+                        maxLines: 2,
+                        ))
+
+                  
 
 
+         
 
-                Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                margin : EdgeInsets.fromLTRB(0, 0, 0, 0) ,
-                height: 70,
-                width: 70,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurple,
-                  shape: BoxShape.circle,
-                ),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_forward, color: Colors.white),
-                  onPressed: () {
-                      runApp(
-                      MaterialApp(
-                        home :Client2State() ,
-                        debugShowCheckedModeBanner: false
-                      )) ;
-                  },
-                ),
-              ),
-            ),
-              ],
-            ),
-          ],
-        ),
+        ]
       ),
-    );
-  }
-}
+
+       Positioned(
+                bottom: screenHeight * 0.01 , right: screenWidth * 0.05 ,
+                child :
+                Container(
+                  height : screenHeight * 0.09 ,
+                  alignment: Alignment.bottomRight ,
+                  child:
+
+                  IconButton(
+                    icon:
+                    Image.asset(
+                      'assets/forward.png',
+                      fit: BoxFit.fitHeight,
+                    ),
+
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Client2State()),
+                      );
+                    },
+                  ),
+                )
+            ),
+
+            Positioned(
+                bottom: screenHeight * 0.01 , left: screenWidth * 0.05 ,
+                child :
+                Container(
+                  height : screenHeight * 0.09 ,
+                  alignment: Alignment.bottomRight ,
+                  child:
+
+                  IconButton(
+                    icon:
+                    Image.asset(
+                      'assets/backward.png',
+                      fit:BoxFit.fitHeight ,
+                    ),
+
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => JibJobHomePageFirstTime1()),
+                      );
+                    },
+                  ),
+                )
+            ),
+
+      ]
+      
+      
+      ));
+      }}

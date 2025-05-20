@@ -84,30 +84,6 @@ class JibJobHomePageFirstTime extends StatelessWidget {
                 )
             ),
 
-            Positioned(
-                bottom: screenHeight*0.005 , left: screenWidth * 0.05 ,
-                child :
-                Container(
-                  padding: EdgeInsets.all(screenWidth * 0.04),
-                  alignment: Alignment.bottomRight ,
-                  child:
-
-                  IconButton(
-                    icon:
-                    Image.asset(
-                      'assets/backward.png',
-                    ),
-
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => JibJobHomePageFirstTime1()),
-                      );
-                    },
-                  ),
-                )
-            ),
-
           ],
 
 
