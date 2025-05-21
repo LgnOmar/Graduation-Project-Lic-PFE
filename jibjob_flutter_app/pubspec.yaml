@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   auto_size_text: ^3.0.0
+  image_picker: ^0.8.4+4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,6 +69,27 @@ flutter:
     - assets/developeur.png
     - assets/reparation.png
     - assets/technicien.png
+    
+    - assets/Infirmier.png
+    - assets/Kinesitherapeute.png
+    - assets/Pharmacien.png
+
+    - assets/Macon.png
+    - assets/Carreleur.png
+    - assets/Charpentier.png
+
+    - assets/poids_lourd.png
+    - assets/Livreur.png
+    - assets/Professeur.png
+
+    - assets/auto-ecole.png
+    - assets/educateur specialise.png
+    - assets/taxi.png
+
+
+
+
+
 
     - assets/logo2.png
     - assets/client.png
@@ -82,6 +104,7 @@ flutter:
     - assets/client3.png
     - assets/profilePhoto.png
 
+
     - assets/profile.png
     - assets/aide.png
     - assets/parametres.png
@@ -91,6 +114,9 @@ flutter:
     - assets/prix.png
     - assets/forward.png
     - assets/backward.png
+    
+    - assets/Picture_Icon.png
+    - assets/_Unkown.png
 
 
 

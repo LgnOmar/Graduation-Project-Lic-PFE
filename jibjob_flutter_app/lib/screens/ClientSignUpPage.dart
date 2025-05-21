@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'Profileclient.dart';
 import 'Client3State.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class ClientSignUpPage extends StatefulWidget {
   @override
@@ -9,13 +12,44 @@ class ClientSignUpPage extends StatefulWidget {
 
 // ignore: unused_element
 class _ClientSignUpPageState extends State<ClientSignUpPage> {
+
+  final ImagePicker _picker = ImagePicker();
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final cityController = TextEditingController();
   final presentationController = TextEditingController();
+  XFile? imageController ;  
 
+  XFile? _image; // To store the selected image
+
+  // Function to pick an image
+  Future<void> _pickImage() async {
+    try {
+      // Pick an image from the gallery
+      final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+
+      if (image != null) {
+        setState(() {
+          _image = image;
+          imageController = _image ;
+        });
+      } else {
+        // Handle case where user cancels the picker
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('No image selected.')),
+        );
+      }
+    } catch (e) {
+      // Handle any errors that occur
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to pick image: $e')),
+      );
+    }
+  }
+  
   final Color darkPurple = Color(0xFF20004E);
 
   @override
@@ -30,8 +64,9 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+          double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: darkPurple,
         unselectedItemColor: Colors.grey,
@@ -48,7 +83,6 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
 
       body: SafeArea(
         child: SingleChildScrollView(
-          //padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start ,
             children: [
@@ -61,18 +95,14 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                         icon: Icon(Icons.arrow_back, color: darkPurple),
                         iconSize: 35,
                         onPressed: () {
-                          runApp(
-                              MaterialApp(
-                                  home : Client3State() ,
-                                  debugShowCheckedModeBanner: false
-                              )) ;
+                              Navigator.push(context, MaterialPageRoute(builder: (_) => Client3State()));
                         },
                       ),
                       Text(
                         'Creer un compte client',
                         style: TextStyle(
                           fontFamily: 'DM Sans' ,
-                          fontSize: 27,
+                          fontSize: 18,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF130160),
                         ),
@@ -88,7 +118,7 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                         buildField("Email", "Ex: zakarya@gmail.com", emailController),
                         buildField("Mot de pass", "********", passwordController, isPassword: true),
                         buildField("Nom et Prenom", "ex: Zakarya Oukil", nameController),
-                        buildField("Telephone", "ex: 06 68 71 87 84", phoneController,
+                        buildField("Telephone", "ex:  68 71 87 84", phoneController,
                             subLabel: "Pour recevoir les demandes des clients"),
                         buildField("Commune", "ex: Birkhadem ou code postal", cityController,
                             subLabel: "Il est preferable de rechercher par code postal"),
@@ -102,34 +132,50 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
 
                         SizedBox(height: 24),
 
-                        Container( margin: EdgeInsets.fromLTRB(20, 0, 0, 0) ,
-                            child : Column(
-                                children: [
-                                  Text('   Photo de Profile\n', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600 ,)),
-                                  GestureDetector(
-                                    onTap: () {
+                        Column(
+                          children: [
+                            SizedBox(height: screenHeight * 0.03),
+                            Container(
+                              height: screenHeight * 0.2,
+                              width: screenHeight * 0.2,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[350] ,
+                                borderRadius: BorderRadius.circular(1000),
+                                border: Border.all(
+                                  color: Color(0xFF130160),
+                                  width: 2,
+                                ), 
+                              ),
 
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 40,
-                                      backgroundColor: Colors.grey[300],
-                                      child: Icon(Icons.camera_alt, size: 40, color: Colors.white),
-                                    ),
-                                  )])),
+                              child: GestureDetector(
+                                onTap: _pickImage,
+                                child: _image == null
+                                    ? ClipOval(
+                                      child: Image.asset(
+                                        "assets/Picture_Icon.png",
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ))
+                                    : ClipOval(
+                                      child: Image.file(
+                                        File(_image!.path),
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      )),
+                              ),
+                            
+                            )
+                          ],
+                        ),
 
                         SizedBox(height: 50,) ,
-
-
 
                         // Submit button
                         ElevatedButton(
                           onPressed: () {
-                            runApp(
-                                MaterialApp(
-                                  //home : Profileclient(emailController , passwordController , nameController , phoneController ,cityController ) ,
-                                    debugShowCheckedModeBanner: false
-                                )) ;
-                            // Navigator.push(context, MaterialPageRoute(builder: (_) => NextPage()));
+                                Navigator.push(context, MaterialPageRoute(builder: (_) => Profileclient(emailController , passwordController , nameController , phoneController , cityController , presentationController , imageController)));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF130160),
@@ -183,38 +229,38 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
   }
 
 
-  Widget buildFieldLarge(String label, String hint, TextEditingController controller,
-      {String? subLabel, bool isPassword = false}) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label , style: TextStyle(fontSize: 18)),
-          if (subLabel != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 2.0),
-              child: Text(
-                subLabel,
-                style: TextStyle(fontSize: 12, color: Colors.black54),
+    Widget buildFieldLarge(String label, String hint, TextEditingController controller,
+        {String? subLabel, bool isPassword = false}) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(label , style: TextStyle(fontSize: 18)),
+            if (subLabel != null)
+              Padding(
+                padding: const EdgeInsets.only(top: 2.0),
+                child: Text(
+                  subLabel,
+                  style: TextStyle(fontSize: 12, color: Colors.black54),
+                ),
+              ),
+            SizedBox(height: 6),
+            TextField(
+              maxLines: 5,
+              controller: controller,
+              decoration: InputDecoration(
+                hintText: hint,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                fillColor: Colors.grey[200] ,
+                filled: true ,
               ),
             ),
-          SizedBox(height: 6),
-          TextField(
-            maxLines: 5,
-            controller: controller,
-            decoration: InputDecoration(
-              hintText: hint,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 12),
-              fillColor: Colors.grey[200] ,
-              filled: true ,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
+    }
 }

@@ -14,7 +14,6 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final cityController = TextEditingController();
-  final presentationController = TextEditingController();
 
   final Color darkPurple = Color(0xFF20004E);
 
@@ -61,11 +60,7 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
                         icon: Icon(Icons.arrow_back, color: darkPurple),
                         iconSize: 35,
                         onPressed: () {
-                          runApp(
-                              MaterialApp(
-                                  home : Prointo3State() ,
-                                  debugShowCheckedModeBanner: false
-                              )) ;
+                              Navigator.push(context, MaterialPageRoute(builder: (_) => Prointo3State()));
                         },
                       ),
                       Text(
@@ -98,12 +93,13 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
                         // Submit button
                         ElevatedButton(
                           onPressed: () {
-                            runApp(
-                                MaterialApp(
-                                    home : ProSignUpPage() ,
-                                    debugShowCheckedModeBanner: false
-                                )) ;
-                            // Navigator.push(context, MaterialPageRoute(builder: (_) => NextPage()));
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => ProSignUpPage(
+                              emailController : emailController,
+                              passwordController : passwordController,
+                              nameController : nameController,
+                              phoneController : phoneController,
+                              cityController : cityController
+                              )));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF130160),

@@ -1,15 +1,36 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'JibJobAuthPage.dart';
+import 'ProSignUpPage0.dart';
 import 'Profilepro.dart' ;
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'dart:ui';
 
 class ProSignUpPage extends StatefulWidget {
+  final TextEditingController emailController ;
+  final TextEditingController passwordController ;
+  final TextEditingController nameController ;
+  final TextEditingController phoneController ;
+  final TextEditingController cityController ;
+  
+  ProSignUpPage({
+    required this.emailController,
+    required this.passwordController,
+    required this.nameController,
+    required this.phoneController,
+    required this.cityController,
+  }) ;
+  
+
   @override
   _ProSignUpPageState createState() => _ProSignUpPageState();
 }
 
 class _ProSignUpPageState extends State<ProSignUpPage> {
 
+
   final Color darkPurple = Color(0xFF20004E);
+  final presentationController = TextEditingController();
 
   final List<Map<String, dynamic>> categories = [
     {
@@ -45,33 +66,136 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
       ]
     },
     {
-      "name": "Éducation",
+      "name": "Santé",
       "services": [
-        {"name" : "Prof particulier", "image": "assets/plombier.png"},
-        {"name" : "Coach scolaire", "image": "assets/plombier.png"},
-        {"name" : "Formateur", "image": "assets/plombier.png"}
+        {"name" : "Infirmier", "image": "assets/Infirmier.png"},
+        {"name" : "Coach Kinésithérapeute", "image": "assets/Kinesitherapeute.png"},
+        {"name" : "Pharmacien", "image": "assets/Pharmacien.png"}
       ]
     },
     {
-      "name": "Nettoyage",
+      "name": "Bâtiment",
       "services": [
-        {"name" : "Ménage", "image": "assets/plombier.png"},
-        {"name" : "Vitres", "image": "assets/plombier.png"},
-        {"name" : "Tapis", "image": "assets/plombier.png"}
+        {"name" : "Maçon", "image": "assets/Macon.png"},
+        {"name" : "Carreleur", "image": "assets/Carreleur.png"},
+        {"name" : "Charpentier", "image": "assets/Charpentier.png"}
+      ]
+    },
+    {
+      "name": "Transports",
+      "services": [
+        {"name" : "poids lourd", "image": "assets/poids_lourd.png"},
+        {"name" : "Livreur", "image": "assets/Livreur.png"},
+        {"name" : "Taxi", "image": "assets/taxi.png"}
+      ]
+    },
+    {
+      "name": "Éducation",
+      "services": [
+        {"name" : "Professeur", "image": "assets/educateur specialise.png"},
+        {"name" : "auto-école", "image": "assets/auto-ecole.png"},
+        {"name" : "Éducateur spécialisé", "image": "assets/Professeur.png"}
       ]
     },
   ];
 
   Set<String> selectedServices = {};
 
+final ImagePicker _picker = ImagePicker();
+
+  
+  XFile? _image;
+  XFile? imageController ;
+  List<XFile?> _images = [null];
+
+  int number = 1 ;
+
+void AddPicture() {
+    setState(() {
+      if(_images[number-1] != null) {
+        _images.add(null); 
+        number++; 
+      }
+      
+    });
+  }
+
+  void RemovePicture() {
+    if (number > 1) {
+      setState(() {
+        _images.removeLast();
+        number--; 
+      });
+    }else if (number == 1){
+      _images[0] = null ;
+    }
+  }
+
+
+
+  // Function to pick the profile image
+  Future<void> _pickImageProfile() async {
+    try {
+      // Pick an image from the gallery
+      final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+
+      if (image != null) {
+        setState(() {
+          _image = image;
+          imageController = _image ;
+        });
+      } else {
+        // Handle case where user cancels the picker
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('No image selected.')),
+        );
+      }
+    } catch (e) {
+      // Handle any errors that occur
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to pick image: $e')),
+      );
+    }
+  }
+
+  Future<void> _pickImage(int index) async {
+    try {
+      final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+      if (image != null) {
+        setState(() {
+          _images[index] = image; // Update the image at the specific index
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('No image selected.')));
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to pick image: $e')));
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
+
+    
+
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    String email = widget.emailController.text;
+    String password = widget.passwordController.text;
+    String name = widget.nameController.text;
+    String phone = widget.phoneController.text;
+    String city = widget.cityController.text;
+
+
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: ListView(
             children: [
               // Header
@@ -80,11 +204,7 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
                   IconButton(
                     icon: Icon(Icons.arrow_back, color: darkPurple),
                     onPressed: () {
-                      runApp(
-                          MaterialApp(
-                              home : JibJobAuthPage() ,
-                              debugShowCheckedModeBanner: false
-                          )) ;
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => ProSignUpPage0()));
                     },
                   ),
                   SizedBox(width: 10),
@@ -104,29 +224,63 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
               Text("Presentation",
                   style: TextStyle(fontWeight: FontWeight.bold)),
               Text("Presenter vous en quelques mots aux clients"),
+
               SizedBox(height: 8),
-              TextField(
-                maxLines: 4,
-                decoration: InputDecoration(
-                  hintText:
-                  "ex: j'ai x années d’expérience en x. Le peux fournir le service a...",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+
+              buildField(
+                "Presentation",
+               "ex: j'ai x années d’expérience en x. Le peux fournir le service a...",
+                presentationController,
+                subLabel: "Presenter vous en quelques mots aux clients",
                 ),
-              ),
+
               SizedBox(height: 24),
 
               // Photo de profile
               Text("Photo de Profile",
                   style: TextStyle(fontWeight: FontWeight.bold)),
-              Text("Photo de votre visage"),
+              Text("photo de votre visage"),
+
               SizedBox(height: 12),
-              CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.grey[300],
-                child: Icon(Icons.camera_alt, size: 30, color: Colors.grey[700]),
-              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: screenHeight * 0.03),
+                            Container(
+                              height: screenHeight * 0.2,
+                              width: screenHeight * 0.2,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[350] ,
+                                borderRadius: BorderRadius.circular(1000),
+                                border: Border.all(
+                                  color: Color(0xFF130160),
+                                  width: 2,
+                                ), 
+                              ),
+
+                              child: GestureDetector(
+                                onTap: _pickImageProfile,
+                                child: _image == null
+                                    ? ClipOval(
+                                      child: Image.asset(
+                                        "assets/Picture_Icon.png",
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ))
+                                    : ClipOval(
+                                      child: Image.file(
+                                        File(_image!.path),
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      )),
+                              ),
+                            
+                            )
+                          ],
+                        ),
               SizedBox(height: 24),
 
               // Realisations
@@ -134,22 +288,80 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
                   style: TextStyle(fontWeight: FontWeight.bold)),
               Text("Montrez aux clients des photos de vos travaux"),
               SizedBox(height: 12),
+
+              SizedBox(height: 12),
+
               Wrap(
+                
                 spacing: 8,
                 runSpacing: 8,
                 children: List.generate(
-                  6,
+                  number,
                       (index) => Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(Icons.camera_alt),
-                  ),
-                ),
+                              height: screenHeight * 0.1,
+                              width: screenHeight * 0.1,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[350] ,
+                                borderRadius: BorderRadius.circular(1000),
+                                border: Border.all(
+                                  color: Color(0xFF130160),
+                                  width: 2,
+                                ), 
+                              ),
+
+                              child: GestureDetector(
+                                onTap: () => _pickImage(index),
+                                child: _images[index] == null
+                                    ? ClipOval(
+                                      child: Image.asset(
+                                        "assets/Picture_Icon.png",
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ))
+                                    : ClipOval(
+                                      child: Image.file(
+                                        File(_images[index]!.path),
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      )),
+                              ),
+                            
+                            )
+                ) , 
+
               ),
+
+              SizedBox(height: 24),
+
+              Row(
+              
+              children: [
+              
+               Container(
+                width: screenWidth*0.4,
+               child : ElevatedButton(
+                onPressed: AddPicture,
+                child: AutoSizeText('Ajouter une photo' , maxLines: 1, minFontSize: 1,) ,
+              ),
+               ),
+
+                SizedBox(width: screenWidth*0.1,),
+
+
+               Container(
+                width: screenWidth*0.4,
+               child : ElevatedButton(
+                onPressed: RemovePicture,
+                child: AutoSizeText('Supprimer une photo' , maxLines: 1, minFontSize: 1,),
+              ),
+               )
+               
+               
+               
+               ]) ,
+
               SizedBox(height: 24),
 
               // Services
@@ -188,9 +400,10 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 40,
+                                radius: screenWidth * 0.25 / 2,
                                 backgroundColor: isSelected ? Colors.deepPurple : Colors.grey[300],
-                                backgroundImage: AssetImage(imagePath),
+                                backgroundImage:  isSelected ? null : AssetImage(imagePath),
+                                
                                 child: isSelected
                                     ? Icon(Icons.check, color: Colors.white, size: 32)
                                     : null,
@@ -212,11 +425,8 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
               SizedBox(height: 32),
 
               ElevatedButton(
-                onPressed: () {runApp(
-                    MaterialApp(
-                        home : Profilepro() ,
-                        debugShowCheckedModeBanner: false
-                    )) ;
+                onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => Profilepro(email , password , name , phone , city , presentationController.text , selectedServices , imageController , _images)));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: darkPurple,
@@ -231,6 +441,42 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+    Widget buildField(String label, String hint, TextEditingController controller,
+      {String? subLabel, bool isPassword = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label , style: TextStyle(fontSize: 18)),
+          if (subLabel != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 2.0),
+              child: Text(
+                subLabel,
+                style: TextStyle(fontSize: 12, color: Colors.black54),
+              ),
+            ),
+          SizedBox(height: 6),
+          TextField(
+            maxLines: 4,
+            controller: controller,
+            obscureText: isPassword,
+            decoration: InputDecoration(
+              hintText: hint,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              contentPadding: EdgeInsets.symmetric(horizontal: 12),
+              fillColor: Colors.grey[200] ,
+              filled: true ,
+            ),
+          ),
+        ],
       ),
     );
   }
