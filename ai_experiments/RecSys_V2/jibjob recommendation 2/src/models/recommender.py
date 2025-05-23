@@ -1161,7 +1161,7 @@ class JobRecommender:
             # --- END NEW Ground Truth ---
 
             # --- MODIFIED LOGGING FOR GROUND TRUTH ---
-            logger.info(f"EVAL LOG User {user_id}: Test items and their (normalized enhanced) ratings:")
+            logger.debug(f"EVAL LOG User {user_id}: Test items and their (normalized enhanced) ratings:")
                 
             logger.info(f"EVAL LOG User {user_id}: Found {len(relevant_job_ids_for_user)} 'is_relevant_for_ranking_eval'==True jobs in test set. True Relevant Job IDs (first 5): {relevant_job_ids_for_user[:5]}")
             all_ground_truth_for_ranking.append(relevant_job_ids_for_user)
@@ -1194,12 +1194,12 @@ class JobRecommender:
             # --- End of Modification ---
 
             if should_log_details_for_this_user: # Conditional logging
-                logger.info(f"EVAL LOG User {user_id} - Top {top_k} recommended job IDs & GCN scores by HeteroGCN:")
+                logger.debug(f"EVAL LOG User {user_id} - Top {top_k} recommended job IDs & GCN scores by HeteroGCN:")
                 for rec_item in recs_for_user[:top_k]: # Use [:top_k] in case recs_for_user is shorter
-                    logger.info(f"  Rec: {rec_item['job_id']}, Score: {rec_item['score']:.4f}")
+                    logger.debug(f"  Rec: {rec_item['job_id']}, Score: {rec_item['score']:.4f}")
 
                 if relevant_job_ids_for_user:
-                    logger.info(f"EVAL LOG User {user_id} - GCN Predicted scores for THEIR ACTUAL RELEVANT test jobs:")
+                    logger.debug(f"EVAL LOG User {user_id} - GCN Predicted scores for THEIR ACTUAL RELEVANT test jobs:")
                     for true_relevant_job_id in relevant_job_ids_for_user:
                         if true_relevant_job_id in self.job_to_idx:
                             true_relevant_job_idx = self.job_to_idx[true_relevant_job_id]
@@ -1208,9 +1208,9 @@ class JobRecommender:
                             self.graph_model.eval() # Ensure model is in eval mode
                             with torch.no_grad():
                                 pred_score_for_true_relevant = self.graph_model(self.graph.to(self.device), user_idx_tensor, job_idx_tensor).item()
-                            logger.info(f"  True Relevant: {true_relevant_job_id}, GCN Predicted Score for it: {pred_score_for_true_relevant:.4f}")
+                            logger.debug(f"  True Relevant: {true_relevant_job_id}, GCN Predicted Score for it: {pred_score_for_true_relevant:.4f}")
                         else:
-                            logger.info(f"  True Relevant: {true_relevant_job_id} (not in job_to_idx mapping for GCN prediction, skipping score log for it)")
+                            logger.debug(f"  True Relevant: {true_relevant_job_id} (not in job_to_idx mapping for GCN prediction, skipping score log for it)")
             # <<<------------------------------------------------------------------------------------------------------<<<
             
             all_recommendations_for_ranking.append([rec['job_id'] for rec in recs_for_user])

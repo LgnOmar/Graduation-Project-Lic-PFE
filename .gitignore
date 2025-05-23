@@ -1,3 +1,9 @@
+# Virtual environments
+ai_experiments/RecSys_V2/jibjob recommendation 2/venv/
+
+# Saved models / large artifacts (if you want to ignore them)
+ai_experiments/RecSys_V2/jibjob recommendation 2/jibjob_recommender_model/
+
 .env
 
 # Miscellaneous

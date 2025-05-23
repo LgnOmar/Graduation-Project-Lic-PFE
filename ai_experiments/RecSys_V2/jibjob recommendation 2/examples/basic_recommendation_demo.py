@@ -321,14 +321,14 @@ def main():
         job_col='job_id',
         rating_col='rating',                # Model trains on normalized 'rating'
         comment_col='comment',
-        epochs=50,                          
+        epochs=50,
         val_ratio=0.2,                      
-        early_stop_patience=15,             
-        batch_size=32,                     
+        early_stop_patience=20,
+        batch_size=32,
         learning_rate=0.001,
         gcn_embedding_dim=256,              
         hidden_dim_gcn=128,                 
-        num_layers_gcn=2,                   
+        num_layers_gcn=2,
         dropout_gcn=0.3
     )
     
