@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch_geometric.nn import GCNConv, SAGEConv, GATConv
+from torch_geometric.nn import HeteroConv, GCNConv, SAGEConv
 from torch_geometric.data import Data, HeteroData
 import numpy as np
 from typing import Dict, List, Tuple, Union, Optional
@@ -15,8 +16,7 @@ import os
 import json
 
 # Setup logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__) 
 
 class GCNRecommender(nn.Module):
     """
@@ -325,7 +325,8 @@ class HeterogeneousGCN(nn.Module):
         embedding_dim: int = 64,
         hidden_dim: int = 64,
         num_layers: int = 2,
-        dropout: float = 0.2
+        dropout: float = 0.2,
+        conv_layer_type: str = 'sage'
     ):
         """
         Initialize the heterogeneous GCN recommendation model.
@@ -340,6 +341,9 @@ class HeterogeneousGCN(nn.Module):
             dropout: Dropout rate for regularization.
         """
         super(HeterogeneousGCN, self).__init__()
+
+        #store the original dimensions passed
+        self.input_node_feature_dims = node_feature_dims
         
         self.node_types = node_types
         self.edge_types = edge_types
@@ -350,26 +354,34 @@ class HeterogeneousGCN(nn.Module):
         # Node type-specific embeddings or feature transformations
         self.node_embeddings = nn.ModuleDict({
             node_type: nn.Linear(feature_dim, embedding_dim)
-            for node_type, feature_dim in node_feature_dims.items()
+            for node_type, feature_dim in self.input_node_feature_dims.items()
         })
+
+        # Import here to avoid circular imports
+        from torch_geometric.nn import HeteroConv, GCNConv
         
         # Heterogeneous graph convolution layers
         self.convs = nn.ModuleList()
         
-        # Import here to avoid circular imports
-        from torch_geometric.nn import HeteroConv, GCNConv
-        
-        for _ in range(num_layers):
-            # Create convolution for each edge type
+        for i in range(num_layers):
             conv_dict = {}
-            for src, rel, dst in edge_types:
-                # Different convolution for each edge type
-                conv_dict[(src, rel, dst)] = GCNConv(
-                    in_channels=(-1, -1),  # Inferred from forward pass
-                    out_channels=hidden_dim
+            for src_node_type, rel_type, dst_node_type in edge_types:
+                # Determine input dimension for this specific GCNConv
+                # For the first HeteroConv layer (i=0), input is self.embedding_dim (after projection)
+                # For subsequent layers (i>0), input is self.hidden_dim (output of previous layer)
+                current_in_channels = self.embedding_dim if i == 0 else self.hidden_dim
+                
+                # *** SWITCH TO SAGEConv ***
+                conv_dict[(src_node_type, rel_type, dst_node_type)] = SAGEConv(
+                    in_channels=(current_in_channels, current_in_channels), # SAGEConv for bipartite takes (in_channels_src, in_channels_dst)
+                                                                           # After our projection, both user and job features going into
+                                                                           # the first SAGEConv layer are of size `embedding_dim`.
+                                                                           # For subsequent layers, both are `hidden_dim`.
+                    out_channels=self.hidden_dim,
+                    # SAGEConv does not have 'add_self_loops' or 'normalize' in the same way GCNConv does.
+                    # It has its own aggregation mechanism.
+                    # Default aggregator for SAGEConv is 'mean'.
                 )
-            
-            # Wrap all convolutions in HeteroConv
             self.convs.append(HeteroConv(conv_dict, aggr='sum'))
         
         # Final prediction layer
@@ -441,7 +453,9 @@ class HeterogeneousGCN(nn.Module):
         config = {
             'node_types': self.node_types,
             'edge_types': self.edge_types,
-            'embedding_dim': self.embedding_dim,
+            # 'node_feature_dims' was the constructor argument. We now save what was passed.
+            'input_node_feature_dims': self.input_node_feature_dims,  # <-- THIS IS THE ADDED LINE
+            'embedding_dim': self.embedding_dim, # Target embedding dim for GCN layers
             'hidden_dim': self.hidden_dim,
             'num_layers': self.num_layers,
             'dropout': self.dropout.p
@@ -452,10 +466,11 @@ class HeterogeneousGCN(nn.Module):
             config['metadata'] = metadata
         
         with open(os.path.join(path, 'config.json'), 'w') as f:
-            json.dump(config, f)
+            json.dump(config, f, indent=4) # indent for readability
+        logger.info(f"HeterogeneousGCN model configuration saved to {os.path.join(path, 'config.json')}")
     
     @classmethod
-    def load(cls, path: str, node_feature_dims: Dict[str, int], device: str = 'cpu'):
+    def load(cls, path: str, device: str = 'cpu'):
         """
         Load a saved heterogeneous GCN model.
         
@@ -471,6 +486,8 @@ class HeterogeneousGCN(nn.Module):
         # Load configuration
         with open(os.path.join(path, 'config.json'), 'r') as f:
             config = json.load(f)
+            node_feature_dims_loaded = config.pop('input_node_feature_dims')
+            model = cls(node_feature_dims=node_feature_dims_loaded, **config)
         
         # Extract metadata if present
         metadata = config.pop('metadata', None)

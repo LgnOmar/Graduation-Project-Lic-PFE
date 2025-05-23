@@ -10,8 +10,7 @@ from typing import List, Dict, Union, Optional
 import logging
 
 # Setup logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__) 
 
 class BERTEmbeddings:
     """
