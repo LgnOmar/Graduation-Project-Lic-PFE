@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Prointo1State.dart';
-import 'Client1State.dart' ;
+import 'Pro/Prointo1State.dart';
+import 'Client/Client1State.dart' ;
 
 
 class JibJobHomePageFirstTime1 extends StatefulWidget {

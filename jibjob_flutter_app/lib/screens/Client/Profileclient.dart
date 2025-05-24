@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'ClientSignUpPage.dart';
 import 'dart:io';
+import 'package:jibjob/Person.dart';
+import 'package:jibjob/screens/Client/MakeOrder.dart';
+import 'package:jibjob/screens/Client/NewOrder.dart';
+import 'package:jibjob/screens/ParametresClient.dart';
 
-// ignore: must_be_immutable
-class Profileclient extends StatelessWidget {
+class Profileclient extends StatefulWidget {
+
+  int Client_Position ;
+
+  Profileclient({
+    required this.Client_Position,
+  }) ;
+
+
+  @override
+  _ProfileclientState createState() => _ProfileclientState();
+}
+
+
+class _ProfileclientState extends State<Profileclient> {
 
   final Color darkPurple = Color(0xFF20004E);
   final Color green = Color(0xFF25D366);
 
-  TextEditingController emailController ;
-  TextEditingController passwordController;
-  TextEditingController nameController;
-  TextEditingController phoneController;
-  TextEditingController cityController;
-  TextEditingController presentationController ;
-  XFile? imagePath ;
-
-
-  Profileclient(
-    this.emailController ,
-    this.passwordController,
-    this.nameController,
-    this.phoneController,
-    this.cityController,
-    this.presentationController ,
-    this.imagePath ,
-    );
-
+  int selectedNavIndex = 3;
 
 
   @override
@@ -37,19 +35,85 @@ class Profileclient extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width ;
     return Scaffold(
       backgroundColor: Colors.grey[300] ,
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: darkPurple,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Pros'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Demandes'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Compte'),
+
+      bottomNavigationBar : Stack(
+  alignment: Alignment.center,
+  children: [
+    Container(
+      height: 95,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 8,
+            offset: Offset(0, -2),
+          ),
         ],
-        currentIndex: 4,
-        type: BottomNavigationBarType.fixed,
       ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _NavBarItem(
+            icon: Icons.groups,
+            label: "Pros",
+            selected: selectedNavIndex == 0,
+            onTap: () => setState(() => selectedNavIndex = 0),
+          ),
+          _NavBarItem(
+            icon: Icons.campaign,
+            label: "Demandes",
+            selected: selectedNavIndex == 1,
+            onTap: () => setState(() {
+              selectedNavIndex = 1 ;
+              Navigator.push(context, MaterialPageRoute(builder: (_) => MakeOrder(Client_Position : widget.Client_Position,)));
+              }),
+          ),
+          SizedBox(width: 56), // Space for the FAB
+          _NavBarItem(
+            icon: Icons.message,
+            label: "Messages",
+            selected: selectedNavIndex == 2,
+            onTap: () => setState(() => selectedNavIndex = 2),
+          ),
+          _NavBarItem(
+            icon: Icons.person,
+            label: "Compte",
+            selected: selectedNavIndex == 3,
+            onTap: () => setState(
+              () {
+                selectedNavIndex = 3;
+              }),
+          ),
+        ],
+      ),
+    ),
+    Positioned(
+  bottom: 20,
+  child: ClipOval(
+    child: Container(
+      width: 60,
+      height: 60,
+      child: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => NewOrder(),
+            ),
+          );
+        },
+        backgroundColor: Color(0xFF20004E),
+        elevation: 4,
+        child: Icon(Icons.add, size: 40),
+      ),
+    ),
+  ),
+)
+
+,
+  ],
+),
       body: Padding(
         padding: EdgeInsets.all(screenWidth * 0.03),
         child: Column(
@@ -89,9 +153,9 @@ class Profileclient extends StatelessWidget {
                               ),
 
                     child : ClipOval(
-                    child: imagePath == null ?
+                    child: Liste_Clients[widget.Client_Position].image == null ?
                     Image.asset('assets/_Unkown.png' , fit: BoxFit.cover , width: double.infinity, height: double.infinity,) :
-                    Image.file(File(imagePath!.path ,), fit: BoxFit.cover , width: double.infinity, height: double.infinity,) ,
+                    Image.file(File(Liste_Clients[widget.Client_Position].image! ,), fit: BoxFit.cover , width: double.infinity, height: double.infinity,) ,
                     ) ,
                     
                   ) ,
@@ -105,7 +169,7 @@ class Profileclient extends StatelessWidget {
                       height: screenHeight * 0.035,
                       child :
                               AutoSizeText(
-                          nameController.text,
+                          Liste_Clients[widget.Client_Position].name == null ? "null" : Liste_Clients[widget.Client_Position].name!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -128,7 +192,7 @@ class Profileclient extends StatelessWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                       ),
                   child : AutoSizeText(
-                          cityController.text ,
+                          Liste_Clients[widget.Client_Position].address == null ? "null" : Liste_Clients[widget.Client_Position].address!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -156,7 +220,7 @@ class Profileclient extends StatelessWidget {
                       SizedBox(width: 8),
                       Container(
                         child :AutoSizeText(
-                          phoneController.text,
+                          Liste_Clients[widget.Client_Position].phone == null ? "null" : Liste_Clients[widget.Client_Position].phone!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -267,7 +331,12 @@ class Profileclient extends StatelessWidget {
                   children: [
                   IconButton(
                     icon: Image.asset('assets/parametres.png', width: 50, height: 50 ,),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ParametresClient()),
+                      );
+                    },
                   ),
                   Container(
                     width: screenWidth * 0.35,
@@ -329,6 +398,48 @@ class Profileclient extends StatelessWidget {
 
 
         ),
+      ),
+    );
+  }
+}
+
+
+
+
+class _NavBarItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final bool selected;
+  final VoidCallback? onTap;
+
+  const _NavBarItem({
+    required this.icon,
+    required this.label,
+    this.selected = false,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            icon,
+            color: selected ? Color(0xFF20004E) : Colors.deepPurple.shade100,
+          ),
+          SizedBox(height: 2),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              color: selected ? Color(0xFF20004E) : Colors.deepPurple.shade100,
+              fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+        ],
       ),
     );
   }

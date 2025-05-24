@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:jibjob/Person.dart';
+import 'package:jibjob/Pro.dart';
 import 'ProSignUpPage.dart';
-import 'ProInto3State.dart' ;
+import 'Prointo3State.dart' ;
 
 class ProSignUpPage0 extends StatefulWidget {
   @override
   _ProSignUpPage0State createState() => _ProSignUpPage0State();
 }
 
-// ignore: unused_element
+
 class _ProSignUpPage0State extends State<ProSignUpPage0> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -31,18 +33,24 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: darkPurple,
-        unselectedItemColor: Colors.grey,
-        currentIndex: 4,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Pros'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Demandes'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Compte'),
-        ],
+
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Color(0xFF130160),
+        elevation: 0,
+        leading: IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        //Navigator.push(
+          //context,
+          //MaterialPageRoute(
+            //builder: (_) => ProInto3State(),
+          //),
+        //);
+      },
+    ),
+        title: Text("Créer un compte pro", style: TextStyle(color: Color(0xFF130160),)),
+        centerTitle: true,
       ),
 
       body: SafeArea(
@@ -51,29 +59,7 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top bar
-              Container ( color: Colors.grey[200] ,
-                  padding: EdgeInsets.symmetric(horizontal: 10 , vertical: 16 ) ,
-                  child : Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.arrow_back, color: darkPurple),
-                        iconSize: 35,
-                        onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (_) => Prointo3State()));
-                        },
-                      ),
-                      Text(
-                        'Creer un compte pro',
-                        style: TextStyle(
-                          fontFamily: 'DM Sans' ,
-                          fontSize: 27,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF130160),
-                        ),
-                      ),
-                    ],
-                  )),
+              // Top 
               SizedBox(height: 24),
 
               // Form fields
@@ -93,12 +79,24 @@ class _ProSignUpPage0State extends State<ProSignUpPage0> {
                         // Submit button
                         ElevatedButton(
                           onPressed: () {
+                            Pro person = Pro(
+                              name: nameController.text,
+                              email: emailController.text,
+                              password: passwordController.text,
+                              phone: phoneController.text,
+                              address: cityController.text,
+                              description: null ,
+                              image: null ,
+                              images: [] ,
+                              Services: [] ,
+                              tarifs: [],
+                            );
+
+                            print("nb clients${Person.nb}\n");
+                            print("nb Pros${Pro.nb}\n");
+
                             Navigator.push(context, MaterialPageRoute(builder: (_) => ProSignUpPage(
-                              emailController : emailController,
-                              passwordController : passwordController,
-                              nameController : nameController,
-                              phoneController : phoneController,
-                              cityController : cityController
+                              person: person,
                               )));
                           },
                           style: ElevatedButton.styleFrom(

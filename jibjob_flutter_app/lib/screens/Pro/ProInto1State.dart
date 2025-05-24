@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'JibJobHomePageFirstTime1.dart';
+import '../JibJobHomePageFirstTime1.dart';
 import 'Prointo2State.dart' ;
 
 
@@ -91,20 +91,20 @@ class Prointo1State extends StatelessWidget {
                   alignment: Alignment.bottomRight ,
                   child:
 
-                  IconButton(
-                    icon:
-                    Image.asset(
-                      'assets/forward.png',
-                      fit: BoxFit.fitHeight,
-                    ),
+                    IconButton(
+                      icon:
+                      Image.asset(
+                        'assets/forward.png',
+                        fit: BoxFit.fitHeight,
+                      ),
 
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Prointo2State()),
-                      );
-                    },
-                  ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Prointo2State()),
+                        );
+                      },
+                    ),
                 )
             ),
 

@@ -5,20 +5,16 @@ import 'Profilepro.dart' ;
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'dart:ui';
+import 'package:jibjob/Pro.dart';
+import 'ProSignUpPage0.dart';
+
 
 class ProSignUpPage extends StatefulWidget {
-  final TextEditingController emailController ;
-  final TextEditingController passwordController ;
-  final TextEditingController nameController ;
-  final TextEditingController phoneController ;
-  final TextEditingController cityController ;
+  Pro person ;
+
   
   ProSignUpPage({
-    required this.emailController,
-    required this.passwordController,
-    required this.nameController,
-    required this.phoneController,
-    required this.cityController,
+    required this.person,
   }) ;
   
 
@@ -99,7 +95,7 @@ class _ProSignUpPageState extends State<ProSignUpPage> {
     },
   ];
 
-  Set<String> selectedServices = {};
+  List<String?> selectedServices = [] ;
 
 final ImagePicker _picker = ImagePicker();
 
@@ -107,6 +103,7 @@ final ImagePicker _picker = ImagePicker();
   XFile? _image;
   XFile? imageController ;
   List<XFile?> _images = [null];
+  List<String?> imagesController = [null] ;
 
   int number = 1 ;
 
@@ -114,6 +111,7 @@ void AddPicture() {
     setState(() {
       if(_images[number-1] != null) {
         _images.add(null); 
+        imagesController.add(null);
         number++; 
       }
       
@@ -124,10 +122,14 @@ void AddPicture() {
     if (number > 1) {
       setState(() {
         _images.removeLast();
+        imagesController.removeLast();
         number--; 
       });
-    }else if (number == 1){
+    }else if (number == 1) {
       _images[0] = null ;
+      if (imagesController.isNotEmpty) {
+        imagesController[0] = null;
+      }
     }
   }
 
@@ -163,7 +165,11 @@ void AddPicture() {
       final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
       if (image != null) {
         setState(() {
-          _images[index] = image; // Update the image at the specific index
+          _images[index] = image;
+          while (imagesController.length <= index) {
+          imagesController.add(null);
+        }
+          imagesController[index] = _images[index]?.path ;
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('No image selected.')));
@@ -183,51 +189,38 @@ void AddPicture() {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    String email = widget.emailController.text;
-    String password = widget.passwordController.text;
-    String name = widget.nameController.text;
-    String phone = widget.phoneController.text;
-    String city = widget.cityController.text;
 
 
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Color(0xFF130160),
+        elevation: 0,
+        leading: IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => ProSignUpPage0(),
+          ),
+        );
+      },
+    ),
+        title: Text("Créer un compte pro", style: TextStyle(color: Color(0xFF130160),)),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: ListView(
             children: [
-              // Header
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back, color: darkPurple),
-                    onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => ProSignUpPage0()));
-                    },
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Creer un compte pro",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: darkPurple,
-                    ),
-                  )
-                ],
-              ),
               SizedBox(height: 24),
 
-              // Presentation
-              Text("Presentation",
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              Text("Presenter vous en quelques mots aux clients"),
-
-              SizedBox(height: 8),
-
               buildField(
+
                 "Presentation",
                "ex: j'ai x années d’expérience en x. Le peux fournir le service a...",
                 presentationController,
@@ -343,6 +336,7 @@ void AddPicture() {
                 width: screenWidth*0.4,
                child : ElevatedButton(
                 onPressed: AddPicture,
+
                 child: AutoSizeText('Ajouter une photo' , maxLines: 1, minFontSize: 1,) ,
               ),
                ),
@@ -426,7 +420,14 @@ void AddPicture() {
 
               ElevatedButton(
                 onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => Profilepro(email , password , name , phone , city , presentationController.text , selectedServices , imageController , _images)));
+                  widget.person.description = presentationController.text ;
+                  widget.person.image = imageController?.path ;
+                  widget.person.images = imagesController ;
+                  widget.person.Services = selectedServices ;
+
+                  Liste_Pros.add(widget.person);
+
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => Profilepro(Pro_Position : Pro.nb -1)));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: darkPurple,
@@ -435,7 +436,7 @@ void AddPicture() {
                   ),
                   padding: EdgeInsets.symmetric(vertical: 14),
                 ),
-                child: Text("Terminer"),
+                child: Text("Terminer" , style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold) ,),
               ),
               SizedBox(height: 24),
             ],

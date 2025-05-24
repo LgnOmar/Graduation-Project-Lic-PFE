@@ -1,54 +1,118 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:jibjob/screens/MesPrix.dart';
 import 'dart:io';
-import 'SplashScreen.dart';
+import 'package:jibjob/Pro.dart';
+import 'package:jibjob/screens/ParametresPro.dart';
 
-// ignore: must_be_immutable
-class Profilepro extends StatelessWidget {
 
-     String? email ;
-    String? password ;
-    String? name ;
-    String? phone ;
-    String? city ;
-    String? presentation ;
-    Set<String> selectedServices = {};
-    XFile? imageFile ;
-    String? imagePath ;
-    List<XFile?> _images = [null];
+class Profilepro extends StatefulWidget {
 
-    TextEditingController emailController = TextEditingController();
+  int Pro_Position ;
 
-    Profilepro(this.email , this.password , this.name , this.phone , this.city , this.presentation ,  this.selectedServices , this.imageFile , _images ) {}
+  Profilepro({
+    required this.Pro_Position,
+  }) ;
+
+
+  @override
+  _ProfileproState createState() => _ProfileproState();
+}
+
+
+
+class _ProfileproState extends State<Profilepro> {
 
 
   final Color darkPurple = Color(0xFF20004E);
-  final Color green = Color(0xFF25D366); // WhatsApp green
+  final Color green = Color(0xFF25D366);
+
+  int selectedNavIndex = 3;
 
   @override
   Widget build(BuildContext context) {
+    Pro pro = Liste_Pros[widget.Pro_Position] ;
 
-    imagePath = imageFile?.path;
+    print ("Nb = ${Pro.nb}") ;
     
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     
     return Scaffold(
       backgroundColor: Colors.grey[300] ,
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: darkPurple,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Pros'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Demandes'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Compte'),
+
+            bottomNavigationBar : Stack(
+  alignment: Alignment.center,
+  children: [
+    Container(
+      height: 95,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 8,
+            offset: Offset(0, -2),
+          ),
         ],
-        currentIndex: 4,
-        type: BottomNavigationBarType.fixed,
       ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _NavBarItem(
+            icon: Icons.groups,
+            label: "Pros",
+            selected: selectedNavIndex == 0,
+            onTap: () => setState(() => selectedNavIndex = 0),
+          ),
+          _NavBarItem(
+            icon: Icons.campaign,
+            label: "Demandes",
+            selected: selectedNavIndex == 1,
+            onTap: () => setState(() {
+              selectedNavIndex = 1 ;
+              //Navigator.push(context, MaterialPageRoute(builder: (_) => MakeOrder(Client_Position : widget.Client_Position,)));
+              }),
+          ),
+          SizedBox(width: 56), // Space for the FAB
+          _NavBarItem(
+            icon: Icons.message,
+            label: "Messages",
+            selected: selectedNavIndex == 2,
+            onTap: () => setState(() => selectedNavIndex = 2),
+          ),
+          _NavBarItem(
+            icon: Icons.person,
+            label: "Compte",
+            selected: selectedNavIndex == 3,
+            onTap: () => setState(
+              () {
+                selectedNavIndex = 3;
+              }),
+          ),
+        ],
+      ),
+    ),
+    Positioned(
+  bottom: 20,
+  child: ClipOval(
+    child: Container(
+      width: 60,
+      height: 60,
+      child: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xFF20004E),
+        elevation: 4,
+        child: Icon(Icons.add, size: 40),
+      ),
+    ),
+  ),
+)
+
+,
+  ],
+),
       body: SingleChildScrollView( 
       child : Padding(
         padding: const EdgeInsets.all(16.0),
@@ -91,9 +155,9 @@ class Profilepro extends StatelessWidget {
                               ),
 
                     child : ClipOval(
-                    child: imageFile == null ?
+                    child: pro.image == null ?
                     Image.asset('assets/_Unkown.png' , fit: BoxFit.cover , width: double.infinity, height: double.infinity,) :
-                    Image.file(File(imageFile!.path ,), fit: BoxFit.cover , width: double.infinity, height: double.infinity,) ,
+                    Image.file(File(pro.image!,), fit: BoxFit.cover , width: double.infinity, height: double.infinity,) ,
                     ) ,
                     
                   ) ,
@@ -107,7 +171,7 @@ class Profilepro extends StatelessWidget {
                       height: screenHeight * 0.035,
                       child :
                               AutoSizeText(
-                          name!,
+                          pro.name == null ? "" : pro.name!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -130,7 +194,7 @@ class Profilepro extends StatelessWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                       ),
                   child : AutoSizeText(
-                          city!,
+                          pro.address == null ? "" : pro.address!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -158,7 +222,7 @@ class Profilepro extends StatelessWidget {
                       SizedBox(width: 8),
                       Container(
                         child :AutoSizeText(
-                          phone!,
+                          pro.phone == null ? "" : pro.phone!,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: darkPurple,
@@ -184,7 +248,7 @@ class Profilepro extends StatelessWidget {
         spacing: 8,
         runSpacing: 5,
         children: 
-                 selectedServices.map((service) {
+                 pro.Services.map((service) {
             return Container(
                 padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
                 decoration: ShapeDecoration(
@@ -198,7 +262,7 @@ class Profilepro extends StatelessWidget {
                     spacing: 10,
                     children: [
                         Text(
-                            service,
+                            service ?? '',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 11,
@@ -221,43 +285,47 @@ SizedBox(height: 32),
 
 Row(
               children: [
+                                GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   width: 180,
                   height: 115,
                   alignment: Alignment.topLeft ,
                 decoration: ShapeDecoration(
+
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : 
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/profile.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/profile.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Mon Profile",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
+                      "Mon Profile",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          ))),
 
-                )
-                ,
-
+                GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -270,35 +338,35 @@ Row(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
                 child :
-                
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/prix.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/prix.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Mes Prix",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                )
+                      "Mes Prix",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          )))
               ],
             ),
             SizedBox(height: 20) ,
             Row(
               children: [
+                                GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          } ,
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   width: 180,
@@ -309,70 +377,74 @@ Row(
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : Column( crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/social.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/social.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Réseaux Sociaux",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                ),
+                      "Réseaux Sociaux",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          ))) ,
 
+                                          GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   width: 180,
                   height: 115,
+                  alignment: Alignment.topLeft ,
                 decoration: ShapeDecoration(
 
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : Column(
-                  crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/points.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/points.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Mes Points",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                )
-                
-                
+                      "Mes Points",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          )))                
               ],
             ),
 
             SizedBox(height: 20) ,
             Row(
               children: [
+                GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   width: 180,
@@ -383,70 +455,74 @@ Row(
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : Column( crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/accueil.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/accueil.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Acceuil",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                ),
+                      "Acceuil",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          ))) ,
 
+                          GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => ParametresPro()));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   width: 180,
                   height: 115,
+                  alignment: Alignment.topLeft ,
                 decoration: ShapeDecoration(
 
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : Column(
-                  crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/parametres.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/parametres.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Paramétres",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                )
-                
-                
+                      "Paramétres",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          )))
               ],
             ),
 
             SizedBox(height: 20) ,
             Row(
               children: [
+                GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => Mesprix(Pro_Position :widget.Pro_Position)));
+                          },
+                child :
                 Container( 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   width: 180,
@@ -457,29 +533,26 @@ Row(
                     color: Colors.white ,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ), 
-                child : Column( crossAxisAlignment: CrossAxisAlignment.start ,
-                  children: [
-                  IconButton(
-                    icon: Image.asset('assets/aide.png', width: 50, height: 50 ,),
-                    onPressed: () {},
-                  ),
-                  Container(
+                child :
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                              Image.asset('assets/aide.png', width: 50, height: 50 ,),
+                              Container(
                     width: screenWidth * 0.35,
                     height: screenHeight * 0.04,
                   child : AutoSizeText(
-                          "Aide & Support",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: darkPurple,
-                            fontSize: screenHeight * 0.025 ,
-                          ),
-                          maxLines: 1,  
-                          minFontSize: 1,
-                        )
-                  ) 
-                  ])
-                ),
-
+                      "Aide & Support",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: darkPurple,
+                        fontSize: screenHeight * 0.025 ,
+                      ),
+                      maxLines: 1,  
+                      minFontSize: 1,
+                    ))
+                            ],
+                          )))
           ])
         ,]
       ),
@@ -514,6 +587,47 @@ class ActionButton extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+
+
+class _NavBarItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final bool selected;
+  final VoidCallback? onTap;
+
+  const _NavBarItem({
+    required this.icon,
+    required this.label,
+    this.selected = false,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            icon,
+            color: selected ? Color(0xFF20004E) : Colors.deepPurple.shade100,
+          ),
+          SizedBox(height: 2),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              color: selected ? Color(0xFF20004E) : Colors.deepPurple.shade100,
+              fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'Profileclient.dart';
+import 'package:jibjob/Pro.dart';
 import 'Client3State.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:jibjob/Person.dart';
+import 'MakeOrder.dart' ;
 
 
 class ClientSignUpPage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
   final phoneController = TextEditingController();
   final cityController = TextEditingController();
   final presentationController = TextEditingController();
-  XFile? imageController ;  
+  XFile? imageController ;
 
   XFile? _image; // To store the selected image
 
@@ -67,19 +69,6 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
           double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: darkPurple,
-        unselectedItemColor: Colors.grey,
-        currentIndex: 4,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),
-          BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Pros'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Demandes'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Compte'),
-        ],
-      ),
 
       body: SafeArea(
         child: SingleChildScrollView(
@@ -175,7 +164,23 @@ class _ClientSignUpPageState extends State<ClientSignUpPage> {
                         // Submit button
                         ElevatedButton(
                           onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (_) => Profileclient(emailController , passwordController , nameController , phoneController , cityController , presentationController , imageController)));
+                            Person person = Person(
+                              name: nameController.text,
+                              email: emailController.text,
+                              password : passwordController.text,
+                              phone: phoneController.text,
+                              address: cityController.text,
+                              description: presentationController.text,
+                              image: imageController?.path,
+                            );
+                            
+                            Liste_Clients.add(person);
+
+                            
+                            print("nb clients${Person.nb}\n");
+                            print("nb Pros${Pro.nb}\n");
+                            
+                                Navigator.push(context, MaterialPageRoute(builder: (_) => MakeOrder(Client_Position: Person.nb -1 )));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF130160),

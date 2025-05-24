@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../JibJobApp.dart';
 import 'JibJobHomePageFirstTime.dart';
 
 
@@ -45,8 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color(0xD3200272),
       body: Center(
-        child: Container(alignment: Alignment.center , child: Image.asset('assets/logo2.png' , width: 300,))
-        ,
+        child: Container(alignment: Alignment.center ,  width: 700, height: 700 , child: Image.asset('assets/logo2.png' , fit: BoxFit.cover,)),
       ),
     );
   }
