@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Prointo1State.dart';
-import 'Client1State.dart' ;
+import 'Pro/Prointo1State.dart';
+import 'Client/Client1State.dart' ;
 
 
 class JibJobHomePageFirstTime1 extends StatefulWidget {
@@ -13,38 +13,49 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
   String selectedCategory = '';
 
   final Color darkPurple = Color(0xFF20004E);
-  final Color darkBlue = Color(0xFF003366);  // Dark blue color for selected card
+  final Color darkBlue = Color(0xFF003366);  
 
   @override
   Widget build(BuildContext context) {
+
+      double screenWidth = MediaQuery.of(context).size.width;
+      double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+
+      body: Stack(
+        children: [
+         Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start ,
           children: [
-            SizedBox(height: 70) ,
-            Container( alignment: Alignment.topCenter ,
-                child : Image.asset(
-                  'assets/logo.png',  // Use the logo image you want to display
-                  //height: 0,
-                  width: 300,
-                ) ),
-            SizedBox(height: 30),
+                SizedBox(height: screenHeight* 0.08) ,
+                Container(
+                  alignment: Alignment.center ,
+                  width: screenWidth * 0.7,
+                  height: screenHeight * 0.1,
+                  child: Image.asset(
+                    "assets/logo.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+
+            SizedBox(height: screenHeight* 0.02) ,
             Container(alignment: Alignment.topCenter ,
                 child : Text(
                   "Êtes vous :",
                   style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
+                    fontSize: screenHeight * 0.04 ,
+                     fontWeight: FontWeight.w800 ,
                     color: darkPurple,
                   ),
                 )),
-            SizedBox(height: 40),
+            SizedBox(height: screenHeight* 0.03) ,
 
             // Professionnel Card
-            GestureDetector(
+            Container(
+            height: screenHeight * 0.19,
+            child : GestureDetector(
               onTap: () {
                 setState(() {
                   if (selectedCategory != "Professionnel"){
@@ -56,7 +67,7 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
               },
               child: Card(
                 elevation: 4,
-                margin : EdgeInsets.fromLTRB(50, 0, 50, 0) ,
+                margin : selectedCategory == "Professionnel" ? EdgeInsets.fromLTRB(screenWidth*0.1, 0, screenWidth*0.1, 0) : EdgeInsets.fromLTRB(screenWidth*0.15, 0, screenWidth*0.15, 0)  ,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(color: darkPurple, width: 1),
@@ -65,31 +76,34 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
                 child: Column(
                   children: [
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      Container(
+                        height : screenHeight * 0.035 ,
                       child: Text(
                         "Professionnel ?",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: screenHeight * 0.028,
                           fontWeight: FontWeight.bold,
                           color: selectedCategory == "Professionnel" ? Colors.white : darkPurple, // Text color based on selection
                         ),
-                      ),
-                    ),
-                    Image.asset(
-                      'assets/Professionnel.png',  // Replace with actual image
-                      height: 150,
+                      )),
+                    Container(
                       width: double.infinity,
-                    ),
+                      height: screenHeight * 0.15,
+                    child : Image.asset(
+                      'assets/Professionnel.png',
+                        fit : BoxFit.fitHeight ,
+                    )),
                   ],
                 ),
               ),
-            ),
+            )),
 
-            SizedBox(height : 50 ) ,
+            SizedBox(height : screenHeight * 0.04) ,
 
             // Client Card
-            GestureDetector(
+            Container(
+            height: screenHeight * 0.19,
+            child : GestureDetector(
               onTap: () {
                 setState(() {
                   if (selectedCategory != "Client"){
@@ -101,7 +115,7 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
               },
               child: Card(
                 elevation: 4,
-                margin : EdgeInsets.fromLTRB(50, 0, 50, 0) ,
+                margin : selectedCategory == "Client" ? EdgeInsets.fromLTRB(screenWidth*0.1, 0, screenWidth*0.1, 0) : EdgeInsets.fromLTRB(screenWidth*0.15, 0, screenWidth*0.15, 0)  ,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(color: darkPurple, width: 1),
@@ -110,28 +124,30 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
                 child: Column(
                   children: [
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    Container(
+                      height: screenHeight * 0.035,
                       child: Text(
                         "Client",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: screenHeight * 0.028,
                           fontWeight: FontWeight.bold,
                           color: selectedCategory == "Client" ? Colors.white : darkPurple, // Text color based on selection
                         ),
-                      ),
-                    ),
-                    Image.asset(
-                      'assets/client.png',  // Replace with actual image
-                      height: 150,
+                      )),
+                    Container(
+                      height: 0.15 * screenHeight ,
                       width: double.infinity,
-                    ),
+                    child : Image.asset(
+                      'assets/client.png',
+                      width: double.infinity,
+                      fit : BoxFit.fitHeight ,
+                    )),
                   ],
                 ),
               ),
-            ),
+            )),
 
-            SizedBox(height : 60) ,
+            SizedBox(height : screenHeight * 0.04) ,
 
             // Show Visiteur Card only if no category is selected
             if (selectedCategory.isEmpty)
@@ -140,12 +156,12 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
 
                 },
 
-                child : Container ( alignment: Alignment.bottomCenter ,
-                    width: 400,
+                child : Container (
+                    margin : EdgeInsets.fromLTRB(screenWidth * 0, 0, screenWidth * 0 , 0),
+                    alignment: Alignment.topCenter,
                     child: Card(
                       color : Colors.white ,
                       elevation: 4,
-                      margin: EdgeInsets.symmetric(vertical: 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: BorderSide(color: darkPurple, width: 1),
@@ -154,7 +170,7 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
                       child : Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "Visiteur",
+                          "         Visiteur         ",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -164,42 +180,41 @@ class _JibJobHomePageFirstTime1State extends State<JibJobHomePageFirstTime1> {
                       ),
                     )),
               ),
+          ],
+        ),
+        if (selectedCategory.isNotEmpty)
+        Positioned(
+                bottom: screenHeight * 0.005 , right: screenWidth * 0.05 ,
+                child :
+                Container(
+                  padding: EdgeInsets.all(screenWidth * 0.04),
+                  alignment: Alignment.bottomRight ,
+                  child:
 
-            if (selectedCategory.isNotEmpty)
+                  IconButton(
+                    icon:
+                    Image.asset(
+                      'assets/forward.png',
+                    ),
 
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  margin : EdgeInsets.fromLTRB(0, 0, 20, 0) ,
-                  height: 70,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    shape: BoxShape.circle,
-                  ),
-                  child: IconButton(
-                    icon: Icon(Icons.arrow_forward, color: Colors.white),
+                    
                     onPressed: () {
-                      if (selectedCategory == "Client") {
-                        runApp(
-                            MaterialApp(
-                                home : Client1State() ,
-                                debugShowCheckedModeBanner: false
-                            )) ;
-                      }else if (selectedCategory == "Professionnel"){
-                        runApp(
-                            MaterialApp(
-                                home : Prointo1State() ,
-                                debugShowCheckedModeBanner: false
-                            )) ;
+                      if (selectedCategory == 'Professionnel'){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Prointo1State()),
+                      );
+                      }else if (selectedCategory == 'Client'){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Client1State()),
+                      );
                       }
                     },
                   ),
-                ),
-              )
-            ,
-          ],
-        ),
+                )
+            ),
+        ]
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'JibJobAuthPage.dart';
-import 'ClientSignUpPage.dart';
-import 'ProSignUpPage.dart';
+import 'Client/ClientSignUpPage.dart';
+import 'Pro/ProSignUpPage.dart';
 
 class CreateAccountPage extends StatelessWidget {
 
