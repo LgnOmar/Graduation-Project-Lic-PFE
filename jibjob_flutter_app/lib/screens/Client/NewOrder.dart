@@ -59,6 +59,8 @@ class _NewOrderState extends State<NewOrder> {
                 
                 Liste_Offres.add(offre) ;
 
+                print("length = ${Liste_Offres.length} \n\n") ;
+
                 for (var item in Liste_Offres) {
                   print("Demande : ${item.demande}\n");
                   print("Demande : ${item.phone}\n");

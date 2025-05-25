@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jibjob/screens/ListePrix.dart';
 import 'package:jibjob/screens/Pro/Profilepro.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -35,6 +36,16 @@ class _MesprixState extends State<Mesprix> {
           "title": descriptionController.text,
           "price": "${priceController.text}DA/${unitController.text}"
         });
+
+        Pros_Offers.add(Listeprix(
+          rate: "4.5",
+          name: Liste_Pros[widget.Pro_Position].name,
+          address: Liste_Pros[widget.Pro_Position].address,
+          image: Liste_Pros[widget.Pro_Position].image,
+          tarifs: Liste_Pros[widget.Pro_Position].tarifs,
+        ));
+
+
         });
         descriptionController.clear();
         priceController.clear();
@@ -182,7 +193,7 @@ SizedBox(
               child: ElevatedButton(
                 onPressed: () {
                   for (int i = 0; i < widget.Pro_Position + 1 ; i++) {
-                    print("\nName :${Liste_Pros[i].name}\n"); ;
+                    print("\nName :${Liste_Pros[i].name}\n");
                     print(Liste_Pros[i].tarifs);
                   }
                   Navigator.push(context, MaterialPageRoute(builder: (_) => Profilepro(Pro_Position : widget.Pro_Position)));

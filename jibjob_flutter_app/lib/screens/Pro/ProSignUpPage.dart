@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:jibjob/screens/ListeChoix.dart';
 import 'ProSignUpPage0.dart';
 import 'Profilepro.dart' ;
 import 'dart:io';
@@ -427,7 +428,7 @@ void AddPicture() {
 
                   Liste_Pros.add(widget.person);
 
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => Profilepro(Pro_Position : Pro.nb -1)));
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => ListeChoix(Pro_Position : Pro.nb -1) ));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: darkPurple,

@@ -3,7 +3,16 @@ class Listeprix {
   String? name ;
   String ? address ;
   String ? image ;
-  List<Map<String, String>> tarifs = [] ;
+  final List<Map<String, String>> tarifs;
+
+  Listeprix({
+    required this.name,
+    required this.address,
+    required this.image,
+    required this.tarifs,
+    required this.rate,
+  });
+
 }
 
-List<Listeprix> User_Offers = [];
+List<Listeprix> Pros_Offers = [];

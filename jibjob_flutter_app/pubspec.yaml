@@ -28,8 +28,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  supabase_flutter: ^2.5.0
-  flutter_dotenv: ^5.1.0
   flutter:
     sdk: flutter
   auto_size_text: ^3.0.0
@@ -56,7 +54,6 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/.env
     - assets/logo.png
     - assets/illustration.png
     - assets/mid3.jpg

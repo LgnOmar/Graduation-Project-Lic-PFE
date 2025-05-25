@@ -5,6 +5,7 @@ import 'package:jibjob/Person.dart';
 import 'package:jibjob/Pro.dart';
 import 'package:jibjob/screens/Client/NewOrder.dart';
 import 'package:jibjob/screens/Client/Profileclient.dart';
+import 'package:jibjob/screens/ListePrix.dart';
 
 
 class MakeOrder extends StatefulWidget {
@@ -178,9 +179,9 @@ class _MesprixState extends State<MakeOrder> {
             height: 590 ,
           
           child :ListView.builder(
-    itemCount: Liste_Pros.length,
+    itemCount: Pros_Offers.length,
     itemBuilder: (context, index) {
-      final item = Liste_Pros[index];
+      final item = Pros_Offers[index];
 
       return Container(
   padding: EdgeInsets.all(16),
@@ -323,7 +324,8 @@ class _MesprixState extends State<MakeOrder> {
     ],)
   );
     },
-  )),
+  )
+  ),
         ),
       ),
     );}

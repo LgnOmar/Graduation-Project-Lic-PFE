@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:jibjob/screens/ListeChoix.dart';
 import 'package:jibjob/screens/MesPrix.dart';
 import 'dart:io';
 import 'package:jibjob/Pro.dart';
@@ -72,7 +73,8 @@ class _ProfileproState extends State<Profilepro> {
             selected: selectedNavIndex == 1,
             onTap: () => setState(() {
               selectedNavIndex = 1 ;
-              //Navigator.push(context, MaterialPageRoute(builder: (_) => MakeOrder(Client_Position : widget.Client_Position,)));
+              Navigator.push(context, MaterialPageRoute(builder: (_) => ListeChoix(Pro_Position : widget.Pro_Position,)));
+             
               }),
           ),
           SizedBox(width: 56), // Space for the FAB

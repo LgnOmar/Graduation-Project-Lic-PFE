@@ -2,18 +2,14 @@ class Offre {
   String? demande;
   String? phone;
   String? address;
-  List<String?> images = [];
-  static int nb = 0;
+  final List<String?> images ;
 
   Offre({
-    this.demande,
-    this.phone,
-    this.address,
-    List<String?>? images ,
-  }) {
-    this.images = images ?? [];
-    nb++;
-  }
+    required this.demande,
+    required this.phone,
+    required this.address,
+    required this.images,
+  }) ;
 
   
 }
