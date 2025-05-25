@@ -86,4 +86,6 @@ app.*.map.json
 ai_experiments/.ipynb_checkpoints/
 backend/__pycache__/
 backend/venv/
- 
+ai_experiments/Rec 2/jibjob recommendation 2/venv/
+ai_experiments/Rec/jibjob recommendation 2/venv/
+ai_experiments/RecSys_V2/jibjob recommendation 2/venv/
