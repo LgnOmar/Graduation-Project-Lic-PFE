@@ -1,0 +1,10 @@
+comprendre le systeme.pdf
+examples
+files.txt
+README.md
+requirements.txt
+resultat du test de lapproche.pdf
+sample_data
+src
+tests
+venv
