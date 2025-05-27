@@ -49,10 +49,10 @@ class Trainer:
         # Set random seed
         torch.manual_seed(self.seed)
         np.random.seed(self.seed)
-        
-        # Initialize optimizer
+          # Initialize optimizer
         self.optimizer = AdamW(model.parameters(), lr=self.lr, weight_decay=self.weight_decay)
-          def train_homogeneous_model(self, 
+        
+    def train_homogeneous_model(self, 
                                data: torch_geometric.data.Data,
                                professional_job_pairs: torch.Tensor, 
                                labels: torch.Tensor) -> Dict[str, Any]:
@@ -201,9 +201,10 @@ class Trainer:
             stats['test_auc'] = test_auc
             
             logger.info(f"Test Loss: {test_loss:.4f}, Test AUC: {test_auc:.4f}")
-            
+        
         return stats
-          def train_heterogeneous_model(self, 
+        
+    def train_heterogeneous_model(self, 
                                 data: torch_geometric.data.HeteroData,
                                 professional_job_pairs: torch.Tensor, 
                                 labels: torch.Tensor) -> Dict[str, Any]:
@@ -343,22 +344,20 @@ class Trainer:
         with torch.no_grad():
             # Get node embeddings
             embeddings_dict = self.model(data.x_dict, data.edge_index_dict)
-            
-            # Test loss and AUC
+              # Test loss and AUC
             test_loss, test_auc = self._evaluate_heterogeneous_model(
                 test_pairs, test_labels, data, embeddings_dict)
                 
             stats['test_loss'] = test_loss
             stats['test_auc'] = test_auc
-            
             logger.info(f"Test Loss: {test_loss:.4f}, Test AUC: {test_auc:.4f}")
-            
+        
         return stats
         
     def _evaluate_homogeneous_model(self, 
                                   pairs: torch.Tensor, 
                                   labels: torch.Tensor, 
-                                  data: torch.geometric.data.Data,
+                                  data: torch_geometric.data.Data,
                                   embeddings: Optional[torch.Tensor] = None) -> Tuple[float, float]:
         """
         Evaluate a homogeneous GCN model.
@@ -387,16 +386,15 @@ class Trainer:
             
             # Compute loss
             loss = F.binary_cross_entropy(preds, labels).item()
-            
-            # Compute AUC
+              # Compute AUC
             auc = self._calculate_auc(preds.cpu().numpy(), labels.cpu().numpy())
             
             return loss, auc
-            
+    
     def _evaluate_heterogeneous_model(self, 
                                     pairs: torch.Tensor, 
                                     labels: torch.Tensor, 
-                                    data: torch.geometric.data.HeteroData,
+                                    data: torch_geometric.data.HeteroData,
                                     embeddings_dict: Optional[Dict[str, torch.Tensor]] = None) -> Tuple[float, float]:
         """
         Evaluate a heterogeneous GCN model.

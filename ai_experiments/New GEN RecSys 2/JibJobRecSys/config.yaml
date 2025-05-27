@@ -1,0 +1,66 @@
+# Example configuration for JibJobRecSys pipeline
+# All parameters referenced in the updated codebase
+
+experiment_name: "test_001"
+
+dataset:
+  num_categories: 20
+  num_professionals: 100
+  num_clients: 30
+  num_jobs: 200
+  num_interactions_per_professional: 10
+  base_category_definitions:
+    - ["Plumbing", ["pipes", "faucets", "drains", "water heaters"]]
+    - ["Electrical Work", ["wiring", "outlets", "circuits", "lighting"]]
+    - ["Content Writing", ["articles", "blogs", "SEO", "copywriting"]]
+    - ["Graphic Design", ["logo", "branding", "illustration", "UI/UX"]]
+    - ["Tutoring", ["math", "science", "homework", "test prep"]]
+    - ["Appliance Repair", ["dishwasher", "washing machine", "refrigerator", "microwave"]]
+    - ["Software Development", ["web apps", "APIs", "databases", "debugging"]]
+    - ["Carpentry", ["furniture", "cabinetry", "woodwork", "repairs"]]
+    - ["Cleaning Services", ["homes", "offices", "deep cleaning", "move-out"]]
+    - ["Landscaping", ["gardens", "lawns", "hedges", "tree trimming"]]
+  avg_categories_per_professional: 3
+  min_categories_per_professional: 1
+  max_categories_per_professional: 5
+  avg_categories_per_job: 2
+  min_categories_per_job: 1
+  max_categories_per_job: 3
+  jaccard_prob_offset: 0.1
+  unrelated_prob: 0.05
+
+bert:
+  model_name: "bert-base-uncased"
+  batch_size: 16
+  pooling: "cls"
+  max_length: 128
+
+graph:
+  make_undirected: true
+
+model:
+  hidden_channels: 256
+  out_channels: 64
+  num_layers: 2
+  num_heads: 2
+  input_feature_dims:
+    Professional: 768
+    Job: 768
+    Category: 768
+
+training:
+  epochs: 60
+  learning_rate: 0.001
+  batch_size: 128
+  num_neg_per_pos: 1
+
+evaluation:
+  k_values: [5, 10, 20]
+  num_negative_samples_for_eval: 100
+
+paths:
+  project_root: "." # or some way to define it if main.py isn't in src/
+  raw_data_dir: "data/raw"
+  generated_data_dir: "data/generated"
+  embeddings_dir: "data/features"
+  models_dir: "models_checkpoint"

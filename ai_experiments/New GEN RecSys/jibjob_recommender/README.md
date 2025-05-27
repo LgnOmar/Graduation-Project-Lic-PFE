@@ -16,6 +16,7 @@ The system uses Graph Convolutional Networks (GCNs) to provide relevant job reco
 - **Advanced evaluation metrics** for measuring recommendation quality
 - **Command-line interfaces** for training and inference
 - **Comprehensive test framework** with integration, continuous integration, and A/B testing capabilities
+- **Enhanced simplified recommender** that handles different user ID formats and doesn't require complex dependencies
 
 ## Project Structure
 
@@ -23,7 +24,7 @@ The system uses Graph Convolutional Networks (GCNs) to provide relevant job reco
 jibjob_recommender/
 ├── sample_data/                   # Sample data and data generation scripts
 │   ├── generate_sample_data.py    # Script to generate synthetic data for testing
-│   ├── locations.csv              # Location data with coordinates
+│   ├── locations.json             # Location data with coordinates
 │   ├── categories.csv             # Job categories
 │   ├── users.csv                  # User profiles (professionals and employers)
 │   ├── professional_categories.csv # Category interests for professionals

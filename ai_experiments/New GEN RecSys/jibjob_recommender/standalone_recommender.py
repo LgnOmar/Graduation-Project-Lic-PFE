@@ -79,8 +79,7 @@ class StandaloneRecommender:
     def get_user_categories(self, user_id):
         """Get categories for a professional user"""
         return self.prof_to_categories.get(user_id, [])
-    
-    def calculate_distance(self, lat1, lon1, lat2, lon2):
+      def calculate_distance(self, lat1, lon1, lat2, lon2):
         """Calculate Haversine distance between two points in kilometers"""
         R = 6371  # Earth radius in kilometers
         
@@ -108,9 +107,26 @@ class StandaloneRecommender:
         Returns:
             List of recommended jobs
         """
-        # Check if user exists
-        if user_id not in self.professionals['user_id'].values:
-            raise ValueError(f"User {user_id} not found or is not a professional")
+        # Check if user exists directly in users.csv
+        if user_id in self.professionals['user_id'].values:
+            # Using the format from users.csv
+            user = self.professionals[self.professionals['user_id'] == user_id].iloc[0]
+            prof_id_for_categories = user_id
+        else:
+            # Maybe the user is using the ID format from professional_categories.csv (prof_XXX)
+            # Try mapping it to the users.csv format
+            # Assuming prof_050 would be user_0050
+            if user_id.startswith("prof_"):
+                # Extract number part and create user_id equivalent
+                number_part = user_id.split("_")[1]
+                equivalent_user_id = f"user_{number_part.zfill(4)}"
+                if equivalent_user_id in self.professionals['user_id'].values:
+                    user = self.professionals[self.professionals['user_id'] == equivalent_user_id].iloc[0]
+                    prof_id_for_categories = user_id  # Use prof_XXX format for categories
+                else:
+                    raise ValueError(f"User {user_id} (mapped to {equivalent_user_id}) not found or is not a professional")
+            else:
+                raise ValueError(f"User {user_id} not found or is not a professional")
         
         # Get user information
         user = self.professionals[self.professionals['user_id'] == user_id].iloc[0]

@@ -36,11 +36,11 @@ def run_train_script(args):
     training_script = os.path.join(current_dir, 'jibjob_recommender_system', 'training', 'train_gcn.py')
     data_dir = os.path.abspath(args.data_dir)
     output_dir = os.path.abspath(args.output_dir)
-    
-    # Create a batch script to run with proper environment setup
+      # Create a batch script to run with proper environment setup
     batch_script = """
 import os
 import sys
+import argparse
 
 # Add the project root directory to the Python path
 sys.path.insert(0, r'{project_dir}')
@@ -48,18 +48,22 @@ sys.path.insert(0, r'{project_dir}')
 # Now we can import from our package
 from jibjob_recommender_system.training.train_gcn import main
 
-if __name__ == "__main__":
-    # Call the main function with required arguments
-    main(data_dir=r"{data_dir}", 
-         model_type="{model_type}", 
-         epochs={epochs}, 
-         output_dir=r"{output_dir}")
-    """.format(
+if __name__ == "__main__":    # Set up arguments as if they came from the command line
+    sys.argv = ['train_gcn.py', 
+                '--data-dir', r"{data_dir}",
+                '--model-type', "{model_type}", 
+                '--epochs', "{epochs}", 
+                '--output-dir', r"{output_dir}",
+                '--config', r"{config_path}"]
+                
+    # Call the main function
+    main()    """.format(
         project_dir=current_dir,
         data_dir=data_dir,
         model_type=args.model_type,
         epochs=args.epochs,
-        output_dir=output_dir
+        output_dir=output_dir,
+        config_path=os.path.join(current_dir, 'jibjob_recommender_system', 'config', 'settings.yaml')
     )
     
     # Write the batch script to a temporary file
@@ -103,17 +107,22 @@ sys.path.insert(0, r'{project_dir}')
 from jibjob_recommender_system.inference.predict import main
 
 if __name__ == "__main__":
-    # Call the main function with required arguments
-    main(user_id="{user_id}", 
-         top_k={top_k}, 
-         data_dir=r"{data_dir}", 
-         output=r"{output_dir}/recommendations.json")
-    """.format(
+    # Set up arguments as if they came from the command line
+    sys.argv = ['predict.py',
+                '--user-id', "{user_id}",
+                '--top-k', "{top_k}", 
+                '--data-dir', r"{data_dir}",
+                '--output', r"{output_dir}/recommendations.json",
+                '--config', r"{config_path}"]
+    
+    # Call the main function
+    main()    """.format(
         project_dir=current_dir,
         user_id=args.user_id,
         top_k=args.top_k,
         data_dir=data_dir,
-        output_dir=output_dir
+        output_dir=output_dir,
+        config_path=os.path.join(current_dir, 'jibjob_recommender_system', 'config', 'settings.yaml')
     )
     
     # Write the batch script to a temporary file
@@ -151,4 +160,7 @@ def main():
         run_predict_script(args)
 
 if __name__ == "__main__":
+    print("[DEBUG] Starting run_jibjob_system.py...")
     main()
+
+
