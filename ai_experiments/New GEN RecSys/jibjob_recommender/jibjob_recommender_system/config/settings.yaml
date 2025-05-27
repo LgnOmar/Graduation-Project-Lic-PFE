@@ -1,0 +1,56 @@
+# JibJob Recommender System Configuration
+
+# Data paths
+data:
+  base_path: '../sample_data'
+  locations_file: 'locations.json'
+  categories_file: 'categories.csv'
+  users_file: 'users.csv'
+  professional_categories_file: 'professional_categories.csv'
+  jobs_file: 'jobs.csv'
+  job_applications_file: 'job_applications.csv'
+
+# Feature engineering
+features:
+  text:
+    model_name: 'distilbert-base-uncased'  # Alternative: bert-base-uncased for higher quality
+    max_length: 128
+    batch_size: 32
+  location:
+    max_distance_km: 50.0  # Maximum radius for job recommendations in km
+    
+# Graph construction
+graph:
+  include_location_nodes: true
+  content_similarity_threshold: 0.7
+  use_heterogeneous: true  # False for homogeneous GCN, True for HeteroGCN
+  
+# Model parameters
+model:
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.2
+  lr: 0.001
+  weight_decay: 0.0001
+  embedding_dim: 128
+
+# Training parameters
+training:
+  batch_size: 64
+  num_epochs: 20
+  patience: 5  # Early stopping patience
+  val_split: 0.1
+  test_split: 0.1
+  seed: 42
+  neg_samples: 5  # Negative samples per positive interaction
+  
+# Inference
+inference:
+  top_n: 10
+  apply_category_filter: true
+  apply_location_filter: true
+
+# Logging
+logging:
+  level: 'INFO'
+  file: 'jibjob_recsys.log'

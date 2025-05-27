@@ -1,0 +1,3 @@
+2025-05-26 00:31:45,499 - root - INFO - Logging configured successfully
+2025-05-26 00:31:45,500 - root - INFO - Starting training of heterogcn model
+2025-05-26 00:31:45,501 - root - ERROR - Configuration file not found at ../config/settings.yaml

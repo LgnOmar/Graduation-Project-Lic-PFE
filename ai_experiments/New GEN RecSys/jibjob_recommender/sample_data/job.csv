@@ -1,0 +1,481 @@
+job_id,title,description,location_id,posted_by_user_id,required_category_id
+job_00001,Experienced Math Tutor Needed,"Seeking an experienced math tutor for high school algebra and geometry. Flexible hours, evenings preferred. Must be patient and able to explain complex concepts clearly.
+
+Location: Adrar
+Category Focus: Tutoring (Math)
+
+Details: Help student prepare for upcoming exams and improve overall understanding of mathematical principles.
+
+Key Requirements: Strong math background, Previous tutoring experience, Good communication skills. This is a part-time gig.",1,user_1601,8
+job_00002,Furniture Assembly for New Apartment,"Need help assembling flat-pack furniture (bed, desk, bookshelf) for a new apartment. Tools will be provided if you don't have your own.
+
+Location: Chlef
+Category Focus: Furniture Assembly
+
+Details: Looking for someone with experience in assembling IKEA or similar furniture. Task should take a few hours.
+
+Key Requirements: Experience with furniture assembly, Careful handling of items, Own transport. This is a one-time gig.",2,user_1602,5
+job_00003,Physics Tutoring for University Student,"University student requires tutoring in introductory physics, focusing on mechanics and thermodynamics. Twice a week.
+
+Location: Laghouat
+Category Focus: Tutoring (Physics)
+
+Details: Assist with problem sets, lab report understanding, and exam preparation for first-year physics course.
+
+Key Requirements: Strong physics knowledge (university level), Tutoring experience, Ability to simplify concepts. This is a recurring gig.",3,user_1603,49
+job_00004,Catering Assistance for Small Birthday Party,"Looking for an assistant for a small birthday party (approx 20 guests). Help with food prep, serving, and light cleanup.
+
+Location: Oum El Bouaghi
+Category Focus: Catering Assistance (Small Events)
+
+Details: Event is on a Saturday evening. Need someone reliable and presentable for about 4-5 hours.
+
+Key Requirements: Basic food handling, Friendly demeanor, Ability to follow instructions. This is a short-term gig.",4,user_1604,25
+job_00005,Local Research Assistant for Market Study,"Seeking a research assistant to conduct local surveys and gather information for a market study on consumer habits.
+
+Location: Batna
+Category Focus: Research Assistant Specialist
+
+Details: Involves approaching people for short questionnaires and recording responses accurately. Good for students.
+
+Key Requirements: Good communication skills, Organized, Comfortable approaching strangers, Basic understanding of survey methods. This is a temporary gig.",5,user_1605,59
+job_00006,Basic Video Editing for YouTube Channel,"Need someone to do basic video editing (cuts, text overlays, simple transitions) for a small YouTube channel. Short clips.
+
+Location: Béjaïa
+Category Focus: Video Editing (Basic)
+
+Details: Editing short vlogs and tutorial videos. Quick turnaround needed for 2-3 videos per week.
+
+Key Requirements: Basic video editing software proficiency (e.g., DaVinci Resolve, Premiere Rush), Attention to detail. This is an ongoing gig.",6,user_1601,46
+job_00007,Elderly Care Companion Needed (Weekends),"Seeking a compassionate companion for an elderly individual on weekends. Light housekeeping and meal prep.
+
+Location: Biskra
+Category Focus: Elderly Care Assistance
+
+Details: Provide companionship, assist with daily activities, and ensure safety. Saturday and Sunday, 4 hours each day.
+
+Key Requirements: Patience, Empathy, Reliability, Experience with elderly care preferred. This is a part-time gig.",7,user_1606,22
+job_00008,Mobile Phone Screen Repair,"My phone screen is cracked. Looking for someone experienced in mobile phone screen replacements for an iPhone model.
+
+Location: Bechar
+Category Focus: Mobile Phone Repair
+
+Details: Need a quick and reliable repair for a common smartphone model. Please state your experience.
+
+Key Requirements: Experience with phone screen repair, Own tools preferred, Careful workmanship. This is a one-time gig.",8,user_1607,30
+job_00009,Chemistry Tutoring for Exam Prep,"High school student needs urgent help preparing for a chemistry final exam. Focus on organic chemistry.
+
+Location: Blida
+Category Focus: Tutoring (Chemistry) Specialist
+
+Details: Intensive tutoring sessions needed over the next two weeks to cover key topics and practice problems.
+
+Key Requirements: Strong chemistry background, Ability to explain difficult concepts, Exam preparation experience. This is a short-term gig.",9,user_1608,50
+job_00010,Tailoring & Alterations for Wedding Dress,"Need minor alterations (hemming, take in sides) for a wedding dress. Must be experienced with delicate fabrics.
+
+Location: Bouira
+Category Focus: Tailoring & Alterations
+
+Details: Requires precise work and attention to detail for a special occasion garment. Fittings will be necessary.
+
+Key Requirements: Professional tailoring experience, Experience with bridal wear, Own sewing equipment. This is a specific project gig.",10,user_1609,31
+job_00011,Guitar Lessons for Beginner (Acoustic),"Looking for a guitar teacher for beginner acoustic guitar lessons. Once a week, in-person.
+
+Location: Tamanrasset
+Category Focus: Music Lessons (Guitar)
+
+Details: Patient instructor wanted to teach basic chords, strumming patterns, and simple songs.
+
+Key Requirements: Proficient in guitar, Teaching experience (especially beginners), Patient and encouraging. This is a recurring gig.",11,user_1610,41
+job_00012,Interior Design Consultation for Small Apartment,"Need advice on furniture layout and decor for a small one-bedroom apartment. Looking for a modern, minimalist style.
+
+Location: Tbessa
+Category Focus: Interior Design Consultation Specialist
+
+Details: One-time consultation to help maximize space and create a cohesive look. Budget-friendly suggestions appreciated.
+
+Key Requirements: Interior design knowledge, Portfolio of previous work (small spaces a plus), Good eye for style. This is a consultation gig.",12,user_1611,32
+job_00013,Custom Craft Making - Knitted Baby Blanket,"Seeking someone to knit a custom baby blanket with specific colors and pattern. High-quality yarn preferred.
+
+Location: Tlemcen
+Category Focus: Craft Making (Custom Orders)
+
+Details: Looking for a skilled knitter to create a unique, handmade gift. Timeline and price to be discussed.
+
+Key Requirements: Advanced knitting skills, Ability to work from a pattern or create one, Attention to detail. This is a custom order gig.",13,user_1612,51
+job_00014,Research Assistant for Local History Project,"Local history enthusiast needed to help research and compile information for a community project.
+
+Location: Tiaret
+Category Focus: Research Assistant Specialist
+
+Details: Involves visiting local archives (if any), interviewing long-time residents, and organizing findings.
+
+Key Requirements: Interest in local history, Good research skills, Organized, Respectful interviewing manner. This is a volunteer gig.",14,user_1613,59
+job_00015,Mobile Phone Data Recovery,"My old phone won't turn on, but I need to recover photos and contacts from it.
+
+Location: Tizi Ouzou
+Category Focus: Mobile Phone Repair
+
+Details: Seeking a technician skilled in data recovery from non-functional mobile devices. Success-based fee possible.
+
+Key Requirements: Data recovery expertise, Experience with various phone models, Trustworthy. This is a technical gig.",15,user_1614,30
+job_00016,Drone Photography for Real Estate Listing,"Need drone photography/videography for a house listing. Exterior shots and short aerial video tour.
+
+Location: Alger
+Category Focus: Drone Piloting (Photography/Survey)
+
+Details: Professional quality images and smooth video footage required to showcase the property and its surroundings.
+
+Key Requirements: Licensed drone pilot (if required by law), Drone photography experience, Portfolio available. This is a project-based gig.",16,user_1615,38
+job_00017,Software Installation & Setup for Home PC,"Help needed to install new software and set up peripherals on a home computer. Basic troubleshooting if needed.
+
+Location: Djelfa
+Category Focus: Software Installation & Setup
+
+Details: Install office suite, antivirus, and configure printer and webcam. Ensure everything is working correctly.
+
+Key Requirements: IT support knowledge, Experience with Windows/Mac OS, Patient with non-tech users. This is a one-time gig.",17,user_1616,47
+job_00018,Event Planning Support for Community Fair,"Volunteers needed to help plan and organize a local community fair. Various roles available.
+
+Location: Jijel
+Category Focus: Event Planning Support Specialist
+
+Details: Assist with vendor coordination, promotions, and on-the-day logistics for a family-friendly event.
+
+Key Requirements: Organized, Good communication skills, Enthusiastic, Team player. This is a volunteer gig.",18,user_1617,24
+job_00019,Pet Sitting for Two Cats (One Week),"Responsible pet sitter needed to look after two indoor cats for one week while I am away. Daily visits.
+
+Location: Se9tif
+Category Focus: Pet Sitting & Dog Walking Specialist
+
+Details: Duties include feeding, changing litter box, and providing some playtime/company for the cats.
+
+Key Requirements: Experience with cats, Trustworthy and reliable, References preferred. This is a temporary gig.",19,user_1618,23
+job_00020,Small Business Bookkeeping Help,"Small craft business needs assistance with basic bookkeeping tasks and organizing financial records for tax season.
+
+Location: Saefda
+Category Focus: Bookkeeping (Small Business)
+
+Details: Help categorize expenses, reconcile accounts, and prepare simple financial summaries. Knowledge of basic accounting software a plus.
+
+Key Requirements: Basic bookkeeping knowledge, Attention to detail, Organized, Trustworthy. This is a short-term project.",20,user_1619,39
+job_00021,Script Writing for Short Animated Film,"Creative script writer wanted for a 5-minute animated short film aimed at children. Simple, heartwarming story.
+
+Location: Skikda
+Category Focus: Script Writing Specialist
+
+Details: Develop characters and plot for a non-dialogue (or minimal dialogue) animation. Collaboration with animator.
+
+Key Requirements: Scriptwriting experience, Creativity, Understanding of storytelling for children. This is a freelance gig.",21,user_1620,58
+job_00022,Personal Shopper for Special Occasion Outfit,"Need help finding and selecting an outfit for an important event. Looking for fashion advice and shopping assistance.
+
+Location: Sidi Bel Abbes
+Category Focus: Personal Shopping
+
+Details: Help me define a style and find a complete outfit (dress, shoes, accessories) within a specific budget.
+
+Key Requirements: Good sense of style, Knowledge of local boutiques/stores, Patient and good listener. This is a consultation gig.",22,user_1621,53
+job_00023,Home Cleaning - Deep Clean Needed,"Requesting a one-time deep cleaning service for a 2-bedroom apartment before new tenants move in.
+
+Location: Annaba
+Category Focus: Home Cleaning Specialist
+
+Details: Thorough cleaning of all rooms, including kitchen appliances, bathrooms, windows, and floors. Cleaning supplies can be provided.
+
+Key Requirements: Professional cleaning experience, Attention to detail, Reliable, Efficient. This is a one-off job.",23,user_1622,6
+job_00024,Computer Hardware Repair - PC Not Booting,"My desktop PC is not starting up. Looking for a technician to diagnose and repair the issue.
+
+Location: Guelma
+Category Focus: Computer Hardware Repair Specialist
+
+Details: Need someone to identify the faulty component (e.g., power supply, motherboard, RAM) and perform the repair.
+
+Key Requirements: PC hardware troubleshooting skills, Repair experience, Own diagnostic tools. This is a repair gig.",24,user_1623,57
+job_00025,Flooring Installation - Small Room (Laminate),"Need laminate flooring installed in a small bedroom (approx 10 sq meters). Materials already purchased.
+
+Location: Constantine
+Category Focus: Flooring Installation (Laminate/Vinyl)
+
+Details: Looking for an experienced individual for a quick and professional installation. Subfloor is ready.
+
+Key Requirements: Laminate flooring installation experience, Own tools, Attention to detail for a neat finish. This is a small project gig.",25,user_1624,37
+job_00026,Content Writing for Travel Blog (Local Insights),"Travel blog seeking articles about hidden gems and local experiences in your city. Paid per article.
+
+Location: Medea
+Category Focus: Content Writing
+
+Details: Write engaging and informative content showcasing unique aspects of Medea for tourists and locals alike.
+
+Key Requirements: Excellent writing skills, Knowledge of local area, Ability to take good photos a plus. This is a freelance gig.",26,user_1625,12
+job_00027,IT Support for Small Home Office Network,"Setting up a small home office network (2 computers, printer) and need help with configuration and troubleshooting.
+
+Location: Mostaganem
+Category Focus: IT Support (Home/Small Office)
+
+Details: Ensure secure Wi-Fi setup, file sharing between computers, and printer connectivity. Basic security advice.
+
+Key Requirements: Networking knowledge (SOHO), Troubleshooting skills, Experience with routers and printers. This is a setup gig.",27,user_1626,29
+job_00028,House Painting - Exterior Trim and Door,"Need the exterior trim and front door of a small house painted. Paint will be provided.
+
+Location: M'Sila
+Category Focus: House Painting Specialist
+
+Details: Requires proper preparation (sanding, cleaning) and neat application of paint for a durable finish.
+
+Key Requirements: Exterior painting experience, Attention to detail, Own brushes/ladders if possible. This is a short project gig.",28,user_1627,3
+job_00029,English to French Translation for Website Content,"Need a native French speaker to translate short website content (approx 500 words) from English to French.
+
+Location: Mascara
+Category Focus: Translation (Eng-Fr)
+
+Details: Content is for a local business website. Accurate and natural-sounding translation required.
+
+Key Requirements: Native French speaker, Fluent in English, Translation experience, Attention to detail. This is a freelance gig.",29,user_1628,13
+job_00030,Drone Surveying for Small Land Plot,"Require a drone survey for a small plot of land to assess topography and boundaries. Output needed for planning.
+
+Location: Ouargla
+Category Focus: Drone Piloting (Photography/Survey)
+
+Details: Need accurate aerial mapping and potentially a 3D model of a rural land plot.
+
+Key Requirements: Drone surveying experience, Appropriate equipment and software, Licensed if applicable. This is a survey gig.",30,user_1629,38
+job_00031,Event Photography for Local Music Gig,"Photographer needed for a local band's gig at a small venue. Capture performance and crowd atmosphere.
+
+Location: Oran
+Category Focus: Event Photography
+
+Details: Looking for dynamic shots in low-light conditions. Approximately 2-3 hours of coverage. Digital delivery of edited photos.
+
+Key Requirements: Event photography experience (music/low-light a plus), Own professional camera gear, Basic photo editing. This is a gig.",31,user_1630,14
+job_00032,Dog Walking Services Needed (Mon-Fri),"Seeking a reliable dog walker for a medium-sized friendly dog, Monday to Friday, midday.
+
+Location: El Bayadh
+Category Focus: Pet Sitting & Dog Walking Specialist
+
+Details: One-hour walk each weekday. Must be comfortable with dogs and responsible.
+
+Key Requirements: Experience with dogs, Reliability, Punctuality, Love for animals. This is an ongoing part-time gig.",32,user_1631,23
+job_00033,Custom Cake for Child's Birthday,"Looking for a baker to create a custom-themed cake for a child's birthday party. Specific design in mind.
+
+Location: Illizi
+Category Focus: Baking (Custom Cakes) Specialist
+
+Details: Need a creative and delicious cake that matches the party theme. Please share portfolio/examples.
+
+Key Requirements: Baking and cake decorating skills, Ability to work with fondant/icing, Hygienic practices. This is a custom order gig.",33,user_1632,52
+job_00034,Welding Repair for Metal Gate,"Small welding job needed to repair a hinge on a metal garden gate. Must be a quick fix.
+
+Location: Bordj Bou Arreridj
+Category Focus: Welding Specialist
+
+Details: Looking for a welder with portable equipment to do a small repair on-site.
+
+Key Requirements: Welding skills (metal repair), Own equipment if possible, Quick availability. This is a small repair gig.",34,user_1633,18
+job_00035,Voice Over for Short Explainer Video (Arabic),"Need a clear and friendly voice over in Arabic for a 2-minute explainer video. Script provided.
+
+Location: Boumerdes
+Category Focus: Voice Over Artist
+
+Details: Professional sounding recording needed. Please provide a voice sample if possible.
+
+Key Requirements: Native Arabic speaker, Clear speaking voice, Access to decent recording equipment. This is a freelance gig.",35,user_1634,45
+job_00036,Resume & CV Editing Service,"Help needed to polish and update a resume and CV for job applications. Focus on clarity and impact.
+
+Location: El Tarf
+Category Focus: Resume Writing & CV Editing
+
+Details: Review existing documents, suggest improvements, and help tailor them for specific job types.
+
+Key Requirements: Strong writing/editing skills, Understanding of resume best practices, Attention to detail. This is a consultation gig.",36,user_1635,40
+job_00037,Handyman for Minor Home Repairs,"Looking for a handyman to fix a leaky faucet, a loose door handle, and hang some shelves.
+
+Location: Tindouf
+Category Focus: Handyman Services (General)
+
+Details: Various small repair tasks around the house. Should have own basic tools.
+
+Key Requirements: General handyman skills, Experience with minor plumbing/carpentry, Reliable. This is a small jobs gig.",37,user_1636,33
+job_00038,Appliance Repair - Washing Machine Not Draining,"My washing machine is not draining properly. Need a technician to diagnose and fix the issue.
+
+Location: Tissemsilt
+Category Focus: Appliance Repair
+
+Details: Looking for someone experienced with common washing machine problems. Please provide an estimate if possible.
+
+Key Requirements: Appliance repair experience (washing machines), Troubleshooting skills, Own tools. This is a repair gig.",38,user_1637,15
+job_00039,Gardening Help - Weeding and Planting,"Need help with garden maintenance, primarily weeding and planting some new flowers. Half-day work.
+
+Location: El Oued
+Category Focus: Gardening & Landscaping Specialist
+
+Details: Assist with general garden upkeep. Basic gardening knowledge helpful. Bring own gloves if possible.
+
+Key Requirements: Physical fitness, Willingness to do manual garden work, Basic gardening knowledge. This is a casual gig.",39,user_1638,4
+job_00040,Local Courier for Document Delivery,"Urgent need for a local courier to pick up and deliver important documents within the city. Same-day service.
+
+Location: Khenchela
+Category Focus: Courier & Delivery (Local)
+
+Details: Must be reliable and ensure timely and secure delivery of sensitive documents.
+
+Key Requirements: Own transport (scooter/bicycle ideal), Knowledge of local area, Punctual and trustworthy. This is an urgent gig.",40,user_1639,54
+job_00041,Proofreading for Academic Paper (English),"Academic paper (English, social sciences) needs thorough proofreading for grammar, spelling, and punctuation.
+
+Location: Souk Ahras
+Category Focus: Proofreading & Editing
+
+Details: Around 5000 words. Looking for meticulous attention to detail and quick turnaround.
+
+Key Requirements: Excellent English grammar and proofreading skills, Experience with academic texts preferred. This is a freelance gig.",41,user_1640,43
+job_00042,Basic Plumbing - Fix Running Toilet,"My toilet keeps running after flushing. Need a plumber to fix this common issue.
+
+Location: Tipaza
+Category Focus: Plumbing
+
+Details: Looking for someone with basic plumbing skills to identify and resolve the cause of the running toilet.
+
+Key Requirements: Basic plumbing knowledge, Experience with toilet mechanisms, Own basic tools. This is a small repair gig.",42,user_1641,1
+job_00043,Moving Assistance - Load/Unload Small Truck,"Need one or two strong individuals to help load and unload a small moving truck. Furniture and boxes.
+
+Location: Mila
+Category Focus: Moving Services Specialist
+
+Details: Help for approximately 3-4 hours. Heavy lifting involved. Payment per hour.
+
+Key Requirements: Physical strength, Ability to lift heavy items safely, Reliability. This is a manual labor gig.",43,user_1642,7
+job_00044,Data Entry for Contact List,"Need assistance with data entry: transferring handwritten contacts into a digital spreadsheet. Accuracy is key.
+
+Location: Ain Defla
+Category Focus: Data Entry Specialist
+
+Details: Approximately 200 entries. Legible handwriting but requires careful transcription.
+
+Key Requirements: Fast and accurate typing skills, Attention to detail, Basic Excel/Sheets knowledge. This is a data entry gig.",44,user_1643,27
+job_00045,Childcare for Evening Event (4 hours),"Need a responsible babysitter for two children (ages 5 and 8) for an evening event. Approx 4 hours.
+
+Location: Naama
+Category Focus: Childcare & Babysitting
+
+Details: Kids will likely be asleep for part of the time. Light meal/snack prep. Must be comfortable with children.
+
+Key Requirements: Babysitting experience, Trustworthy, References preferred, First aid knowledge a plus. This is a babysitting gig.",45,user_1644,21
+job_00046,Pressure Washing for Driveway and Patio,"Looking for someone with a pressure washer to clean a concrete driveway and small patio area.
+
+Location: Ain Temouchent
+Category Focus: Pressure Washing
+
+Details: Need to remove dirt and mildew. Water access available. Preferably use own equipment.
+
+Key Requirements: Experience with pressure washing, Own equipment preferred, Careful not to damage surfaces. This is an outdoor cleaning gig.",46,user_1645,35
+job_00047,Tutoring (Arabic Language) for Beginner Adult,"Adult learner looking for an Arabic tutor to learn basic conversational Arabic and an introduction to reading/writing.
+
+Location: Ghardaefa
+Category Focus: Tutoring (Languages)
+
+Details: Weekly lessons, flexible timing. Patient and structured approach needed for a complete beginner.
+
+Key Requirements: Native Arabic speaker, Teaching/tutoring experience, Patience with beginners. This is a language tutoring gig.",47,user_1646,9
+job_00048,Network Troubleshooting for Slow Internet,"My home internet has become very slow. Need help diagnosing the issue (router, modem, ISP).
+
+Location: Relizane
+Category Focus: Network Troubleshooting Specialist
+
+Details: Test speeds, check router settings, and help identify the bottleneck. Basic IT knowledge required.
+
+Key Requirements: Networking troubleshooting skills, Familiarity with home routers/modems, Problem-solving ability. This is an IT support gig.",48,user_1647,48
+job_00049,Urgent French Tutoring for High Schooler,"High school student needs immediate help with French grammar and conversation practice before an oral exam.
+
+Location: El M'ghair
+Category Focus: Tutoring (Languages)
+
+Details: Looking for a few intensive sessions this week. Focus on improving fluency and confidence.
+
+Key Requirements: Fluent in French, Tutoring experience, Familiar with high school curriculum. This is an urgent tutoring gig.",49,user_1648,9
+job_00050,Local Guide for Photography Tour,"Seeking a knowledgeable local to act as a guide for a half-day photography tour, showing interesting spots.
+
+Location: El Menia
+Category Focus: Tour Guiding (Local)
+
+Details: Guide a small group of amateur photographers to photogenic locations, sharing some local insights.
+
+Key Requirements: Deep knowledge of El Menia, Good communication skills, Friendly and engaging. This is a guiding gig.",50,user_1649,61
+job_00051,Mathematics Tutor for Primary School Child,"Need a kind and patient tutor for a primary school child struggling with basic arithmetic and problem-solving.
+
+Location: Ouled Djellal
+Category Focus: Tutoring (Math)
+
+Details: After-school sessions, twice a week, to build confidence and understanding in mathematics.
+
+Key Requirements: Good at math fundamentals, Experience with young children, Patience and creativity in teaching. This is a part-time tutoring gig.",51,user_1601,8
+job_00052,Event Staff for Weekend Festival (Usher/Ticket Scan),"Looking for event staff for a weekend music festival. Roles include ushering and ticket scanning.
+
+Location: Bordj Baji Mokhtar
+Category Focus: Event Staff
+
+Details: Friendly and energetic individuals needed for 8-hour shifts on Saturday and Sunday. Training provided.
+
+Key Requirements: Good customer service skills, Ability to stand for long periods, Reliable and punctual. This is a temporary event gig.",52,user_1602,62
+job_00053,Carpentry: Build Simple Outdoor Shelves,"Need a carpenter to build a set of simple wooden shelves for outdoor plant storage. Materials provided.
+
+Location: Béni Abbès
+Category Focus: Carpentry
+
+Details: Basic design, sturdy construction needed. Should be a one-day job for an experienced carpenter.
+
+Key Requirements: Carpentry skills, Experience building shelves/outdoor furniture, Own tools preferred. This is a small carpentry gig.",53,user_1603,17
+job_00054,Graphic Design for Local Cafe Menu,"Local cafe needs a redesign of their food and drink menu. Modern and easy-to-read layout.
+
+Location: Timimoun
+Category Focus: Graphic Design
+
+Details: Create a visually appealing menu design (A4, two-sided). Print-ready files needed.
+
+Key Requirements: Graphic design skills, Experience with menu design a plus, Adobe Creative Suite or similar. This is a design project.",54,user_1604,103
+job_00055,House Sitter with Pet Care (Dog & Bird),"Responsible house sitter needed for 10 days. Must also care for a friendly dog (walks, feeding) and a small bird (feeding).
+
+Location: Touggourt
+Category Focus: Pet Sitting & Dog Walking Specialist
+
+Details: Stay in the house, ensure security, water plants, and provide excellent care for beloved pets.
+
+Key Requirements: Trustworthy, Experience with dogs and birds, References required, Clean background. This is a house/pet sitting gig.",55,user_1605,23
+job_00056,Photography Assistant for Wedding Shoot,"Wedding photographer needs an assistant for a full-day wedding shoot. Help with gear, lighting, and crowd management.
+
+Location: Djanet
+Category Focus: Photography Assistant
+
+Details: Must be proactive, able to follow instructions quickly, and comfortable in a fast-paced environment.
+
+Key Requirements: Basic photography knowledge, Professional demeanor, Physical fitness (carrying gear), Own transport. This is an assistant gig.",56,user_1606,63
+job_00057,Window Cleaning for Small Shopfront,"Small retail shop needs its front windows cleaned (inside and out). Ground level, easily accessible.
+
+Location: In Salah
+Category Focus: Window Cleaning
+
+Details: Streak-free cleaning required for a professional appearance. Preferably bring own supplies.
+
+Key Requirements: Window cleaning experience, Attention to detail, Own cleaning supplies/tools preferred. This is a small cleaning gig.",57,user_1607,36
+job_00058,Personal Fitness Trainer for Home Workouts,"Seeking a personal fitness trainer to design and guide home workout routines. Focus on strength and flexibility.
+
+Location: In Guezzam
+Category Focus: Personal Fitness Training
+
+Details: Two sessions per week at my home. Tailored program for specific fitness goals. Motivating and knowledgeable.
+
+Key Requirements: Certified personal trainer, Experience designing home workouts, Motivational skills. This is a fitness training gig.",58,user_1608,20
+job_00059,Basic Website Update (WordPress),"Need help updating content (text and images) on a small WordPress website. No coding required.
+
+Location: Adrar
+Category Focus: Web Development (Basic WordPress)
+
+Details: Training will be provided on how to use the WordPress editor. Looking for someone comfortable with computers.
+
+Key Requirements: Basic computer literacy, Familiarity with WordPress a plus, Attention to detail. This is a content update gig.",1,user_1609,11
+job_00060,Packing Help for House Move,"Need assistance packing household items (kitchenware, books, clothes) into boxes for an upcoming move.
+
+Location: Chlef
+Category Focus: Moving Services Specialist
+
+Details: Careful and organized packing needed for 1-2 days. Packing materials will be provided.
+
+Key Requirements: Organized, Careful with fragile items, Efficient, Trustworthy. This is a packing gig.",2,user_1610,7

@@ -1,0 +1,8 @@
+{
+  "num_users": 50,
+  "num_jobs": 100,
+  "num_interactions": 200,
+  "rating_mean": 4.011626293986629,
+  "rating_std": 1.0341666369428635,
+  "generated_at": "2025-05-19 05:21:33"
+}
