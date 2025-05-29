@@ -88,7 +88,8 @@ def main():
         clients_path=os.path.join(data_dir, 'clients.csv'),
         categories_path=os.path.join(data_dir, 'categories.csv'),
         output_dir=data_dir,
-        random_seed=42,
+        base_category_definitions=config['dataset']['base_category_definitions'],
+        random_seed=config.get('random_seed', 42),
         min_categories=config['dataset']['min_categories_per_job'],
         max_categories=config['dataset']['max_categories_per_job']
     )

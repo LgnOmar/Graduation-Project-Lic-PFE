@@ -31,8 +31,9 @@ import pandas as pd
 import numpy as np
 import random
 from datetime import datetime, timedelta
+import yaml
 
-def generate_jobs(num_jobs: int, avg_categories_per_job: int, clients_path: str, categories_path: str, output_dir: str, random_seed: int = 42, min_categories: int = 1, max_categories: int = 3):
+def generate_jobs(num_jobs: int, avg_categories_per_job: int, clients_path: str, categories_path: str, output_dir: str, base_category_definitions: list, random_seed: int = 42, min_categories: int = 1, max_categories: int = 3):
     random.seed(random_seed)
     np.random.seed(random_seed)
     clients = pd.read_csv(clients_path)
@@ -41,7 +42,9 @@ def generate_jobs(num_jobs: int, avg_categories_per_job: int, clients_path: str,
     jobs = []
     job_cats = []
     weights = np.random.dirichlet(np.ones(len(cat_ids)), size=1)[0]
-    
+    # Build a mapping from category_name to keywords using passed base_category_definitions
+    catname_to_keywords = {name: keywords for name, keywords in base_category_definitions}
+
     # Helper function to safely access keywords
     def get_keyword(keywords_list, index, default_suffix="related task"):
         """Helper to safely get a keyword or a default value by cycling if index is out of bounds."""
@@ -49,34 +52,47 @@ def generate_jobs(num_jobs: int, avg_categories_per_job: int, clients_path: str,
             return f"a general {default_suffix}"
         return keywords_list[index % len(keywords_list)]
 
-    desc_templates = [
-        lambda n, k: (
-            f"{n} required for immediate work involving {get_keyword(k, 0)} and {get_keyword(k, 1)}. "
-            f"Candidates should be adept at {get_keyword(k, 2)} and able to handle {get_keyword(k, 3, 'related duties')}. "
-            f"Flexibility and reliability are essential."
-        ),
-        lambda n, k: (
-            f"Looking for a skilled {n} to assist with {get_keyword(k, 0)}. "
-            f"Experience in {get_keyword(k, 1)} and {get_keyword(k, 2)} is a plus. "
-            f"Must be able to manage {get_keyword(k, 3, 'miscellaneous tasks')}."
-        ),
-        lambda n, k: (
-            f"Seeking {n} for projects involving {get_keyword(k, 0)}. "
-            f"Knowledge of {get_keyword(k, 1)} and {get_keyword(k, 2)} required. "
-            f"Ability to handle {get_keyword(k, 3, 'varied responsibilities')} independently is preferred."
-        ),
-    ]
     for i in range(num_jobs):
         job_id = 5001 + i
         client_id = int(clients.sample(1)['client_id'])
         k = int(np.clip(int(np.random.normal(avg_categories_per_job, 1)), min_categories, max_categories))
         selected = np.random.choice(cat_ids, size=k, replace=False, p=weights)
         cat_names = categories[categories['category_id'].isin(selected)]['category_name'].tolist()
+        # --- Use richer keywords from config for all selected categories ---
         cat_keywords = []
-        for cid in selected:
-            cat_keywords.extend(categories[categories['category_id'] == cid].iloc[0]['category_name'].split())
-        title = f"{'Urgent' if random.random() < 0.5 else 'Need'}: {' and '.join(cat_names)} expert needed"
-        desc = random.choice(desc_templates)(" and ".join(cat_names), cat_keywords)
+        for cname in cat_names:
+            cat_keywords.extend(catname_to_keywords.get(cname, []))
+        # More diverse title templates
+        title_templates = [
+            lambda names, kws: f"Urgent: {' and '.join(names)} expert needed for {get_keyword(kws, 0)}",
+            lambda names, kws: f"Seeking {' & '.join(names)} Specialist - Focus on {get_keyword(kws, 1)}",
+            lambda names, kws: f"Part-time {names[0]} Opportunity: {get_keyword(kws, 2)} skills required",
+            lambda names, kws: f"Experienced {names[0]} for {get_keyword(kws, 0)} and {get_keyword(kws, 1)} projects"
+        ]
+        title = random.choice(title_templates)(cat_names, cat_keywords)
+        # More diverse description templates
+        desc_templates = [
+            lambda n, k: (
+                f"We are seeking a {n[0]} with strong skills in {get_keyword(k, 0)} and {get_keyword(k, 1)}. "
+                f"Experience with {n[1] if len(n)>1 else n[0]} tasks, especially {get_keyword(k, 2)}, would be a significant advantage. "
+                f"This role involves {get_keyword(k, 3, 'varied responsibilities')} and collaboration across teams."
+            ),
+            lambda n, k: (
+                f"Looking for a {n[0]} professional to handle {get_keyword(k, 0)} and {get_keyword(k, 1)}. "
+                f"Ability to manage {get_keyword(k, 2)} and support {n[1] if len(n)>1 else n[0]}-related projects is required. "
+                f"Attention to detail and reliability are essential."
+            ),
+            lambda n, k: (
+                f"Join our team as a {n[0]} expert. Key tasks include {get_keyword(k, 0)}, {get_keyword(k, 1)}, and {get_keyword(k, 2)}. "
+                f"Knowledge of {n[1] if len(n)>1 else n[0]} and experience with {get_keyword(k, 3, 'miscellaneous tasks')} are a plus."
+            ),
+            lambda n, k: (
+                f"Exciting opportunity for a {n[0]} with expertise in {get_keyword(k, 0)}. "
+                f"The ideal candidate will also be familiar with {get_keyword(k, 1)} and {get_keyword(k, 2)}. "
+                f"Role includes {get_keyword(k, 3, 'cross-functional duties')}."
+            )
+        ]
+        desc = random.choice(desc_templates)(cat_names, cat_keywords)
         posting_date = (datetime.now() - timedelta(days=random.randint(0, 60))).strftime('%Y-%m-%d')
         jobs.append({
             "job_id": job_id,
