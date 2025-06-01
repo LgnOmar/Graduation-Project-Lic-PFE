@@ -71,6 +71,7 @@ JibJobRecSys/
 See `requirements.txt` for all dependencies.
 
 ## Project Highlights
+
 - Fully synthetic, reproducible dataset generation
 - Heterogeneous GNN (HGTConv preferred) and BERT for text
 - Modular, extensible, and scalable design
